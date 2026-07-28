@@ -14,6 +14,7 @@ class GenerationProvider(StrEnum):
     a secret nor accidentally sends retrieved evidence to an external service.
     """
 
+    EXTRACTIVE = "extractive"
     DISABLED = "disabled"
     OPENAI = "openai"
     OPENAI_COMPATIBLE = "openai-compatible"
@@ -50,6 +51,9 @@ class Settings(BaseSettings):
     processed_dir: Path = Path("data/processed")
     artifact_dir: Path = Path("artifacts")
     evaluation_dir: Path = Path("data/eval")
+    parsed_article_path: Path = Path("data/processed/article.json")
+    chunks_path: Path = Path("data/processed/chunks.json")
+    dense_index_dir: Path = Path("artifacts/indexes/dense")
 
     embedding_model: str = "intfloat/multilingual-e5-base"
     reranker_enabled: bool = False
@@ -67,7 +71,12 @@ class Settings(BaseSettings):
     chunk_overlap_tokens: int = Field(default=50, ge=0, le=128)
     table_chunk_max_tokens: int = Field(default=450, ge=32, le=512)
 
-    generation_provider: GenerationProvider = GenerationProvider.DISABLED
+    dense_score_threshold: float = Field(default=0.45, ge=-1.0, le=1.0)
+    minimum_retrieved_chunks: int = Field(default=1, ge=1, le=20)
+    extractive_max_claims: int = Field(default=3, ge=1, le=10)
+    extractive_max_excerpt_chars: int = Field(default=500, ge=32, le=4_000)
+
+    generation_provider: GenerationProvider = GenerationProvider.EXTRACTIVE
     generation_model: str | None = None
     llm_api_key: SecretStr | None = None
     llm_base_url: AnyHttpUrl | None = None
@@ -82,15 +91,22 @@ class Settings(BaseSettings):
 
         if self.context_top_k > self.fused_top_k:
             raise ValueError("context_top_k cannot exceed fused_top_k")
+        if self.minimum_retrieved_chunks > self.context_top_k:
+            raise ValueError("minimum_retrieved_chunks cannot exceed context_top_k")
         if self.chunk_target_tokens > self.chunk_max_tokens:
             raise ValueError("chunk_target_tokens cannot exceed chunk_max_tokens")
         if self.chunk_overlap_tokens >= self.chunk_target_tokens:
             raise ValueError("chunk_overlap_tokens must be smaller than chunk_target_tokens")
         if self.retrieval_mode is RetrievalMode.HYBRID_RERANK and not self.reranker_enabled:
             raise ValueError("hybrid-rerank mode requires reranker_enabled=true")
-        if self.generation_provider is GenerationProvider.DISABLED:
+        if self.generation_provider in {
+            GenerationProvider.DISABLED,
+            GenerationProvider.EXTRACTIVE,
+        }:
             if self.llm_api_key is not None:
-                raise ValueError("llm_api_key must be unset when generation is disabled")
+                raise ValueError("llm_api_key must be unset for local generation providers")
+            if self.llm_base_url is not None:
+                raise ValueError("llm_base_url must be unset for local generation providers")
             return self
         if not self.generation_model:
             raise ValueError("generation_model is required when generation is enabled")

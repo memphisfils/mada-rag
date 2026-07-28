@@ -172,6 +172,7 @@ class ParsedArticle(StrictModel):
     """Normalized content of the sole article revision, ready for chunking."""
 
     page_title: Literal["Madagascar"] = "Madagascar"
+    schema_version: Literal["1.0"] = "1.0"
     revision_id: PositiveInt
     source_url: AnyHttpUrl
     sections: tuple[SectionRecord, ...]
@@ -196,6 +197,38 @@ class ParsedArticle(StrictModel):
             raise ValueError("all tables must reference the article revision")
         if any(table.section_id not in known_sections for table in self.tables):
             raise ValueError("all tables must reference a parsed section")
+        return self
+
+
+class DenseIndexManifest(StrictModel):
+    """Integrity metadata for one saved FAISS IndexFlatIP artifact."""
+
+    schema_version: Literal["1.0"] = "1.0"
+    revision_id: PositiveInt
+    embedding_model: NonEmptyStr
+    dimension: PositiveInt
+    chunk_count: PositiveInt
+    chunk_ids: tuple[NonEmptyStr, ...]
+    metric: Literal["inner-product"] = "inner-product"
+    index_type: Literal["IndexFlatIP"] = "IndexFlatIP"
+    normalized: Literal[True] = True
+    index_sha256: Sha256
+    chunks_sha256: Sha256
+    created_at: datetime
+
+    @field_validator("created_at")
+    @classmethod
+    def require_created_timezone(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("index creation timestamp must be timezone-aware")
+        return value
+
+    @model_validator(mode="after")
+    def validate_index_manifest(self) -> Self:
+        if self.chunk_count != len(self.chunk_ids):
+            raise ValueError("chunk_count must match chunk_ids")
+        if len(self.chunk_ids) != len(set(self.chunk_ids)):
+            raise ValueError("index chunk IDs must be unique")
         return self
 
 
@@ -238,6 +271,25 @@ class Chunk(StrictModel):
             raise ValueError("table-part chunks require table_part_index")
         if self.chunk_type is not ChunkType.TABLE_PART and self.table_part_index is not None:
             raise ValueError("table_part_index is only valid for table-part chunks")
+        return self
+
+
+class ChunkCorpus(StrictModel):
+    """Versioned serialization envelope for chunks from one article revision."""
+
+    schema_version: Literal["1.0"] = "1.0"
+    revision_id: PositiveInt
+    chunks: tuple[Chunk, ...]
+
+    @model_validator(mode="after")
+    def validate_corpus(self) -> Self:
+        if not self.chunks:
+            raise ValueError("chunk corpus cannot be empty")
+        chunk_ids = [chunk.chunk_id for chunk in self.chunks]
+        if len(chunk_ids) != len(set(chunk_ids)):
+            raise ValueError("chunk IDs must be unique")
+        if any(chunk.revision_id != self.revision_id for chunk in self.chunks):
+            raise ValueError("all chunks must reference the corpus revision")
         return self
 
 

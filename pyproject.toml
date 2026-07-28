@@ -23,6 +23,9 @@ dependencies = [
   "uvicorn[standard]>=0.34,<1",
 ]
 
+[project.scripts]
+mada-rag = "mada_rag.cli:app"
+
 [project.optional-dependencies]
 openai = ["openai>=1.59,<3"]
 

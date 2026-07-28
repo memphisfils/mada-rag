@@ -16,7 +16,7 @@ def test_settings_defaults_are_local_secret_free_and_source_bounded() -> None:
     assert config.source_page_title == "Madagascar"
     assert str(config.source_canonical_url) == "https://en.wikipedia.org/wiki/Madagascar"
     assert str(config.mediawiki_api_url) == "https://en.wikipedia.org/w/api.php"
-    assert config.generation_provider is GenerationProvider.DISABLED
+    assert config.generation_provider is GenerationProvider.EXTRACTIVE
     assert config.generation_model is None
     assert config.llm_api_key is None
     assert config.llm_base_url is None
@@ -24,6 +24,7 @@ def test_settings_defaults_are_local_secret_free_and_source_bounded() -> None:
     assert config.retrieval_mode is RetrievalMode.HYBRID
     assert not config.reranker_enabled
     assert config.context_top_k <= config.fused_top_k
+    assert config.minimum_retrieved_chunks <= config.context_top_k
 
 
 def test_settings_are_strict_for_direct_values() -> None:
@@ -47,7 +48,22 @@ def test_settings_are_strict_for_direct_values() -> None:
         ),
         (
             {"generation_provider": GenerationProvider.DISABLED, "llm_api_key": "secret"},
-            "llm_api_key must be unset when generation is disabled",
+            "llm_api_key must be unset for local generation providers",
+        ),
+        (
+            {"generation_provider": GenerationProvider.EXTRACTIVE, "llm_api_key": "secret"},
+            "llm_api_key must be unset for local generation providers",
+        ),
+        (
+            {
+                "generation_provider": GenerationProvider.EXTRACTIVE,
+                "llm_base_url": "http://127.0.0.1:1234/v1",
+            },
+            "llm_base_url must be unset for local generation providers",
+        ),
+        (
+            {"minimum_retrieved_chunks": 6, "context_top_k": 5},
+            "minimum_retrieved_chunks cannot exceed context_top_k",
         ),
         (
             {"generation_provider": GenerationProvider.OPENAI},
