@@ -3,12 +3,18 @@
 from __future__ import annotations
 
 import json
-from typing import NoReturn
+import os
+from collections.abc import Iterator
+from contextlib import contextmanager
+from pathlib import Path
+from typing import Annotated, NoReturn
 
 import typer
 
 from mada_rag.chunking import ArticleChunker
 from mada_rag.config import GenerationProvider, RetrievalMode, Settings
+from mada_rag.evaluation import evaluate as run_evaluation
+from mada_rag.evaluation import load_evaluation_cases, write_evaluation_report
 from mada_rag.generation import CitationValidator, ExtractiveGenerator, SufficiencyPolicy
 from mada_rag.indexing import BM25Index, DenseIndex, E5Embedder
 from mada_rag.ingestion import MediaWikiClient, SnapshotStore, ingest_snapshot
@@ -36,6 +42,24 @@ app = typer.Typer(
 def _fail(exc: Exception) -> NoReturn:
     typer.echo(json.dumps({"error": str(exc)}, ensure_ascii=False), err=True)
     raise typer.Exit(code=1)
+
+
+@contextmanager
+def _offline_model_loading() -> Iterator[None]:
+    """Prevent evaluation from downloading an embedding or reranker model."""
+
+    keys = ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE")
+    previous = {key: os.environ.get(key) for key in keys}
+    try:
+        for key in keys:
+            os.environ[key] = "1"
+        yield
+    finally:
+        for key, value in previous.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
 
 
 def _load_dense(settings: Settings) -> tuple[DenseIndex, E5Embedder]:
@@ -194,6 +218,94 @@ def ask(
         service = _build_service(settings) if mode is None else _build_service(settings, mode)
         answer = service.ask(question, language=language)
         typer.echo(answer.model_dump_json(indent=2))
+    except (RuntimeError, ValueError) as exc:
+        _fail(exc)
+
+
+@app.command()
+def evaluate(
+    questions_file: Annotated[
+        Path | None,
+        typer.Option(
+            "--file",
+            "-f",
+            help="Local JSONL EvalCase file; defaults to data/eval/questions.jsonl.",
+        ),
+    ] = None,
+    case_ids: Annotated[
+        list[str] | None,
+        typer.Option(
+            "--case",
+            help="Evaluate only one case ID; may be specified multiple times.",
+        ),
+    ] = None,
+    top_k: Annotated[
+        int,
+        typer.Option(min=1, max=100, help="Retrieval cutoff for ranking metrics."),
+    ] = 5,
+    modes: Annotated[
+        list[RetrievalMode] | None,
+        typer.Option(
+            "--mode",
+            help="Pipeline to evaluate; repeat for multiple modes.",
+        ),
+    ] = None,
+    output: Annotated[
+        Path | None,
+        typer.Option(
+            "--output",
+            "-o",
+            help="Optional local path for the JSON report.",
+        ),
+    ] = None,
+) -> None:
+    """Evaluate local dense/hybrid pipelines without source-network access."""
+
+    settings = Settings()
+    try:
+        with _offline_model_loading():
+            selected_modes = tuple(
+                dict.fromkeys(modes or [RetrievalMode.DENSE, RetrievalMode.HYBRID])
+            )
+            if RetrievalMode.HYBRID_RERANK in selected_modes and not settings.reranker_enabled:
+                raise ValueError("hybrid-rerank evaluation requires reranker_enabled=true")
+            cases = load_evaluation_cases(
+                questions_file or settings.evaluation_dir / "questions.jsonl",
+                case_ids=case_ids,
+            )
+            snapshot, _html = SnapshotStore(settings.snapshot_dir).load_verified()
+            if any(case.revision_id != snapshot.revision_id for case in cases):
+                raise ValueError("evaluation cases differ from the verified snapshot revision")
+            dense_index, _embedder = _load_dense(settings)
+            if dense_index.manifest is None:
+                raise RuntimeError("loaded dense index is missing its manifest")
+            services = {mode.value: _build_service(settings, mode) for mode in selected_modes}
+            index_hashes = {
+                mode.value: {
+                    "index_sha256": dense_index.manifest.index_sha256,
+                    "chunks_sha256": dense_index.manifest.chunks_sha256,
+                }
+                for mode in selected_modes
+            }
+            report = run_evaluation(
+                cases,
+                retrievers={mode: service.retriever for mode, service in services.items()},
+                services=services,
+                top_k=top_k,
+                snapshot_sha256=snapshot.html_sha256,
+                index_hashes=index_hashes,
+                parameters={
+                    "modes": [mode.value for mode in selected_modes],
+                    "dense_top_k": settings.dense_top_k,
+                    "lexical_top_k": settings.lexical_top_k,
+                    "fused_top_k": settings.fused_top_k,
+                    "rrf_k": settings.rrf_k,
+                    "context_top_k": settings.context_top_k,
+                },
+            )
+            if output is not None:
+                write_evaluation_report(report, output)
+            typer.echo(report.to_json())
     except (RuntimeError, ValueError) as exc:
         _fail(exc)
 

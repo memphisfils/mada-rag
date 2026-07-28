@@ -70,6 +70,27 @@ Les tâches Luna portant sur les tests commencent seulement après gel du contra
 
 Avant fusion, l'auteur fournit la commande exécutée et son résultat. Une revue peut approuver, demander une correction au propriétaire, ou bloquer. Aucun résultat « attendu » n'est présenté comme résultat « obtenu ».
 
+## État de réalisation au 29 juillet 2026
+
+| Gate / phase | État | Preuves et limites restantes |
+|---|---|---|
+| G0 — Architecture | Terminé | Architecture, décisions, risques et DoD sont documentés. |
+| G1 — Données | Implémenté, revue release restante | Snapshot révisionné, parsing et tableaux sont couverts par les tests ; vérifier une dernière fois les artefacts depuis un clone propre. |
+| G2 — Vertical dense | Implémenté | Ingestion, index local, CLI, citations et abstention existent ; le smoke complet avec le vrai modèle reste une preuve de release. |
+| G3 — Retrieval | Terminé en tests | BM25, RRF, reranker paresseux, expansion tabulaire et API sont testés sans réseau ni modèle ; ce n'est pas une mesure comparative. |
+| P4 / G4 — Évaluation produit | Partiel | Jeu de 25 cas et documentation prêts ; harnais `evaluate`, runs réels et artefacts de métriques restent à livrer. |
+| P5 / G5 — Release | Non démarré | Clone propre, revue adversariale finale, scan de secrets, mesures réelles et publication restent bloquants. |
+
+### Décisions et risques actifs
+
+| Sujet | Décision / risque | État et action suivante |
+|---|---|---|
+| Génération | Le chemin livré est extractif et local ; il ne réclame aucun secret. | Accepté ; tout adaptateur LLM devra conserver les mêmes validations de citations. |
+| Reranking | Le cross-encoder est optionnel et chargé à la demande. | Implémenté/testé ; aucune mesure dense/hybride/rerank ne doit être annoncée avant P4.3. |
+| Source unique | Le snapshot est la seule base de connaissance. | Accepté ; ne pas relancer `ingest` pour une comparaison reproductible. |
+| Bilingue et abstention | Les reformulations FR/EN et les seuils peuvent modifier la couverture de preuve. | Risque ouvert ; calibrer séparément puis geler les paramètres avant le run final. |
+| Release | Les index et modèles sont absents du dépôt. | Risque ouvert ; documenter et exécuter une installation/initialisation sur clone vierge. |
+
 ## Stratégie de tests
 
 - Unitaires : modèles, nettoyage, sections, tables, chunking, RRF, citations.
@@ -108,14 +129,13 @@ Les tests CI n'appellent ni Wikipedia ni un LLM payant. Les tests réseau et gé
 
 ## Travaux restants
 
-- [ ] Approuver G0 et créer le scaffolding.
-- [ ] Fixer puis valider le snapshot et son manifeste.
-- [ ] Livrer le parcours dense minimal avant les optimisations.
-- [ ] Livrer hybride puis reranking avec tests séparés.
-- [ ] Geler les questions et preuves avant l'exécution finale.
-- [ ] Générer le rapport à partir des sorties réelles.
-- [ ] Compléter README, limites et réflexion de deux paragraphes.
-- [ ] Réussir clone propre, revue adversariale et scan des secrets.
+- [x] Documenter l'architecture, les décisions, les risques et la DoD (G0).
+- [x] Livrer le parcours dense, BM25/RRF, reranking optionnel, API et tests G1-G3.
+- [x] Versionner 25 questions/proofs et le protocole de rapport P4.
+- [x] Compléter README, limites, licences et réflexion en deux paragraphes.
+- [ ] Implémenter le harnais et la commande `evaluate`.
+- [ ] Geler paramètres, exécuter dense/hybride/hybride+rerank et versionner les artefacts réels.
+- [ ] Réussir clone propre, revue adversariale et scan de secrets (G5).
 - [ ] Publier le dépôt et préparer le lien de remise.
 
 ## Definition of Done de release
