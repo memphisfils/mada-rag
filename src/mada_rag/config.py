@@ -43,6 +43,8 @@ class Settings(BaseSettings):
     source_page_title: str = "Madagascar"
     source_canonical_url: AnyHttpUrl = AnyHttpUrl("https://en.wikipedia.org/wiki/Madagascar")
     mediawiki_api_url: AnyHttpUrl = AnyHttpUrl("https://en.wikipedia.org/w/api.php")
+    mediawiki_user_agent: str = "mada-rag/0.1.0 (https://github.com/memphisfils/mada-rag)"
+    mediawiki_timeout_seconds: float = Field(default=30.0, gt=0, le=120)
 
     snapshot_dir: Path = Path("data/raw")
     processed_dir: Path = Path("data/processed")
@@ -60,6 +62,11 @@ class Settings(BaseSettings):
     context_top_k: int = Field(default=5, ge=1, le=50)
     rrf_k: int = Field(default=60, ge=1, le=1_000)
 
+    chunk_target_tokens: int = Field(default=350, ge=32, le=512)
+    chunk_max_tokens: int = Field(default=450, ge=32, le=512)
+    chunk_overlap_tokens: int = Field(default=50, ge=0, le=128)
+    table_chunk_max_tokens: int = Field(default=450, ge=32, le=512)
+
     generation_provider: GenerationProvider = GenerationProvider.DISABLED
     generation_model: str | None = None
     llm_api_key: SecretStr | None = None
@@ -75,6 +82,10 @@ class Settings(BaseSettings):
 
         if self.context_top_k > self.fused_top_k:
             raise ValueError("context_top_k cannot exceed fused_top_k")
+        if self.chunk_target_tokens > self.chunk_max_tokens:
+            raise ValueError("chunk_target_tokens cannot exceed chunk_max_tokens")
+        if self.chunk_overlap_tokens >= self.chunk_target_tokens:
+            raise ValueError("chunk_overlap_tokens must be smaller than chunk_target_tokens")
         if self.retrieval_mode is RetrievalMode.HYBRID_RERANK and not self.reranker_enabled:
             raise ValueError("hybrid-rerank mode requires reranker_enabled=true")
         if self.generation_provider is GenerationProvider.DISABLED:

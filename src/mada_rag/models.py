@@ -127,6 +127,7 @@ class SectionRecord(StrictModel):
     path: tuple[NonEmptyStr, ...]
     ordinal: NonNegativeInt
     text: str
+    paragraphs: tuple[NonEmptyStr, ...] = ()
     source_anchor: NonEmptyStr | None = None
     parent_section_id: NonEmptyStr | None = None
 
@@ -164,6 +165,37 @@ class TableRecord(StrictModel):
         expected_width = len(self.headers)
         if any(len(row) != expected_width for row in self.rows):
             raise ValueError("every table row must have the same width as headers")
+        return self
+
+
+class ParsedArticle(StrictModel):
+    """Normalized content of the sole article revision, ready for chunking."""
+
+    page_title: Literal["Madagascar"] = "Madagascar"
+    revision_id: PositiveInt
+    source_url: AnyHttpUrl
+    sections: tuple[SectionRecord, ...]
+    tables: tuple[TableRecord, ...] = ()
+
+    @model_validator(mode="after")
+    def validate_article_graph(self) -> Self:
+        if not self.sections:
+            raise ValueError("parsed article requires at least one section")
+
+        section_ids = [section.section_id for section in self.sections]
+        if len(section_ids) != len(set(section_ids)):
+            raise ValueError("section IDs must be unique")
+        if any(section.revision_id != self.revision_id for section in self.sections):
+            raise ValueError("all sections must reference the article revision")
+
+        known_sections = set(section_ids)
+        table_ids = [table.table_id for table in self.tables]
+        if len(table_ids) != len(set(table_ids)):
+            raise ValueError("table IDs must be unique")
+        if any(table.revision_id != self.revision_id for table in self.tables):
+            raise ValueError("all tables must reference the article revision")
+        if any(table.section_id not in known_sections for table in self.tables):
+            raise ValueError("all tables must reference a parsed section")
         return self
 
 
