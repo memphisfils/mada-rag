@@ -73,8 +73,11 @@ class Settings(BaseSettings):
 
     dense_score_threshold: float = Field(default=0.45, ge=-1.0, le=1.0)
     minimum_retrieved_chunks: int = Field(default=1, ge=1, le=20)
+    minimum_concept_coverage: float = Field(default=0.8, ge=0.0, le=1.0)
+    max_expanded_table_chunks: int = Field(default=100, ge=1, le=500)
     extractive_max_claims: int = Field(default=3, ge=1, le=10)
     extractive_max_excerpt_chars: int = Field(default=500, ge=32, le=4_000)
+    max_query_chars: int = Field(default=1_000, ge=32, le=10_000)
 
     generation_provider: GenerationProvider = GenerationProvider.EXTRACTIVE
     generation_model: str | None = None

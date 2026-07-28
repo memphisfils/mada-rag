@@ -11,7 +11,7 @@ from mada_rag.generation import (
     SufficiencyPolicy,
 )
 from mada_rag.models import Answer, AnswerStatus, Language, RetrievedChunk
-from mada_rag.retrieval import DenseRetriever
+from mada_rag.retrieval import ContextExpander, Retriever
 
 
 class RagService:
@@ -20,10 +20,11 @@ class RagService:
     def __init__(
         self,
         *,
-        retriever: DenseRetriever,
+        retriever: Retriever,
         generator: AnswerGenerator,
         sufficiency_policy: SufficiencyPolicy,
         citation_validator: CitationValidator | None = None,
+        context_expander: ContextExpander | None = None,
         context_top_k: int = 5,
     ) -> None:
         if context_top_k <= 0:
@@ -32,15 +33,20 @@ class RagService:
         self.generator = generator
         self.sufficiency_policy = sufficiency_policy
         self.citation_validator = citation_validator or CitationValidator()
+        self.context_expander = context_expander
         self.context_top_k = context_top_k
 
     def retrieve(self, question: str, *, top_k: int | None = None) -> tuple[RetrievedChunk, ...]:
+        """Return the retriever's ranked output without generation-only expansion."""
+
         return self.retriever.retrieve(question, top_k=top_k)
 
     def ask(self, question: str, *, language: Language = Language.EN) -> Answer:
         started = perf_counter()
         candidates = self.retrieve(question, top_k=self.context_top_k)
-        decision = self.sufficiency_policy.assess(candidates)
+        if self.context_expander is not None:
+            candidates = self.context_expander.expand(candidates)
+        decision = self.sufficiency_policy.assess(candidates, question=question)
         if not decision.sufficient:
             return self._abstain(
                 question,

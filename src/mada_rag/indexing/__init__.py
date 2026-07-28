@@ -1,5 +1,6 @@
 """Dense FAISS and lexical BM25 index construction."""
 
+from mada_rag.indexing.bm25 import BM25Index, BM25IndexError
 from mada_rag.indexing.dense import (
     CHUNKS_FILENAME,
     INDEX_FILENAME,
@@ -21,6 +22,8 @@ __all__ = [
     "DEFAULT_E5_MODEL",
     "INDEX_FILENAME",
     "MANIFEST_FILENAME",
+    "BM25Index",
+    "BM25IndexError",
     "DenseIndex",
     "DenseIndexConflictError",
     "DenseIndexError",

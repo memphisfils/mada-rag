@@ -2,8 +2,15 @@
 
 from __future__ import annotations
 
+import re
+from dataclasses import dataclass
 from typing import Protocol
 
+from mada_rag.generation.relevance import (
+    normalized_tokens,
+    ordering_direction,
+    query_concepts,
+)
 from mada_rag.models import (
     Answer,
     AnswerStatus,
@@ -12,6 +19,20 @@ from mada_rag.models import (
     Language,
     RetrievedChunk,
 )
+
+_SENTENCE_RE = re.compile(r"[^.!?\n]+(?:[.!?]+|$)")
+_NUMBER_RE = re.compile(r"[-+]?\d[\d,\s]*(?:\.\d+)?")
+_ENTITY_CONCEPTS = frozenset({"city", "country", "district", "province", "region", "state"})
+_DERIVED_MEASURES = frozenset({"area", "density", "percent", "percentage", "ratio", "rate"})
+
+
+@dataclass(frozen=True, slots=True)
+class _EvidenceSpan:
+    candidate: RetrievedChunk
+    excerpt: str
+    start: int
+    end: int
+    relevance: float
 
 
 class AnswerGenerator(Protocol):
@@ -31,12 +52,18 @@ class AnswerGenerator(Protocol):
     ) -> Answer: ...
 
 
-def _exact_excerpt(text: str, maximum_chars: int) -> tuple[str, int, int]:
-    start = len(text) - len(text.lstrip())
-    available = text[start : start + maximum_chars]
+def _bounded_excerpt(
+    text: str,
+    start: int,
+    end: int,
+    maximum_chars: int,
+) -> tuple[str, int, int]:
+    while start < end and text[start].isspace():
+        start += 1
+    available = text[start : min(end, start + maximum_chars)]
     if not available:
         raise ValueError("cannot extract evidence from an empty chunk")
-    if start + len(available) < len(text):
+    if end - start > maximum_chars:
         boundaries = [available.rfind(marker) for marker in (". ", "? ", "! ", "\n")]
         boundary = max(boundaries)
         if boundary >= 31:
@@ -47,6 +74,172 @@ def _exact_excerpt(text: str, maximum_chars: int) -> tuple[str, int, int]:
                 available = available[:word_boundary]
     excerpt = available.rstrip()
     return excerpt, start, start + len(excerpt)
+
+
+def _candidate_spans(
+    question: str,
+    candidate: RetrievedChunk,
+    maximum_chars: int,
+) -> tuple[_EvidenceSpan, ...]:
+    concepts = query_concepts(question)
+    spans: list[_EvidenceSpan] = []
+    for match in _SENTENCE_RE.finditer(candidate.chunk.text):
+        excerpt, start, end = _bounded_excerpt(
+            candidate.chunk.text,
+            match.start(),
+            match.end(),
+            maximum_chars,
+        )
+        if not excerpt:
+            continue
+        excerpt_concepts = set(normalized_tokens(excerpt))
+        overlap = len(concepts & excerpt_concepts)
+        coverage = overlap / len(concepts) if concepts else 1.0
+        numeric_matches = sum(
+            1 for concept in concepts if concept.replace(",", "") in excerpt.replace(",", "")
+        )
+        relevance = coverage * 10.0 + overlap + numeric_matches + candidate.score * 0.01
+        spans.append(_EvidenceSpan(candidate, excerpt, start, end, relevance))
+    return tuple(spans)
+
+
+def _parse_number(value: str) -> float | None:
+    match = _NUMBER_RE.search(value.replace("\u2212", "-").replace("\xa0", " "))
+    if match is None:
+        return None
+    normalized = match.group(0).replace(",", "").replace(" ", "")
+    try:
+        return float(normalized)
+    except ValueError:
+        return None
+
+
+def _row_assignments(candidate: RetrievedChunk) -> tuple[dict[str, str], str, int, int] | None:
+    for line in candidate.chunk.text.splitlines():
+        stripped = line.strip()
+        if not stripped.casefold().startswith("row ") or ":" not in stripped:
+            continue
+        assignments: dict[str, str] = {}
+        _prefix, values = stripped.split(":", 1)
+        for assignment in values.split(" | "):
+            if "=" not in assignment:
+                continue
+            header, value = assignment.split("=", 1)
+            assignments[header.strip()] = value.strip()
+        if not assignments:
+            return None
+        start = candidate.chunk.text.index(stripped)
+        return assignments, stripped, start, start + len(stripped)
+    return None
+
+
+def _field_relevance(question: str, headers: set[str]) -> tuple[str | None, float]:
+    concepts = query_concepts(question)
+    header_concepts = {header: set(normalized_tokens(header)) for header in headers}
+    document_frequency = {
+        concept: sum(concept in values for values in header_concepts.values())
+        for concept in concepts
+    }
+    best_header: str | None = None
+    best_score = 0.0
+    for header, values in header_concepts.items():
+        overlap = concepts & values
+        score = sum(1.0 / max(document_frequency[concept], 1) for concept in overlap)
+        score += 2.0 * len(overlap & _DERIVED_MEASURES)
+        if score > best_score:
+            best_header = header
+            best_score = score
+    return best_header, best_score
+
+
+def _table_comparison_spans(
+    question: str,
+    candidates: tuple[RetrievedChunk, ...],
+) -> tuple[_EvidenceSpan, ...]:
+    direction = ordering_direction(question)
+    if direction is None:
+        return ()
+    groups: dict[str, list[tuple[RetrievedChunk, dict[str, str], str, int, int]]] = {}
+    for candidate in candidates:
+        if candidate.chunk.table_id is None or candidate.chunk.row_index is None:
+            continue
+        parsed = _row_assignments(candidate)
+        if parsed is None:
+            continue
+        assignments, excerpt, start, end = parsed
+        groups.setdefault(candidate.chunk.table_id, []).append(
+            (candidate, assignments, excerpt, start, end)
+        )
+
+    concepts = query_concepts(question)
+    best_spans: tuple[_EvidenceSpan, ...] = ()
+    best_table_score = 0.0
+    for rows in groups.values():
+        headers = {
+            header
+            for _candidate, assignments, _excerpt, _start, _end in rows
+            for header in assignments
+        }
+        field, field_score = _field_relevance(question, headers)
+        if field is None or field_score <= 0:
+            continue
+        numeric_rows: list[tuple[float, RetrievedChunk, str, int, int]] = []
+        for candidate, assignments, excerpt, start, end in rows:
+            if concepts & _ENTITY_CONCEPTS and "total" in normalized_tokens(excerpt):
+                continue
+            value = _parse_number(assignments.get(field, ""))
+            if value is not None:
+                numeric_rows.append((value, candidate, excerpt, start, end))
+        if len(numeric_rows) < 2:
+            continue
+        winning_value = (
+            max(value for value, *_rest in numeric_rows)
+            if direction == "maximum"
+            else min(value for value, *_rest in numeric_rows)
+        )
+        winners = tuple(
+            _EvidenceSpan(candidate, excerpt, start, end, field_score + candidate.score * 0.01)
+            for value, candidate, excerpt, start, end in numeric_rows
+            if value == winning_value
+        )
+        if winners and field_score > best_table_score:
+            best_spans = winners
+            best_table_score = field_score
+    return best_spans
+
+
+def _select_evidence(
+    question: str,
+    candidates: tuple[RetrievedChunk, ...],
+    *,
+    maximum_claims: int,
+    maximum_chars: int,
+) -> tuple[_EvidenceSpan, ...]:
+    table_winners = _table_comparison_spans(question, candidates)
+    if table_winners:
+        return table_winners[:maximum_claims]
+    spans = [
+        span
+        for candidate in candidates
+        for span in _candidate_spans(question, candidate, maximum_chars)
+    ]
+    spans.sort(
+        key=lambda span: (
+            -span.relevance,
+            span.candidate.rank,
+            span.start,
+        )
+    )
+    selected: list[_EvidenceSpan] = []
+    seen: set[str] = set()
+    for span in spans:
+        if span.excerpt in seen:
+            continue
+        seen.add(span.excerpt)
+        selected.append(span)
+        if len(selected) == maximum_claims:
+            break
+    return tuple(selected)
 
 
 class ExtractiveGenerator:
@@ -77,17 +270,19 @@ class ExtractiveGenerator:
         if not candidates:
             raise ValueError("extractive generation requires retrieved evidence")
 
+        selected = _select_evidence(
+            question,
+            candidates,
+            maximum_claims=self.max_claims,
+            maximum_chars=self.max_excerpt_chars,
+        )
         claims: list[Claim] = []
         citations: list[Citation] = []
-        excerpts_seen: set[str] = set()
-        for candidate in candidates:
-            excerpt, start, end = _exact_excerpt(
-                candidate.chunk.text,
-                self.max_excerpt_chars,
-            )
-            if excerpt in excerpts_seen:
-                continue
-            excerpts_seen.add(excerpt)
+        for evidence in selected:
+            candidate = evidence.candidate
+            excerpt = evidence.excerpt
+            start = evidence.start
+            end = evidence.end
             number = len(claims) + 1
             citation_id = f"citation-{number}"
             claims.append(
@@ -113,8 +308,6 @@ class ExtractiveGenerator:
                     end_char=end,
                 )
             )
-            if len(claims) == self.max_claims:
-                break
         if not claims:
             raise ValueError("no distinct exact excerpts could be generated")
 

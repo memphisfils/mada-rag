@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from mada_rag.indexing import DenseIndex, DenseIndexIntegrityError, EmbeddingBackend
-from mada_rag.models import RetrievalMethod, RetrievedChunk
+from mada_rag.models import Chunk, RetrievalMethod, RetrievedChunk
 
 
 class DenseRetriever:
@@ -29,6 +29,10 @@ class DenseRetriever:
     @property
     def revision_id(self) -> int:
         return self.index.revision_id
+
+    @property
+    def chunks(self) -> tuple[Chunk, ...]:
+        return self.index.chunks
 
     def retrieve(
         self,

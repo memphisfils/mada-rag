@@ -1,0 +1,1639 @@
+{
+  "schema_version": "1.0",
+  "revision_id": 1365949107,
+  "chunks": [
+    {
+      "chunk_id": "chunk-2d28841c865831121b84bbeb7dff068b",
+      "revision_id": 1365949107,
+      "chunk_type": "text",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 0,
+      "text": "Madagascar, officially the Republic of Madagascar, is an island country in the Indian Ocean that includes the island of Madagascar and numerous smaller peripheral islands. Lying off the southeastern coast of Africa, it is the world's fourth-largest island, the second-largest island country, and the 46th-largest country overall. Its capital and largest city is Antananarivo. Following the prehistoric breakup of the supercontinent Gondwana, Madagascar split from Africa during the Early Jurassic period, around 180 million years ago, and from the Indian subcontinent approximately 90 million years ago. This isolation allowed native plants and animals to evolve in relative seclusion. As a result, Madagascar is a biodiversity hotspot and one of the world's 17 megadiverse countries, with over 90% of its wildlife being endemic. The island has a subtropical to tropical maritime climate. Madagascar was first permanently settled during or before the mid-first millennium CE (roughly 500 to 700) by Austronesian peoples, presumably arriving on outrigger canoes from present-day Indonesia. These were joined around the ninth century by Bantu groups crossing the Mozambique Channel from East Africa. Other groups continued to settle on Madagascar over time, each one making lasting contributions to Malagasy cultural life. Consequently, there are 18 or more classified peoples of Madagascar, the most numerous being the Merina of the central highlands. Until the late 18th century, the island",
+      "token_count": 350,
+      "content_sha256": "24a29dde7c63063afac5ed948332fa40beb2b5559e11a5c8f8778eed728c5dfe",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": null,
+      "row_index": null,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+      "revision_id": 1365949107,
+      "chunk_type": "text",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 1,
+      "text": "to Malagasy cultural life. Consequently, there are 18 or more classified peoples of Madagascar, the most numerous being the Merina of the central highlands. Until the late 18th century, the island of Madagascar was ruled by a fragmented assortment of shifting sociopolitical alliances. Beginning in the early 19th century, most of it was united and ruled as the Kingdom of Madagascar by a series of Merina nobles. The monarchy was ended in 1897 by France's annexation of Madagascar, from which the country gained independence in 1960. It has since undergone four major constitutional periods, termed republics, and has been governed as a constitutional democracy since 1992. Following a political crisis and military coup in 2009, Madagascar underwent a protracted transition towards its fourth and current republic, with constitutional governance being restored in January 2014. In 2025, a series of mass protests resulted in a military coup and the installation of Michael Randrianirina as president of a military junta. Madagascar is a member of the United Nations (UN), the African Union (AU), the Southern African Development Community (SADC), and the Organisation Internationale de la Francophonie. Malagasy and French are both official languages of the state. Christianity is the country's predominant religion, with a significant minority still practicing traditional faiths. Madagascar is classified as a least-developed country by the UN. Ecotourism and agriculture, paired with greater investments in education, health and private enterprise, are key elements of its development strategy.",
+      "token_count": 349,
+      "content_sha256": "78f18db2fb91acafb037655b42450ebaf4cf198579639b62437434ffc6a1d664",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": null,
+      "row_index": null,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-0c1234d0676612ccfe32a94404c7fdee",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 3,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 1: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Flag Emblem | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Flag Emblem\nRow 2: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Motto: Fitiavana, Tanindrazana, Fandrosoana (Malagasy) Amour, Patrie, Progrès (French) \"Love, Fatherland, Progress\" | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Motto: Fitiavana, Tanindrazana, Fandrosoana (Malagasy) Amour, Patrie, Progrès (French) \"Love, Fatherland, Progress\"\nRow 3: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Anthem: Ry Tanindrazanay malala ô! (Malagasy) Ô Terre de nos ancêtres bien-aimés! (French) \"Oh, land of our beloved ancestors!\" | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Anthem: Ry Tanindrazanay malala ô! (Malagasy) Ô Terre de nos ancêtres bien-aimés! (French) \"Oh, land of our beloved ancestors!\"\nRow 4: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Location of Madagascar (dark green) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Location of Madagascar (dark green)",
+      "token_count": 429,
+      "content_sha256": "0517df59ddaf9cc59e94939611bd8bebd946e2e08126eced866154177101b9ee",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 0
+    },
+    {
+      "chunk_id": "chunk-4702818cb53469cea994f6ff893c557f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 4,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 5: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Capital and largest city | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Antananarivo 18°55′S 47°31′E ﻿ / ﻿ 18.917°S 47.517°E ﻿ / -18.917; 47.517\nRow 6: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Official languages | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy French\nRow 7: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Ethnic groups (2017) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=26% Merina 15% Betsimisaraka 12% Betsileo 7% Tsimihety 6% Sakalava 5% Antaisaka 5% Antandroy 24% others\nRow 8: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Demonym | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy\nRow 9: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Government | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Unitary semi-presidential republic under a military junta\nRow 10: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• President | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Michael Randrianirina",
+      "token_count": 426,
+      "content_sha256": "c2f667e0db2e266c89faf704815e222bc9d6f22996a8077af4a5fa5cd149c7d5",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 1
+    },
+    {
+      "chunk_id": "chunk-104f3a269d580a422617eeb8670ada31",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 5,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 11: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Prime Minister | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Mamitiana Rajaonarison\nRow 12: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Legislature | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Parliament\nRow 13: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Upper house | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Senate (suspended)\nRow 14: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Lower house | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=National Assembly\nRow 15: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Formation | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Formation\nRow 16: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Kingdom | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=c. 1540\nRow 17: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• French protectorate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=c. 1882",
+      "token_count": 414,
+      "content_sha256": "76cca46c3d8c2a11197596099f5f6501719ba03eb7b4198236685d44784d10f7",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 2
+    },
+    {
+      "chunk_id": "chunk-d9700c3ebbd258e637372402287b5950",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 6,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 18: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• French colony | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=6 August 1896\nRow 19: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Republic proclaimed | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=14 October 1958\nRow 20: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Declaration of independence | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=26 June 1960\nRow 21: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Referendum | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=21 December 1975\nRow 22: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Socialist state | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=30 December 1975 – 12 January 1992\nRow 23: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Third Republic | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=12 January 1992 – 11 December 2010\nRow 24: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Referendum | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=17 November 2010",
+      "token_count": 419,
+      "content_sha256": "3cb47303993fb91d355540663e358542165d0d475634640cb3ff775ebcc54856",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 3
+    },
+    {
+      "chunk_id": "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 7,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 25: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Current constitution | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=11 December 2010\nRow 26: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2025 Malagasy protests | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=25 September – 14 October 2025\nRow 27: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Coup d'état | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=12–14 October 2025\nRow 28: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Area | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Area\nRow 29: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Total | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=592,796 km 2 (228,880 sq mi) ( 46th)\nRow 30: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Water | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=5,501 km 2 (2,124 sq mi)\nRow 31: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Water (%) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=0.9%",
+      "token_count": 433,
+      "content_sha256": "cd28caf4f5585ff345f3d2e5aee4da75d8666b01894b36c81cf095bedf2365c2",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 4
+    },
+    {
+      "chunk_id": "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 8,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 32: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Population | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Population\nRow 33: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2024 estimate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=31,964,956 ( 49th)\nRow 34: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Density | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=55/km 2 (142.4/sq mi) ( 164th)\nRow 35: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=GDP ( PPP) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=2026 estimate\nRow 36: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Total | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$68.110 billion ( 117th)\nRow 37: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Per capita | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$2,110 ( 182nd)\nRow 38: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=GDP (nominal) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=2026 estimate",
+      "token_count": 437,
+      "content_sha256": "7c12d3e02422fae3545944045c0fa405bd586b5df78d63b18cefc727ffd8d68d",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 5
+    },
+    {
+      "chunk_id": "chunk-77b111b94dece5630904bcdc29f8de2a",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 9,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 39: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Total | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$21.090 billion ( 139th)\nRow 40: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Per capita | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$652 ( 188th)\nRow 41: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Gini (2021) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=36.8 medium inequality\nRow 42: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=HDI (2023) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=0.487 low ( 183rd)\nRow 43: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Currency | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Ariary ( MGA)\nRow 44: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Time zone | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=UTC +3 ( EAT)\nRow 45: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Date format | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=dd/mm/yyyy",
+      "token_count": 428,
+      "content_sha256": "bf758be4783c71ea186b5e6f60b17e303f34665cb608ab8a008d577e762abedc",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 6
+    },
+    {
+      "chunk_id": "chunk-ae0192a636690671e846a0efb7e83194",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 10,
+      "text": "Columns: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)\nRow 46: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Calling code | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=+261\nRow 47: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=ISO 3166 code | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=MG\nRow 48: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Internet TLD | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=.mg",
+      "token_count": 197,
+      "content_sha256": "3299360ebd77e3542036dc48bb6332c397442f0e6b0a43e9fe024fa5fc6abf95",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": null,
+      "table_part_index": 7
+    },
+    {
+      "chunk_id": "chunk-5121bc63bba4efcc0a850733dec05381",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 11,
+      "text": "Row 1: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Flag Emblem | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Flag Emblem",
+      "token_count": 58,
+      "content_sha256": "d1e760b929fd302cd74ae366e9efda0ca21575fd1a9ec761307352bb0bfda368",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 0,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-564d1951a5147c1ec7792152a747208b",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 12,
+      "text": "Row 2: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Motto: Fitiavana, Tanindrazana, Fandrosoana (Malagasy) Amour, Patrie, Progrès (French) \"Love, Fatherland, Progress\" | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Motto: Fitiavana, Tanindrazana, Fandrosoana (Malagasy) Amour, Patrie, Progrès (French) \"Love, Fatherland, Progress\"",
+      "token_count": 130,
+      "content_sha256": "b3668ab1ddbcb17b726f4edcad42b8ae3cdf3cf665079bd6a6fd734a2ead5abd",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 1,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-733fb9fffefab9354f86e5805e53d72f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 13,
+      "text": "Row 3: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Anthem: Ry Tanindrazanay malala ô! (Malagasy) Ô Terre de nos ancêtres bien-aimés! (French) \"Oh, land of our beloved ancestors!\" | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Anthem: Ry Tanindrazanay malala ô! (Malagasy) Ô Terre de nos ancêtres bien-aimés! (French) \"Oh, land of our beloved ancestors!\"",
+      "token_count": 144,
+      "content_sha256": "39def0c16621c6df2006e59dc1e0d5638a2d10de6a8606a1a7e049304069ce50",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 2,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-2c6d6940d3d1c8db8a47870c2723a5c2",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 14,
+      "text": "Row 4: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Location of Madagascar (dark green) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Location of Madagascar (dark green)",
+      "token_count": 66,
+      "content_sha256": "aeaaa8fbd7a72e0c2329d276c05893fe6ded58f083457920395384a49396d09e",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 3,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-f9835ff9233b9e6dc3a052f082ace360",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 15,
+      "text": "Row 5: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Capital and largest city | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Antananarivo 18°55′S 47°31′E ﻿ / ﻿ 18.917°S 47.517°E ﻿ / -18.917; 47.517",
+      "token_count": 87,
+      "content_sha256": "30ac06d87ba613d6d19351c11e97fdd2d67bf7c024bc361a35caeef81bf9c36b",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 4,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-0ce5807330fd257c73e005b1c27b4770",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 16,
+      "text": "Row 6: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Official languages | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy French",
+      "token_count": 56,
+      "content_sha256": "5428a6dff2672b9c93431ae33cbd987c1208d27ee2514bc3001b0ca6a66ce3b4",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 5,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-b67de7b2f996bd1971cc97316aa88e01",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 17,
+      "text": "Row 7: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Ethnic groups (2017) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=26% Merina 15% Betsimisaraka 12% Betsileo 7% Tsimihety 6% Sakalava 5% Antaisaka 5% Antandroy 24% others",
+      "token_count": 85,
+      "content_sha256": "f25ff7f22009ba2b45a3995c4d3fb6f4af4890f965768ae55a6f339e86a48d24",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 6,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-820a96b48c06e9fbb07df75cf7efd06e",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 18,
+      "text": "Row 8: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Demonym | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy",
+      "token_count": 54,
+      "content_sha256": "f7048832f828106fe3bd682e3570862d84531662301f8d733e674e9e3960d68b",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 7,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-c86bdbb4cbd885a30971da20327bfa7f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 19,
+      "text": "Row 9: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Government | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Unitary semi-presidential republic under a military junta",
+      "token_count": 65,
+      "content_sha256": "6135449ec8a4726ce571c6d8537f9a35efcfbeb1eaed0945385b90e2acc52b3b",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 8,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-38a78b28a295ec0a7e9e667c5b3f43f1",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 20,
+      "text": "Row 10: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• President | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Michael Randrianirina",
+      "token_count": 56,
+      "content_sha256": "0abe2b48ffaea4b26ffa530d6cd0edaccb32f196ae1913a451913b7bb0b98f0d",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 9,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-1ae4be98401b54786d3903f2ffa57eae",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 21,
+      "text": "Row 11: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Prime Minister | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Mamitiana Rajaonarison",
+      "token_count": 59,
+      "content_sha256": "2094ef0abfed5d3f7c7fb956ad2974719ed2d8063cf2adf9ec803ffd074bcf77",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 10,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-9e770b0921227ca5a1db9233a5d0f55d",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 22,
+      "text": "Row 12: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Legislature | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Parliament",
+      "token_count": 56,
+      "content_sha256": "0741bdf9e1100a6af5796c15e2ef62cf4a586d2c4c3116e1c9bb080a0366d0af",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 11,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-2cb6144463276766a728bf750deb7c9c",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 23,
+      "text": "Row 13: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Upper house | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Senate (suspended)",
+      "token_count": 60,
+      "content_sha256": "289930c1295babc1df0dac3d3c3bdaf58fe382f73016699842c68e7bea210806",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 12,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-0184181d7cd055393121b84a791ce6c5",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 24,
+      "text": "Row 14: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Lower house | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=National Assembly",
+      "token_count": 56,
+      "content_sha256": "11379eff5f25692011fe3bb9f602cc0d352cbfff541d453f5406343c98a954ca",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 13,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-f9e368401c76725a2d89d26b7b5b4a97",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 25,
+      "text": "Row 15: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Formation | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Formation",
+      "token_count": 53,
+      "content_sha256": "6334cfab384a56144daee4a495674fc1444834eff12a1a154c146702bacf99bb",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 14,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-676cca17541c583f40c4ea2ac9a6d767",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 26,
+      "text": "Row 16: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Kingdom | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=c. 1540",
+      "token_count": 55,
+      "content_sha256": "03071e8d4da9ff71f7e2b57a5c6e71e8645ee795ee377577f721063bba8b8407",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 15,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-5586b190c13652842cff05336628822b",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 27,
+      "text": "Row 17: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• French protectorate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=c. 1882",
+      "token_count": 56,
+      "content_sha256": "35cf120b45131fe39f6ca5f0c0f1a13486f48ea0d76081f3e4cc8aee7bf8992a",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 16,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-826ea1e7370ab452b5b2e83cc4351f16",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 28,
+      "text": "Row 18: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• French colony | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=6 August 1896",
+      "token_count": 56,
+      "content_sha256": "bf3cfafb574d04a55116ef4a70671ab46f4b909e5b39017f72bc1135689365d4",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 17,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-27ef63737577f35d7d1c29af272e7d9b",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 29,
+      "text": "Row 19: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Republic proclaimed | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=14 October 1958",
+      "token_count": 57,
+      "content_sha256": "5f4308db6128e0d6a587040165d0277beb6264ca7c8f510f45be3f97c51917d4",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 18,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-68190c5244c5af56f03cd7c2efe80e62",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 30,
+      "text": "Row 20: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Declaration of independence | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=26 June 1960",
+      "token_count": 58,
+      "content_sha256": "c5bb9c72ca1a3faedef69c4fad62cf320c89c2002511040acaaaa47424d2ffee",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 19,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-b5df04043aeac6b55fc18621b22dbd07",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 31,
+      "text": "Row 21: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Referendum | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=21 December 1975",
+      "token_count": 55,
+      "content_sha256": "b115c0fe690ce9cbb30e7cec5fc3f8c95a49d68381575031135a77531bdce5a7",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 20,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-290fc7249a8f5f1deaa55b32c0169f28",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 32,
+      "text": "Row 22: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Socialist state | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=30 December 1975 – 12 January 1992",
+      "token_count": 60,
+      "content_sha256": "7e44cc64f594a88b59b35625795a40fd3f2984b608de3869a7da59b5092b7be3",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 21,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-26eae76d2be88d1447163a774a6b5e7f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 33,
+      "text": "Row 23: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Third Republic | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=12 January 1992 – 11 December 2010",
+      "token_count": 59,
+      "content_sha256": "cbbc5b9d39a8c86e46e23d5d428f9d19f73e661c7991e4d559ab36f7e6599738",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 22,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-1ddca0bc1da1b612b44b179642d4f5bd",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 34,
+      "text": "Row 24: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Referendum | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=17 November 2010",
+      "token_count": 55,
+      "content_sha256": "6573f095ba5206891ce0aa7ffa7aa7b52ce20322756af432e6f39bedacbf112b",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 23,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-7f2019b1447fe7e9b118a60e2789c42e",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 35,
+      "text": "Row 25: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Current constitution | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=11 December 2010",
+      "token_count": 55,
+      "content_sha256": "cd38ef5c3f2825780ff84204db08dde5bf21b9b28482cab5300d73283371680e",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 24,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-e6d6d2b44599aa35f00ab2ccaf7bced9",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 36,
+      "text": "Row 26: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2025 Malagasy protests | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=25 September – 14 October 2025",
+      "token_count": 60,
+      "content_sha256": "955f7e2b9d4efaf5814921115ee0fdca86badc76a548a8256b9df0840c58b28a",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 25,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-7bc15a9ccb303f12f005d7d0269392c0",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 37,
+      "text": "Row 27: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Coup d'état | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=12–14 October 2025",
+      "token_count": 60,
+      "content_sha256": "7ead4d782614a0bc76aa705da81cf6e8c86a44e770c4aa9f4b9197bc23cc791e",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 26,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-9ad1df1afb9426773b2326adaa0886d8",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 38,
+      "text": "Row 28: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Area | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Area",
+      "token_count": 53,
+      "content_sha256": "3b46b8f825dbfef2337e2c271ebb9c898b8f131093b469a5fd360cbb494ac573",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 27,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-274a6fc3493aa4918a9224378b9216d8",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 39,
+      "text": "Row 29: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Total | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=592,796 km 2 (228,880 sq mi) ( 46th)",
+      "token_count": 69,
+      "content_sha256": "9a7c82e06ecb4fa28188d44e2d07a211c2523a96e7b01eb4833d451922b34e32",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 28,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-2fbc56c411e4996d50417f5d75d80569",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 40,
+      "text": "Row 30: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Water | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=5,501 km 2 (2,124 sq mi)",
+      "token_count": 62,
+      "content_sha256": "9693e3c2f93da90d5e39ea7a78d844c17246802a6287116c2f538a246b8f9b20",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 29,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-93e04711a1d1615fda5b7f8a5992425e",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 41,
+      "text": "Row 31: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Water (%) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=0.9%",
+      "token_count": 55,
+      "content_sha256": "cb45af503379948c92736f0bc9004679f2050fc88af43a9d521424eaa073d33e",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 30,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-c9b93712099342874c253c81651800d4",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 42,
+      "text": "Row 32: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Population | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Population",
+      "token_count": 53,
+      "content_sha256": "1427bad031305d2545c0a1c4095ef3ce5b9af6dee7dce69c6e5a911bc82d863a",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 31,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-f2e08f3e270eecceeb74d5c6b1bfbc56",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 43,
+      "text": "Row 33: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2024 estimate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=31,964,956 ( 49th)",
+      "token_count": 63,
+      "content_sha256": "b513c0b5d266b9291ed4fdc50a4bdd6e4d64ab7d33d8b1b707e5a8770277a6c2",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 32,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-d8c2784395793c4f6be95c203086bf4b",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 44,
+      "text": "Row 34: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Density | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=55/km 2 (142.4/sq mi) ( 164th)",
+      "token_count": 68,
+      "content_sha256": "23cd9d04f36bbbbc3491c17e0ca54797d5f14fd06378f485d84c5757167a58f0",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 33,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-eb48f5e50f7eab0766ffba239c2ec1fa",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 45,
+      "text": "Row 35: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=GDP ( PPP) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=2026 estimate",
+      "token_count": 57,
+      "content_sha256": "5d422e792a9538e63100d87e63d3177235e704166af366b6f97b004ea9daa8fd",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 34,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-33325411b417a197db2d99692e1bb8bb",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 46,
+      "text": "Row 36: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Total | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$68.110 billion ( 117th)",
+      "token_count": 60,
+      "content_sha256": "f765aef465dd347b9b095cbd5f974b92d75dd95a46dedc43825cf7156d569cb7",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 35,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-975a0ad55ce580dc677804d079133994",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 47,
+      "text": "Row 37: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Per capita | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$2,110 ( 182nd)",
+      "token_count": 60,
+      "content_sha256": "951d74d519399513d227bf0bcbf0e3fcd7b1f43a71ed9f7d715f094040be02a9",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 36,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-26718bbeb918a68dca2081fb8b9c9950",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 48,
+      "text": "Row 38: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=GDP (nominal) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=2026 estimate",
+      "token_count": 57,
+      "content_sha256": "be8f4a86028e30421fd6137143858122c757fb4581191430284652ffbd98c81a",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 37,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-2104c8c393b32fe281e7c377dd785c2c",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 49,
+      "text": "Row 39: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Total | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$21.090 billion ( 139th)",
+      "token_count": 60,
+      "content_sha256": "435614610cf354fac3acb0379e176c867aae36ba5153c6b4db23e9279670a9e0",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 38,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-7f945c49fa9ec0dd9a47796a08ba6cff",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 50,
+      "text": "Row 40: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• Per capita | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=$652 ( 188th)",
+      "token_count": 58,
+      "content_sha256": "627e77ddf9b4f4a1115fef1b82bb7f36566028537fba432a54f65cedf6bbefae",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 39,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-b877fe2ee5d646b02d5d13047e223c6b",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 51,
+      "text": "Row 41: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Gini (2021) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=36.8 medium inequality",
+      "token_count": 58,
+      "content_sha256": "136e242b43e70b4856a0dd6b30688e1868d2132fde4199418636cfbd429e5a12",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 40,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-019a05c854df92de54a3532bd93b1901",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 52,
+      "text": "Row 42: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=HDI (2023) | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=0.487 low ( 183rd)",
+      "token_count": 60,
+      "content_sha256": "7b139dc0ce0d5b6b3b71386cc8de4d437d58fa3b4f0ef3e4af415872aad4269c",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 41,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-ff570aa97aae55356d091298417b598f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 53,
+      "text": "Row 43: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Currency | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Ariary ( MGA)",
+      "token_count": 58,
+      "content_sha256": "ef4205eb6670ad970ab702cbd85090153162e2e508a9f2af08cf3b500e300cf1",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 42,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-5ff78368eb73b4e563349a73de55ba61",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 54,
+      "text": "Row 44: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Time zone | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=UTC +3 ( EAT)",
+      "token_count": 58,
+      "content_sha256": "eb89fe450810200778a7116faea6ad438a7e38feef771ed944718e9e8126e996",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 43,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-5b607d27d6f6d8d3d99a8e053d67bd19",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 55,
+      "text": "Row 45: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Date format | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=dd/mm/yyyy",
+      "token_count": 57,
+      "content_sha256": "ba3ecd816cf1c02ac7844dd5f6b003c5aaa90233f1e3ce3c998d74b974987732",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 44,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-c6119e3b485a13deae2b124c5765dede",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 56,
+      "text": "Row 46: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Calling code | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=+261",
+      "token_count": 54,
+      "content_sha256": "b2f14bafc353180901b29a90b01ad66b2c9500f6583057e731e9a0024045f055",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 45,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-6c4ca424e1b8d7c41f0fe957f99bf91a",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 57,
+      "text": "Row 47: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=ISO 3166 code | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=MG",
+      "token_count": 54,
+      "content_sha256": "1bc2349072feddfa24446c530070649cc7a9cb4b77b5223fca5de3e8e76bceb3",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 46,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-0e3344f4aac5577d141a087b091af932",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "lead",
+      "section_path": [
+        "Lead"
+      ],
+      "ordinal": 58,
+      "text": "Row 48: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Internet TLD | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=.mg",
+      "token_count": 54,
+      "content_sha256": "3dc831bd271630e68c6838e31a3b9dcf13fee85f1070f35d44c39ba87daeb847",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": null,
+      "table_id": "table-b9c1f609578d6f375b85de59",
+      "row_index": 47,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-6c48d6ccc375bc5d68281fbe1bf05589",
+      "revision_id": 1365949107,
+      "chunk_type": "text",
+      "section_id": "section-107d94b5595542275fe6d112",
+      "section_path": [
+        "History",
+        "Independent state"
+      ],
+      "ordinal": 83,
+      "text": "caused hundreds of thousands of people to face food insecurity and leaving over one million on the verge of famine. In November 2023, Rajoelina was re-elected to another term with 58.95% of the vote in the first round of the election amid an opposition boycott and a controversy about his acquisition of French citizenship and subsequent eligibility. The turnout was 46.36%, the lowest in a presidential election in the country's history. Power and water cuts, as well as general distrust of Rajoelina's administration, sparked a series of protests in 2025 culminating in his flight and impeachment with the military taking control of the country. On 17 October 2025, Colonel Michael Randrianirina was sworn in as Madagascar's new president to succeed Rajoelina.",
+      "token_count": 185,
+      "content_sha256": "d60fe844fcfc4a348bf08b700dd6d757573207b953479b40b97877fdb1a8346a",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Independent_state",
+      "table_id": null,
+      "row_index": null,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-a2344f469ab63d810c18f818146476ba",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 103,
+      "text": "Columns: Number on map | Region's name | Area (km 2) | Population (2018 census) | Population density per km 2 | Capital | Former province\nRow 1: Number on map=1 | Region's name=Diana | Area (km 2)=19,266 | Population (2018 census)=889,736 | Population density per km 2=36.3 | Capital=Antsiranana | Former province=Antsiranana\nRow 2: Number on map=2 | Region's name=Sava | Area (km 2)=25,518 | Population (2018 census)=1,123,013 | Population density per km 2=38.4 | Capital=Sambava | Former province=Antsiranana\nRow 3: Number on map=3 | Region's name=Itasy | Area (km 2)=6,993 | Population (2018 census)=897,962 | Population density per km 2=104.8 | Capital=Miarinarivo | Former province=Antananarivo\nRow 4: Number on map=4 | Region's name=Analamanga | Area (km 2)=16,911 | Population (2018 census)=3,618,128 | Population density per km 2=198.0 | Capital=Antananarivo | Former province=Antananarivo\nRow 5: Number on map=5 | Region's name=Vakinankaratra | Area (km 2)=16,599 | Population (2018 census)=2,074,358 | Population density per km 2=108.6 | Capital=Antsirabe | Former province=Antananarivo",
+      "token_count": 395,
+      "content_sha256": "0f862069956cdb725b7f9c0de6c411f36704b54dfd4bff38828fb59415ab2c48",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": null,
+      "table_part_index": 0
+    },
+    {
+      "chunk_id": "chunk-3f0e6f125095ac50c75289cf30c5f5a6",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 104,
+      "text": "Columns: Number on map | Region's name | Area (km 2) | Population (2018 census) | Population density per km 2 | Capital | Former province\nRow 6: Number on map=6 | Region's name=Bongolava | Area (km 2)=16,688 | Population (2018 census)=674,474 | Population density per km 2=27.4 | Capital=Tsiroanomandidy | Former province=Antananarivo\nRow 7: Number on map=7 | Region's name=Sofia | Area (km 2)=50,100 | Population (2018 census)=1,500,227 | Population density per km 2=24.9 | Capital=Antsohihy | Former province=Mahajanga\nRow 8: Number on map=8 | Region's name=Boeny | Area (km 2)=31,046 | Population (2018 census)=931,171 | Population density per km 2=25.8 | Capital=Mahajanga | Former province=Mahajanga\nRow 9: Number on map=9 | Region's name=Betsiboka | Area (km 2)=30,025 | Population (2018 census)=394,561 | Population density per km 2=9.8 | Capital=Maevatanana | Former province=Mahajanga\nRow 10: Number on map=10 | Region's name=Melaky | Area (km 2)=38,852 | Population (2018 census)=309,805 | Population density per km 2=7.5 | Capital=Maintirano | Former province=Mahajanga",
+      "token_count": 404,
+      "content_sha256": "142de34de5a83cb2e14e588fa2d6c09b7a7f926bfe2b9153f0eec53a821e72c9",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": null,
+      "table_part_index": 1
+    },
+    {
+      "chunk_id": "chunk-5df5a22126aacfa2954ac4e72f0d3d62",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 105,
+      "text": "Columns: Number on map | Region's name | Area (km 2) | Population (2018 census) | Population density per km 2 | Capital | Former province\nRow 11: Number on map=11 | Region's name=Alaotra-Mangoro | Area (km 2)=31,948 | Population (2018 census)=1,255,514 | Population density per km 2=32.1 | Capital=Ambatondrazaka | Former province=Toamasina\nRow 12: Number on map=12 | Region's name=Atsinanana | Area (km 2)=21,934 | Population (2018 census)=1,484,403 | Population density per km 2=57.9 | Capital=Toamasina | Former province=Toamasina\nRow 13: Number on map=13 | Region's name=Analanjirofo | Area (km 2)=21,930 | Population (2018 census)=1,152,345 | Population density per km 2=47.2 | Capital=Fenoarivo Atsinanana | Former province=Toamasina\nRow 14: Number on map=14 | Region's name=Amoron'i Mania | Area (km 2)=16,141 | Population (2018 census)=833,919 | Population density per km 2=44.3 | Capital=Ambositra | Former province=Fianarantsoa\nRow 15: Number on map=15 | Region's name=Matsiatra Ambony | Area (km 2)=21,080 | Population (2018 census)=1,447,296 | Population density per km 2=56.9 | Capital=Fianarantsoa | Former province=Fianarantsoa",
+      "token_count": 415,
+      "content_sha256": "fbb1497d0a3d1b94b54af5ec7e5798f59725f638b673e7cdebb013d8ed034a13",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": null,
+      "table_part_index": 2
+    },
+    {
+      "chunk_id": "chunk-784b358497c52f4d41477d330ec807ea",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 106,
+      "text": "Columns: Number on map | Region's name | Area (km 2) | Population (2018 census) | Population density per km 2 | Capital | Former province\nRow 16: Number on map=16 | Region's name=Vatovavy | Area (km 2)=12,775 | Population (2018 census)=705,675 | Population density per km 2=72.2 | Capital=Mananjary | Former province=Fianarantsoa\nRow 17: Number on map=17 | Region's name=Atsimo-Atsinanana | Area (km 2)=18,863 | Population (2018 census)=1,026,674 | Population density per km 2=47.6 | Capital=Farafangana | Former province=Fianarantsoa\nRow 18: Number on map=18 | Region's name=Ihorombe | Area (km 2)=26,391 | Population (2018 census)=418,520 | Population density per km 2=11.8 | Capital=Ihosy | Former province=Fianarantsoa\nRow 19: Number on map=19 | Region's name=Menabe | Area (km 2)=46,121 | Population (2018 census)=700,577 | Population density per km 2=12.8 | Capital=Morondava | Former province=Toliara\nRow 20: Number on map=20 | Region's name=Atsimo-Andrefana | Area (km 2)=66,236 | Population (2018 census)=1,799,088 | Population density per km 2=19.9 | Capital=Toliara | Former province=Toliara",
+      "token_count": 411,
+      "content_sha256": "1e164491d3fb1b201993d95561b1caa3a42e88f076ba0478cf92f198f9c47c53",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": null,
+      "table_part_index": 3
+    },
+    {
+      "chunk_id": "chunk-5973088afdfa39e0f8d63eeefd91b2e5",
+      "revision_id": 1365949107,
+      "chunk_type": "table-part",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 107,
+      "text": "Columns: Number on map | Region's name | Area (km 2) | Population (2018 census) | Population density per km 2 | Capital | Former province\nRow 21: Number on map=21 | Region's name=Androy | Area (km 2)=19,317 | Population (2018 census)=903,376 | Population density per km 2=38.0 | Capital=Ambovombe-Androy | Former province=Toliara\nRow 22: Number on map=22 | Region's name=Anosy | Area (km 2)=25,731 | Population (2018 census)=809,313 | Population density per km 2=26.1 | Capital=Tôlanaro | Former province=Toliara\nRow 23: Number on map=23 | Region's name=Fitovinany | Area (km 2)=19,605 | Population (2018 census)=1,435,882 | Population density per km 2=72.2 | Capital=Manakara | Former province=Fianarantsoa",
+      "token_count": 267,
+      "content_sha256": "fd29f2fac60ec911cb5deed31c117f5fef5a70eeba2358f5b51ab75fe7260d69",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": null,
+      "table_part_index": 4
+    },
+    {
+      "chunk_id": "chunk-78abe6c578c62532aa593897db42f7fa",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 108,
+      "text": "Row 1: Number on map=1 | Region's name=Diana | Area (km 2)=19,266 | Population (2018 census)=889,736 | Population density per km 2=36.3 | Capital=Antsiranana | Former province=Antsiranana",
+      "token_count": 71,
+      "content_sha256": "93acb9711f2629d41194a9179c61c94efab5260c68ba30128faeff8d9882204d",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 0,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-0f7c562730d330234262af3671765a7f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 109,
+      "text": "Row 2: Number on map=2 | Region's name=Sava | Area (km 2)=25,518 | Population (2018 census)=1,123,013 | Population density per km 2=38.4 | Capital=Sambava | Former province=Antsiranana",
+      "token_count": 69,
+      "content_sha256": "c9d2a13c6a513674659aaf6cd75a71a21c31c75338a06e1fd1dbfebed65492ea",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 1,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-8961d13e507d5e6cc5ac42cd52e0755c",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 110,
+      "text": "Row 3: Number on map=3 | Region's name=Itasy | Area (km 2)=6,993 | Population (2018 census)=897,962 | Population density per km 2=104.8 | Capital=Miarinarivo | Former province=Antananarivo",
+      "token_count": 73,
+      "content_sha256": "222059d27e277f5251614c8a78cb3f60ae57d486bae53b2c7f87df50a6818c78",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 2,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-58597e3558fa501ad857dd1e0bafd663",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 111,
+      "text": "Row 4: Number on map=4 | Region's name=Analamanga | Area (km 2)=16,911 | Population (2018 census)=3,618,128 | Population density per km 2=198.0 | Capital=Antananarivo | Former province=Antananarivo",
+      "token_count": 76,
+      "content_sha256": "e91ba9afce142b3a54953bb9665946db0527a540629ac4eb73f0cf776642e771",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 3,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-2ccb03223b03e752871b8ae66c876296",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 112,
+      "text": "Row 5: Number on map=5 | Region's name=Vakinankaratra | Area (km 2)=16,599 | Population (2018 census)=2,074,358 | Population density per km 2=108.6 | Capital=Antsirabe | Former province=Antananarivo",
+      "token_count": 77,
+      "content_sha256": "cc81a9e15ddc7bf20569d57020ceedeace61f170eec50d35e343cd02be81048c",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 4,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-5e3d4f646a291fd67c662742be566873",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 113,
+      "text": "Row 6: Number on map=6 | Region's name=Bongolava | Area (km 2)=16,688 | Population (2018 census)=674,474 | Population density per km 2=27.4 | Capital=Tsiroanomandidy | Former province=Antananarivo",
+      "token_count": 79,
+      "content_sha256": "acddcb836f011d8dae06e86e57c539c4e3c760f036780f35551c9c34b1ad56d9",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 5,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-19900c6b62550d89626722dee694dc34",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 114,
+      "text": "Row 7: Number on map=7 | Region's name=Sofia | Area (km 2)=50,100 | Population (2018 census)=1,500,227 | Population density per km 2=24.9 | Capital=Antsohihy | Former province=Mahajanga",
+      "token_count": 75,
+      "content_sha256": "ebe5935515afcf7667722419bb9c43b80a10a34bfdda86811af0ff82ec84bfbf",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 6,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-9f08463eb9fa11b34eca57626ade622f",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 115,
+      "text": "Row 8: Number on map=8 | Region's name=Boeny | Area (km 2)=31,046 | Population (2018 census)=931,171 | Population density per km 2=25.8 | Capital=Mahajanga | Former province=Mahajanga",
+      "token_count": 73,
+      "content_sha256": "9870e0295b86d3bd0d6392dcda90e374797249befbf14f2d32aa829dc80e983d",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 7,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-8f5dcce5030b5e4c80316c129d587546",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 116,
+      "text": "Row 9: Number on map=9 | Region's name=Betsiboka | Area (km 2)=30,025 | Population (2018 census)=394,561 | Population density per km 2=9.8 | Capital=Maevatanana | Former province=Mahajanga",
+      "token_count": 74,
+      "content_sha256": "09ef7c1ec640cf6125fc91fac3fe359a8cee7dd16e3a8790bff348cec291eccc",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 8,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-1af9e0327b628ad7c9430fac55f0820b",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 117,
+      "text": "Row 10: Number on map=10 | Region's name=Melaky | Area (km 2)=38,852 | Population (2018 census)=309,805 | Population density per km 2=7.5 | Capital=Maintirano | Former province=Mahajanga",
+      "token_count": 74,
+      "content_sha256": "a21181fc3d8ae77a5d9c24bea5ac7f64572a1d40fc4eee883ec6989e4644e0d2",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 9,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-1091b6c2d601fbda0c5984006f4ce559",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 118,
+      "text": "Row 11: Number on map=11 | Region's name=Alaotra-Mangoro | Area (km 2)=31,948 | Population (2018 census)=1,255,514 | Population density per km 2=32.1 | Capital=Ambatondrazaka | Former province=Toamasina",
+      "token_count": 78,
+      "content_sha256": "ae3f5b1880ecbc25bd3a12f232852f95c74016429831a29dce1f3e59b411f387",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 10,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-b4facd26f79c95c25832532c5e6a356c",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 119,
+      "text": "Row 12: Number on map=12 | Region's name=Atsinanana | Area (km 2)=21,934 | Population (2018 census)=1,484,403 | Population density per km 2=57.9 | Capital=Toamasina | Former province=Toamasina",
+      "token_count": 73,
+      "content_sha256": "57444877871c36d888ebdd807fdc97a216382516372a5f2350a7e801991f61f6",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 11,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-e196b4e17d542d0ce122d8fe9367daf9",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 120,
+      "text": "Row 13: Number on map=13 | Region's name=Analanjirofo | Area (km 2)=21,930 | Population (2018 census)=1,152,345 | Population density per km 2=47.2 | Capital=Fenoarivo Atsinanana | Former province=Toamasina",
+      "token_count": 77,
+      "content_sha256": "0bcf4a21de5a0dca0f5f9fad88e8ebcd6e8a429536df5317d1e76eac0d7e9b7d",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 12,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-65cdcbf65131ccaa837b5f8e86dd0595",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 121,
+      "text": "Row 14: Number on map=14 | Region's name=Amoron'i Mania | Area (km 2)=16,141 | Population (2018 census)=833,919 | Population density per km 2=44.3 | Capital=Ambositra | Former province=Fianarantsoa",
+      "token_count": 79,
+      "content_sha256": "53cafa92f76c2d496115be8bb0f70b36868971459a3ae91102579bf36b67345e",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 13,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-dd64bc0e3cc6938487fbd310b8561496",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 122,
+      "text": "Row 15: Number on map=15 | Region's name=Matsiatra Ambony | Area (km 2)=21,080 | Population (2018 census)=1,447,296 | Population density per km 2=56.9 | Capital=Fianarantsoa | Former province=Fianarantsoa",
+      "token_count": 79,
+      "content_sha256": "b50fe104217ba0188fe17a67fd515cfd9d338273a732518bd1956d75e914c43c",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 14,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-15e64252a4ea794bab97291ac613e3e7",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 123,
+      "text": "Row 16: Number on map=16 | Region's name=Vatovavy | Area (km 2)=12,775 | Population (2018 census)=705,675 | Population density per km 2=72.2 | Capital=Mananjary | Former province=Fianarantsoa",
+      "token_count": 76,
+      "content_sha256": "5366f4fbe4744eb7b9401c77d307f0cc155a1c4dc1ddbf108c67f2997f473bf8",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 15,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-800a91fc2481bc2e53d4b09af990d115",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 124,
+      "text": "Row 17: Number on map=17 | Region's name=Atsimo-Atsinanana | Area (km 2)=18,863 | Population (2018 census)=1,026,674 | Population density per km 2=47.6 | Capital=Farafangana | Former province=Fianarantsoa",
+      "token_count": 81,
+      "content_sha256": "6b98c8edf5c7e345c06bf71b12cfff0805c78d5102ef5edcff86690aa79a3c01",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 16,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-1530f12f42285c68893ab9857487e9c0",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 125,
+      "text": "Row 18: Number on map=18 | Region's name=Ihorombe | Area (km 2)=26,391 | Population (2018 census)=418,520 | Population density per km 2=11.8 | Capital=Ihosy | Former province=Fianarantsoa",
+      "token_count": 75,
+      "content_sha256": "3769adf87d7d1df9f35be5489c0b3c424ff6a83dea534fa07ac2b1c8a860c70d",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 17,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-b529cdecf776a0d5e6454fccb6084c62",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 126,
+      "text": "Row 19: Number on map=19 | Region's name=Menabe | Area (km 2)=46,121 | Population (2018 census)=700,577 | Population density per km 2=12.8 | Capital=Morondava | Former province=Toliara",
+      "token_count": 72,
+      "content_sha256": "a71c5a82fd5210550fb59f2cd61169d524d88a61da198482709258b4416369ec",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 18,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-63491375fed94992bb070854767c695a",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 127,
+      "text": "Row 20: Number on map=20 | Region's name=Atsimo-Andrefana | Area (km 2)=66,236 | Population (2018 census)=1,799,088 | Population density per km 2=19.9 | Capital=Toliara | Former province=Toliara",
+      "token_count": 78,
+      "content_sha256": "99aa68747baad5c737897cb677c372a801be0703f24bd5bf3970f50b876b2470",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 19,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-ecbe05ee6ce706a52c9d3219ea5c1ae4",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 128,
+      "text": "Row 21: Number on map=21 | Region's name=Androy | Area (km 2)=19,317 | Population (2018 census)=903,376 | Population density per km 2=38.0 | Capital=Ambovombe-Androy | Former province=Toliara",
+      "token_count": 80,
+      "content_sha256": "522821ef45dcbaae0e41cf1da24996fc22974fe0ff01d5304ab5860348eab255",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 20,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-fa60d70f8bc8a3a2fae2426ff24239b0",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 129,
+      "text": "Row 22: Number on map=22 | Region's name=Anosy | Area (km 2)=25,731 | Population (2018 census)=809,313 | Population density per km 2=26.1 | Capital=Tôlanaro | Former province=Toliara",
+      "token_count": 74,
+      "content_sha256": "f6e75920d6b5961ef4db72d2f50405bba613e5849a38eaac4ec5ce9ffc5ed3ae",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 21,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-3ce4a4321c7f764d62983e2fd23e6687",
+      "revision_id": 1365949107,
+      "chunk_type": "table-row",
+      "section_id": "section-2d27a40335d3bc21d067b59d",
+      "section_path": [
+        "Government",
+        "Administrative divisions"
+      ],
+      "ordinal": 130,
+      "text": "Row 23: Number on map=23 | Region's name=Fitovinany | Area (km 2)=19,605 | Population (2018 census)=1,435,882 | Population density per km 2=72.2 | Capital=Manakara | Former province=Fianarantsoa",
+      "token_count": 76,
+      "content_sha256": "b7b3455a8e7a6663979a906586948fa3c71f04047e766c5ac538fd5d1b0c11ed",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Administrative_divisions",
+      "table_id": "table-1dabd1874445c1a7290e7852",
+      "row_index": 22,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-0e65f76953781b67a8443ddd710e1b79",
+      "revision_id": 1365949107,
+      "chunk_type": "text",
+      "section_id": "section-fc02ba0c7f4f7ccdac1ff58a",
+      "section_path": [
+        "Demographics",
+        "Health"
+      ],
+      "ordinal": 175,
+      "text": "increased an average of 60% during this period, indicating low but increasing availability of basic medical services and treatment. The Malagasy fertility rate in 2009 was 4.6 children per woman, declining from 6.3 in 1990. [ citation needed] Teen pregnancy rates of 14.8% in 2011, much higher than the African average, were a contributing factor to rapid population growth. [ needs update] In 2010, the maternal mortality rate was 440 per 100,000 births, compared to 373.1 in 2008 and 484.4 in 1990, representing a decline in perinatal care following the 2009 coup. The infant mortality rate in 2011 was 41 per 1,000 births, with an under-five mortality rate at 61 per 1,000 births. Schistosomiasis, malaria, and sexually transmitted diseases are common in Madagascar, although as of 2011 the HIV infection rate remained low relative to many countries in mainland Africa, at 0.2% of the adult population; and the malaria mortality rate was also among Africa's lowest at 8.5 deaths per 100,000 people, in part because of the highest frequency use of insecticide-treated nets in Africa. Adult life expectancy as of 2009 was 63 years for men and 67 years for women. Madagascar had outbreaks of the bubonic plague and pneumonic plague in 2017 (2,575 cases, 221 deaths) and earlier in 2014 (263 confirmed cases, 71 deaths). In 2019, Madagascar had a measles outbreak, resulting in 118,000 cases and 1,688 deaths and was also affected the next year by the",
+      "token_count": 348,
+      "content_sha256": "f7febcb8feed5c3ab33af594f94e0a73a013fc2dc12824d1ae6d14ac29df46b5",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Health",
+      "table_id": null,
+      "row_index": null,
+      "table_part_index": null
+    },
+    {
+      "chunk_id": "chunk-99242aac25101075735f086ff30995a1",
+      "revision_id": 1365949107,
+      "chunk_type": "text",
+      "section_id": "section-ff762665d8dbb83b367ffb53",
+      "section_path": [
+        "Culture",
+        "Cuisine"
+      ],
+      "ordinal": 187,
+      "text": "Malagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions. The complexity of Malagasy meals can range from the simple traditional preparations introduced by the earliest settlers to the refined festival dishes prepared for the island's 19th-century monarchs. Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka). The many varieties of laoka may be vegetarian or include animal proteins, typically featuring a sauce flavored with such ingredients as ginger, onion, garlic, tomato, vanilla, coconut milk, salt, curry powder, and green peppercorns, or less commonly, other spices or herbs. In parts of the arid south and west, pastoral families may replace rice with maize, cassava, or curds made from fermented zebu milk. A wide variety of sweet and savory fritters as well as other street foods are available across the island, as are diverse tropical and temperate-climate fruits. Locally produced beverages include fruit juices, coffee, herbal teas, and alcoholic drinks such as rum, wine, and beer. Three Horses Beer is the most popular beer on the island and is considered emblematic of Madagascar.",
+      "token_count": 307,
+      "content_sha256": "9ef8acb3af7ba2891152bd287fde7307da8917674306dfcd322ef72b06faa8e8",
+      "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+      "source_anchor": "Cuisine",
+      "table_id": null,
+      "row_index": null,
+      "table_part_index": null
+    }
+  ]
+}

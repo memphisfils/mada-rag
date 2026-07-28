@@ -8,13 +8,21 @@ from typing import NoReturn
 import typer
 
 from mada_rag.chunking import ArticleChunker
-from mada_rag.config import GenerationProvider, Settings
+from mada_rag.config import GenerationProvider, RetrievalMode, Settings
 from mada_rag.generation import CitationValidator, ExtractiveGenerator, SufficiencyPolicy
-from mada_rag.indexing import DenseIndex, E5Embedder
+from mada_rag.indexing import BM25Index, DenseIndex, E5Embedder
 from mada_rag.ingestion import MediaWikiClient, SnapshotStore, ingest_snapshot
 from mada_rag.models import Language, RetrievedChunk
 from mada_rag.parsing import parse_article
-from mada_rag.retrieval import DenseRetriever
+from mada_rag.retrieval import (
+    BM25Retriever,
+    ContextExpander,
+    CrossEncoderReranker,
+    DenseRetriever,
+    HybridRetriever,
+    RerankedRetriever,
+    Retriever,
+)
 from mada_rag.service import RagService
 from mada_rag.storage import save_chunks, save_parsed_article
 
@@ -41,15 +49,49 @@ def _load_dense(settings: Settings) -> tuple[DenseIndex, E5Embedder]:
     return index, embedder
 
 
-def _build_service(settings: Settings) -> RagService:
-    if settings.generation_provider is not GenerationProvider.EXTRACTIVE:
-        raise ValueError("the G2 CLI supports the secret-free extractive provider only")
+def _build_retriever(
+    settings: Settings,
+    mode: RetrievalMode | None = None,
+) -> Retriever:
+    selected_mode = mode or settings.retrieval_mode
     index, embedder = _load_dense(settings)
-    retriever = DenseRetriever(
+    dense = DenseRetriever(
         index,
         embedder,
         default_top_k=settings.dense_top_k,
     )
+    if selected_mode is RetrievalMode.DENSE:
+        return dense
+
+    lexical = BM25Retriever(
+        BM25Index(index.chunks),
+        default_top_k=settings.lexical_top_k,
+    )
+    hybrid = HybridRetriever(
+        dense,
+        lexical,
+        rrf_k=settings.rrf_k,
+        dense_candidates=settings.dense_top_k,
+        lexical_candidates=settings.lexical_top_k,
+        default_top_k=settings.fused_top_k,
+    )
+    if selected_mode is RetrievalMode.HYBRID:
+        return hybrid
+    return RerankedRetriever(
+        hybrid,
+        CrossEncoderReranker(settings.reranker_model),
+        candidate_top_k=settings.fused_top_k,
+        default_top_k=settings.context_top_k,
+    )
+
+
+def _build_service(
+    settings: Settings,
+    mode: RetrievalMode | None = None,
+) -> RagService:
+    if settings.generation_provider is not GenerationProvider.EXTRACTIVE:
+        raise ValueError("the G2 CLI supports the secret-free extractive provider only")
+    retriever = _build_retriever(settings, mode)
     return RagService(
         retriever=retriever,
         generator=ExtractiveGenerator(
@@ -59,8 +101,13 @@ def _build_service(settings: Settings) -> RagService:
         sufficiency_policy=SufficiencyPolicy(
             minimum_score=settings.dense_score_threshold,
             minimum_candidates=settings.minimum_retrieved_chunks,
+            minimum_concept_coverage=settings.minimum_concept_coverage,
         ),
         citation_validator=CitationValidator(),
+        context_expander=ContextExpander(
+            retriever.chunks,
+            max_expanded_chunks=settings.max_expanded_table_chunks,
+        ),
         context_top_k=settings.context_top_k,
     )
 
@@ -122,17 +169,13 @@ def build_index(
 def retrieve(
     question: str = typer.Argument(..., help="French or English natural-language query."),
     top_k: int | None = typer.Option(None, min=1, max=100),
+    mode: RetrievalMode | None = None,
 ) -> None:
     """Retrieve evidence from the validated local dense index."""
 
     settings = Settings()
     try:
-        index, embedder = _load_dense(settings)
-        candidates = DenseRetriever(
-            index,
-            embedder,
-            default_top_k=settings.dense_top_k,
-        ).retrieve(question, top_k=top_k)
+        candidates = _build_service(settings, mode).retrieve(question, top_k=top_k)
         typer.echo(_retrieved_json(candidates))
     except (RuntimeError, ValueError) as exc:
         _fail(exc)
@@ -142,15 +185,36 @@ def retrieve(
 def ask(
     question: str = typer.Argument(..., help="French or English natural-language query."),
     language: Language = Language.EN,
+    mode: RetrievalMode | None = None,
 ) -> None:
     """Return exact cited spans or abstain when retrieval is insufficient."""
 
     settings = Settings()
     try:
-        answer = _build_service(settings).ask(question, language=language)
+        service = _build_service(settings) if mode is None else _build_service(settings, mode)
+        answer = service.ask(question, language=language)
         typer.echo(answer.model_dump_json(indent=2))
     except (RuntimeError, ValueError) as exc:
         _fail(exc)
+
+
+@app.command()
+def serve(
+    host: str | None = typer.Option(None, help="Bind host; defaults to Settings."),
+    port: int | None = typer.Option(None, min=1, max=65_535, help="Bind port."),
+) -> None:
+    """Serve the lazy FastAPI application."""
+
+    import uvicorn
+
+    from mada_rag.api import create_app
+
+    settings = Settings()
+    uvicorn.run(
+        create_app(settings=settings),
+        host=host or settings.api_host,
+        port=port or settings.api_port,
+    )
 
 
 if __name__ == "__main__":
