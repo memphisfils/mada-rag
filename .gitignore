@@ -1,0 +1,53 @@
+# Input documents used to specify the exercise (not runtime knowledge).
+/captures_originales.pdf
+/test_technique_ai_engineer.md
+/test_technique_ai_engineer_propre.pdf
+
+# Local environments and secrets.
+.venv/
+.env
+.env.*
+!.env.example
+
+# Python caches and build products.
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Tooling caches and reports.
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+
+# Editors and operating systems.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary work.
+/tmp/
+
+# Rebuildable RAG artifacts. Immutable source snapshots under data/raw and
+# evaluation reports under artifacts/reports remain versionable on purpose.
+/data/processed/
+/data/indexes/
+/data/cache/
+/artifacts/*
+!/artifacts/.gitkeep
+!/artifacts/reports/
+!/artifacts/reports/**
+*.faiss
+
+# Local model caches.
+/.huggingface/
+/.sentence_transformers/
