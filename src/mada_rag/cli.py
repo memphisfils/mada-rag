@@ -4,12 +4,16 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Annotated, NoReturn
 
 import typer
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 from mada_rag.chunking import ArticleChunker
 from mada_rag.config import GenerationProvider, RetrievalMode, Settings

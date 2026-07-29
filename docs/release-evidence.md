@@ -43,17 +43,40 @@ insuffisante aboutit à une abstention sans claim factuel.
 | Validité/précision des citations | Contrôles de provenance/offset/extrait et proxy fondé sur les preuves attendues ; ce n'est pas une revue humaine d'entailment. |
 | Latences | `cold_ms` est le premier échantillon, les champs `warm_*` les suivants, et `max_ms` le maximum observé. Elles dépendent de la machine, du cache et des modèles. |
 
-## Tableau de preuves à compléter par le release manager
+## Preuves observées avant l'archivage
 
-| Gate | Commande ou lien de preuve | Statut | À renseigner après exécution réelle |
+Les commandes et résultats ci-dessous ont été exécutés le 29 juillet 2026 UTC
+sur le commit `5f77b58cb31a6fc7ec4d09b934dbfce071617d53`. Les changements
+documentaires postérieurs nécessitent leur propre CI ; cette section ne les
+présente pas par anticipation comme déjà validés.
+
+| Gate | Commande ou lien de preuve | Résultat réellement observé |
+|---|---|---|
+| Qualité locale | `uv run ruff check .`; `uv run ruff format --check .`; `uv run mypy src`; `uv run pytest -q` | Ruff et format OK, mypy OK, `188 passed` (un avertissement externe Starlette/httpx). |
+| CI GitHub | [run 30492765067](https://github.com/memphisfils/mada-rag/actions/runs/30492765067) | `success`, déclenché manuellement sur `5f77b58`, terminé à `2026-07-29T21:33:39Z`; lint, format, mypy et tests verts. |
+| Publication `main` | `git push origin HEAD:refs/heads/main` puis `git ls-remote --heads origin main` | Le SHA local et `refs/heads/main` étaient tous deux `5f77b58cb31a6fc7ec4d09b934dbfce071617d53`; aucun push forcé. |
+| Visibilité publique | `curl -I -H "Authorization:" https://github.com/memphisfils/mada-rag` et lectures raw de `README.md` / `.github/workflows/ci.yml` | HTTP `200`; README et workflow visibles sans en-tête d'autorisation. |
+| Clone propre | `git clone --depth 1 --branch main https://github.com/memphisfils/mada-rag.git`; `uv sync --frozen --all-extras --group dev`; Ruff, format, `pytest -q`, `mada-rag --help` | Clone sur `5f77b58`; installation gelée réussie (extra OpenAI inclus); Ruff/format OK et `188 passed` (même avertissement externe). |
+| Snapshot | `data/raw/manifest.json` | Révision `1365949107`, SHA-256 HTML `c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a`. |
+
+## Exécution holdout réellement mesurée
+
+Configuration gelée : fallback `extractive`, aucune clé définie, `top_k=5`,
+snapshot `1365949107`, index SHA-256
+`5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61`.
+Les commandes ont été exécutées séparément par mode afin d'isoler un crash
+natif Windows observé lors du lancement combiné dense+hybrid (`-1073741819`,
+aucun rapport combiné écrit). Les deux rapports suivants sont donc les seules
+mesures publiées :
+
+| Mode | Commande | Rapport et SHA-256 | Résultat |
 |---|---|---|---|
-| Qualité locale | `uv run ruff check .`, `uv run ruff format --check .`, `uv run mypy src`, `uv run pytest` | À compléter | Commit, date, sorties et code de retour |
-| CI GitHub | [workflow CI](https://github.com/memphisfils/mada-rag/actions/workflows/ci.yml) | À compléter | URL du run, SHA du commit, conclusion et horodatage |
-| Clone propre | `git clone … && uv sync --frozen --all-extras --group dev` | À compléter | OS/Python/uv, SHA, log d'installation et commandes de validation |
-| Snapshot | Vérification de `data/raw/manifest.json` et de son SHA-256 | À compléter | SHA observé, commande et date |
-| Évaluation calibrage | `uv run mada-rag evaluate …` avec rapports JSON versionnés | À compléter | Commande exacte, SHA des rapports, timestamp, paramètres et matériel |
-| Évaluation holdout | Même protocole, après gel de la configuration | À compléter | Confirmation écrite d'absence de calibrage, rapport séparé et métriques réellement mesurées |
-| Secrets | Scan du dépôt et de l'historique autorisé par la procédure de release | À compléter | Outil/commande, périmètre, date et résultat sans exposer de valeur sensible |
+| dense | `uv run mada-rag evaluate --file data/eval/holdout.jsonl --mode dense --top-k 5 --output artifacts/reports/evaluation-holdout-extractive-dense.json` | `evaluation-holdout-extractive-dense.json` — `7C7400C8C311C7EC2BA883A0F6B067021A4C2A2CA701613DD5F563A4F7BE5E6C` | evidence recall/hit/complete `1.0`; citation validity `1.0`; answer accuracy `0.0`; answerability status accuracy `0.6667`; trap false-positive rate `1.0`. |
+| hybrid | `uv run mada-rag evaluate --file data/eval/holdout.jsonl --mode hybrid --top-k 5 --output artifacts/reports/evaluation-holdout-extractive-hybrid.json` | `evaluation-holdout-extractive-hybrid.json` — `B2C16C68F426B2B2063B0B91C4D35E5635A932CFE028260C5F6C909487CC122F` | evidence recall/hit/complete `1.0`; citation validity `1.0`; answer accuracy `0.0`; answerability status accuracy `0.6667`; trap false-positive rate `1.0`. |
 
-Ne renseignez jamais une métrique, une CI verte ou une réussite de clone propre
-par anticipation. Les valeurs non exécutées restent « À compléter ».
+Le holdout est inédit et n'a servi à aucun réglage. Ces résultats montrent que
+le fallback extractif récupère les preuves du holdout mais ne satisfait pas le
+seuil de qualité de réponse ni l'abstention sur son piège. Il ne faut donc pas
+déclarer une qualification fonctionnelle de ce fallback sur ce holdout. Les
+baselines historiques sont conservées et ne sont ni remplacées ni recalibrées
+à partir de ces six cas.

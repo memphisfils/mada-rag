@@ -1,0 +1,525 @@
+{
+  "case_count": 6,
+  "generated_at": "2026-07-29T22:16:46.259533+00:00",
+  "index_hashes": {
+    "hybrid": {
+      "chunks_sha256": "99e27de0805b3a201d443da3f0e7b4324dd459f360a866e166d215e74f239a05",
+      "index_sha256": "5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61"
+    }
+  },
+  "modes": {
+    "hybrid": {
+      "cases": [
+        {
+          "answer_latency_ms": 637.7680000005057,
+          "answer_status": "answered",
+          "answer_text": "Madagascar's highest peaks rise from three prominent highland massifs.\n\nMaromokotro 2,876 m (9,436 ft) in the Tsaratanana Massif is the island's highest point, followed by Boby Peak 2,658 m (8,720 ft) in the Andringitra Massif, and Tsiafajavona 2,643 m (8,671 ft) in the Ankaratra Massif.\n\nAlong the length of Madagascar's Eastern Coast runs a narrow and steep escarpment containing much of the island's remaining tropical lowland forest.",
+          "answerable": true,
+          "case_id": "holdout-highest-point-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+              "citation_id": "citation-1",
+              "end_char": 766,
+              "excerpt": "Madagascar's highest peaks rise from three prominent highland massifs.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Geography"
+              ],
+              "source_anchor": "Geography",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 696,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+              "citation_id": "citation-2",
+              "end_char": 983,
+              "excerpt": "Maromokotro 2,876 m (9,436 ft) in the Tsaratanana Massif is the island's highest point, followed by Boby Peak 2,658 m (8,720 ft) in the Andringitra Massif, and Tsiafajavona 2,643 m (8,671 ft) in the Ankaratra Massif.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Geography"
+              ],
+              "source_anchor": "Geography",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 767,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-3ce02031146a9f069a8551eeebd5f2e0",
+              "citation_id": "citation-3",
+              "end_char": 1262,
+              "excerpt": "Along the length of Madagascar's Eastern Coast runs a narrow and steep escarpment containing much of the island's remaining tropical lowland forest.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Geography"
+              ],
+              "source_anchor": "Geography",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 1114,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Madagascar's highest peaks rise from three prominent highland massifs."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Maromokotro 2,876 m (9,436 ft) in the Tsaratanana Massif is the island's highest point, followed by Boby Peak 2,658 m (8,720 ft) in the Andringitra Massif, and Tsiafajavona 2,643 m (8,671 ft) in the Ankaratra Massif."
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "Along the length of Madagascar's Eastern Coast runs a narrow and steep escarpment containing much of the island's remaining tropical lowland forest."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1"
+          ],
+          "retrieval_latency_ms": 63114.446500003396,
+          "retrieved_chunk_ids": [
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-899921e90607aa4ff7ebdd2169c6ff15",
+            "chunk-3ce02031146a9f069a8551eeebd5f2e0",
+            "chunk-6844826bc8082dc448f3a7c97d404b7c"
+          ]
+        },
+        {
+          "answer_latency_ms": 628.5857999973814,
+          "answer_status": "abstained",
+          "answer_text": "Je ne sais pas à partir du snapshot fourni.",
+          "answerable": true,
+          "case_id": "holdout-baobab-species-fr",
+          "citation_count": 0,
+          "citations": [],
+          "claims": [],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75"
+          ],
+          "retrieval_latency_ms": 414.7257999939029,
+          "retrieved_chunk_ids": [
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-ae0192a636690671e846a0efb7e83194",
+            "chunk-d9700c3ebbd258e637372402287b5950"
+          ]
+        },
+        {
+          "answer_latency_ms": 713.5315999985323,
+          "answer_status": "answered",
+          "answer_text": "Antananarivo, the administrative capital and largest city of Madagascar, is located in the highlands region, near the island's geographic center.\n\nAntananarivo, the administrative capital and largest city of Madagascar, is located\n\nKing Andrianjaka founded Antananarivo as the capital of his Imerina Kingdom around 1610 or 1625 upon the site of a captured Vazimba capital on the hilltop of Analamanga.",
+          "answerable": true,
+          "case_id": "holdout-vakinankaratra-capital-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+              "citation_id": "citation-1",
+              "end_char": 267,
+              "excerpt": "Antananarivo, the administrative capital and largest city of Madagascar, is located in the highlands region, near the island's geographic center.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Government",
+                "Structure"
+              ],
+              "source_anchor": "Structure",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 122,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-703e3b8014678b284d9e981a7073f765",
+              "citation_id": "citation-2",
+              "end_char": 1571,
+              "excerpt": "Antananarivo, the administrative capital and largest city of Madagascar, is located",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Government",
+                "Structure"
+              ],
+              "source_anchor": "Structure",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 1488,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+              "citation_id": "citation-3",
+              "end_char": 437,
+              "excerpt": "King Andrianjaka founded Antananarivo as the capital of his Imerina Kingdom around 1610 or 1625 upon the site of a captured Vazimba capital on the hilltop of Analamanga.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Government",
+                "Structure"
+              ],
+              "source_anchor": "Structure",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 268,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Antananarivo, the administrative capital and largest city of Madagascar, is located in the highlands region, near the island's geographic center."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Antananarivo, the administrative capital and largest city of Madagascar, is located"
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "King Andrianjaka founded Antananarivo as the capital of his Imerina Kingdom around 1610 or 1625 upon the site of a captured Vazimba capital on the hilltop of Analamanga."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-2ccb03223b03e752871b8ae66c876296"
+          ],
+          "retrieval_latency_ms": 484.70589999487856,
+          "retrieved_chunk_ids": [
+            "chunk-2ccb03223b03e752871b8ae66c876296",
+            "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-15e64252a4ea794bab97291ac613e3e7"
+          ]
+        },
+        {
+          "answer_latency_ms": 685.2560000043013,
+          "answer_status": "answered",
+          "answer_text": "Row 4: Number on map=4 | Region's name=Analamanga | Area (km 2)=16,911 | Population (2018 census)=3,618,128 | Population density per km 2=198.0 | Capital=Antananarivo | Former province=Antananarivo",
+          "answerable": true,
+          "case_id": "holdout-antsirabe-rank-fr",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-58597e3558fa501ad857dd1e0bafd663",
+              "citation_id": "citation-1",
+              "end_char": 197,
+              "excerpt": "Row 4: Number on map=4 | Region's name=Analamanga | Area (km 2)=16,911 | Population (2018 census)=3,618,128 | Population density per km 2=198.0 | Capital=Antananarivo | Former province=Antananarivo",
+              "revision_id": 1365949107,
+              "row_index": 3,
+              "section_path": [
+                "Government",
+                "Administrative divisions"
+              ],
+              "source_anchor": "Administrative_divisions",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": "table-1dabd1874445c1a7290e7852"
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Row 4: Number on map=4 | Region's name=Analamanga | Area (km 2)=16,911 | Population (2018 census)=3,618,128 | Population density per km 2=198.0 | Capital=Antananarivo | Former province=Antananarivo"
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-3a5f5a6814fbc13f28d740ccae60a4e1"
+          ],
+          "retrieval_latency_ms": 770.6292000002577,
+          "retrieved_chunk_ids": [
+            "chunk-3a5f5a6814fbc13f28d740ccae60a4e1",
+            "chunk-6844826bc8082dc448f3a7c97d404b7c",
+            "chunk-2ccb03223b03e752871b8ae66c876296",
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-6ea3822b1d733faf17683895db07a467"
+          ]
+        },
+        {
+          "answer_latency_ms": 572.497499997553,
+          "answer_status": "answered",
+          "answer_text": "Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka).\n\nMalagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions.\n\nSoutheast Asian cultural influence is also evident in Malagasy cuisine, in which rice is consumed at every meal, typically accompanied by one of a variety of flavorful vegetable or meat dishes.",
+          "answerable": true,
+          "case_id": "holdout-cuisine-components-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-99242aac25101075735f086ff30995a1",
+              "citation_id": "citation-1",
+              "end_char": 493,
+              "excerpt": "Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka).",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture",
+                "Cuisine"
+              ],
+              "source_anchor": "Cuisine",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 338,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-99242aac25101075735f086ff30995a1",
+              "citation_id": "citation-2",
+              "end_char": 137,
+              "excerpt": "Malagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture",
+                "Cuisine"
+              ],
+              "source_anchor": "Cuisine",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+              "citation_id": "citation-3",
+              "end_char": 1373,
+              "excerpt": "Southeast Asian cultural influence is also evident in Malagasy cuisine, in which rice is consumed at every meal, typically accompanied by one of a variety of flavorful vegetable or meat dishes.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture"
+              ],
+              "source_anchor": "Culture",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 1180,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka)."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Malagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions."
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "Southeast Asian cultural influence is also evident in Malagasy cuisine, in which rice is consumed at every meal, typically accompanied by one of a variety of flavorful vegetable or meat dishes."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1"
+          ],
+          "retrieval_latency_ms": 392.66700000007404,
+          "retrieved_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1",
+            "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+            "chunk-0c1234d0676612ccfe32a94404c7fdee",
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-78fa6d971d444b9a7f48fbfe5e0f9336"
+          ]
+        },
+        {
+          "answer_latency_ms": 785.610999999335,
+          "answer_status": "answered",
+          "answer_text": "The Madagascar-US Business Council was formed in May 2003 as a collaboration between the US Agency for International Development and Malagasy artisan producers to support the export of local handicrafts to foreign markets.\n\nRow 6: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Official languages | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy French\n\nMalagasy and French are both official languages of the state.",
+          "answerable": false,
+          "case_id": "holdout-space-agency-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-147d1ed7c0e733bdf5e6baeaa7455da3",
+              "citation_id": "citation-1",
+              "end_char": 946,
+              "excerpt": "The Madagascar-US Business Council was formed in May 2003 as a collaboration between the US Agency for International Development and Malagasy artisan producers to support the export of local handicrafts to foreign markets.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Economy",
+                "Natural resources and trade"
+              ],
+              "source_anchor": "Natural_resources_and_trade",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 724,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-0ce5807330fd257c73e005b1c27b4770",
+              "citation_id": "citation-2",
+              "end_char": 235,
+              "excerpt": "Row 6: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Official languages | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy French",
+              "revision_id": 1365949107,
+              "row_index": 5,
+              "section_path": [
+                "Lead"
+              ],
+              "source_anchor": null,
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": "table-b9c1f609578d6f375b85de59"
+            },
+            {
+              "chunk_id": "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+              "citation_id": "citation-3",
+              "end_char": 1266,
+              "excerpt": "Malagasy and French are both official languages of the state.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Lead"
+              ],
+              "source_anchor": null,
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 1205,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "The Madagascar-US Business Council was formed in May 2003 as a collaboration between the US Agency for International Development and Malagasy artisan producers to support the export of local handicrafts to foreign markets."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Row 6: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Official languages | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=Malagasy French"
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "Malagasy and French are both official languages of the state."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 621.1158000005526,
+          "retrieved_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-a34a1870cb0a1a9e9b6f1d24347d39c8",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-147d1ed7c0e733bdf5e6baeaa7455da3",
+            "chunk-4702818cb53469cea994f6ff893c557f"
+          ]
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 0.0,
+        "answer_accuracy_correct": 0,
+        "answer_accuracy_total": 5,
+        "answer_latency": {
+          "cold_ms": 637.7680000005057,
+          "max_ms": 785.610999999335,
+          "mean_ms": 670.5416499996014,
+          "p50_ms": 661.5120000024035,
+          "p95_ms": 767.5911499991344,
+          "samples": 6,
+          "warm_max_ms": 785.610999999335,
+          "warm_mean_ms": 677.0963799994206,
+          "warm_p50_ms": 685.2560000043013,
+          "warm_p95_ms": 771.1951199991745,
+          "warm_samples": 5
+        },
+        "answerability_status_accuracy": 0.6666666666666666,
+        "answerability_status_correct": 4,
+        "answerability_status_total": 6,
+        "citation_precision": 0.4,
+        "citation_precision_count": 4,
+        "citation_precision_total": 10,
+        "citation_total": 13,
+        "citation_valid_count": 13,
+        "citation_validity": 1.0,
+        "complete_evidence_rate_at_k": 1.0,
+        "evidence_recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieval_evaluated_cases": 5,
+        "retrieval_latency": {
+          "cold_ms": 63114.446500003396,
+          "max_ms": 63114.446500003396,
+          "mean_ms": 10966.381699998843,
+          "p50_ms": 552.9108499977156,
+          "p95_ms": 47528.49217500261,
+          "samples": 6,
+          "warm_max_ms": 770.6292000002577,
+          "warm_mean_ms": 536.7687399979332,
+          "warm_p50_ms": 484.70589999487856,
+          "warm_p95_ms": 740.7265200003167,
+          "warm_samples": 5
+        },
+        "trap_false_positive_rate": 1.0,
+        "trap_false_positives": 1,
+        "trap_total": 1
+      }
+    }
+  },
+  "parameters": {
+    "context_top_k": 5,
+    "dense_top_k": 20,
+    "fused_top_k": 10,
+    "lexical_top_k": 20,
+    "modes": [
+      "hybrid"
+    ],
+    "rrf_k": 60,
+    "top_k": 5
+  },
+  "revision_id": 1365949107,
+  "schema_version": "2.0",
+  "snapshot_sha256": "c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a"
+}

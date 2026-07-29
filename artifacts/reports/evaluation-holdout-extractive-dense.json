@@ -1,0 +1,479 @@
+{
+  "case_count": 6,
+  "generated_at": "2026-07-29T22:15:04.809702+00:00",
+  "index_hashes": {
+    "dense": {
+      "chunks_sha256": "99e27de0805b3a201d443da3f0e7b4324dd459f360a866e166d215e74f239a05",
+      "index_sha256": "5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61"
+    }
+  },
+  "modes": {
+    "dense": {
+      "cases": [
+        {
+          "answer_latency_ms": 788.4006000022055,
+          "answer_status": "answered",
+          "answer_text": "Row 33: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2024 estimate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=31,964,956 ( 49th)",
+          "answerable": true,
+          "case_id": "holdout-highest-point-en",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-f2e08f3e270eecceeb74d5c6b1bfbc56",
+              "citation_id": "citation-1",
+              "end_char": 236,
+              "excerpt": "Row 33: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2024 estimate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=31,964,956 ( 49th)",
+              "revision_id": 1365949107,
+              "row_index": 32,
+              "section_path": [
+                "Lead"
+              ],
+              "source_anchor": null,
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": "table-b9c1f609578d6f375b85de59"
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Row 33: Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=• 2024 estimate | Republic of Madagascar Repoblikan'i Madagasikara ( Malagasy) République de Madagascar ( French)=31,964,956 ( 49th)"
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1"
+          ],
+          "retrieval_latency_ms": 67611.52969999966,
+          "retrieved_chunk_ids": [
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-3ce02031146a9f069a8551eeebd5f2e0",
+            "chunk-f9835ff9233b9e6dc3a052f082ace360",
+            "chunk-e32253bf9a84a33dab2abdc3c7b0d69d"
+          ]
+        },
+        {
+          "answer_latency_ms": 407.0246000046609,
+          "answer_status": "abstained",
+          "answer_text": "Je ne sais pas à partir du snapshot fourni.",
+          "answerable": true,
+          "case_id": "holdout-baobab-species-fr",
+          "citation_count": 0,
+          "citations": [],
+          "claims": [],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75"
+          ],
+          "retrieval_latency_ms": 632.5732000041171,
+          "retrieved_chunk_ids": [
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-f8ecd082ee767192c3044458afd6b448",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-1a6301e7741bfd4f95195d022160bcdb",
+            "chunk-3ce02031146a9f069a8551eeebd5f2e0"
+          ]
+        },
+        {
+          "answer_latency_ms": 452.9108999995515,
+          "answer_status": "answered",
+          "answer_text": "Antananarivo, the administrative capital and largest city of Madagascar, is located in the highlands region, near the island's geographic center.\n\nKing Andrianjaka founded Antananarivo as the capital of his Imerina Kingdom around 1610 or 1625 upon the site of a captured Vazimba capital on the hilltop of Analamanga.\n\nAs Merina dominance expanded over neighboring Malagasy peoples in the early 19th century to establish the Kingdom of Madagascar, Antananarivo became the administrative center for virtually the entire island.",
+          "answerable": true,
+          "case_id": "holdout-vakinankaratra-capital-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+              "citation_id": "citation-1",
+              "end_char": 267,
+              "excerpt": "Antananarivo, the administrative capital and largest city of Madagascar, is located in the highlands region, near the island's geographic center.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Government",
+                "Structure"
+              ],
+              "source_anchor": "Structure",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 122,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+              "citation_id": "citation-2",
+              "end_char": 437,
+              "excerpt": "King Andrianjaka founded Antananarivo as the capital of his Imerina Kingdom around 1610 or 1625 upon the site of a captured Vazimba capital on the hilltop of Analamanga.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Government",
+                "Structure"
+              ],
+              "source_anchor": "Structure",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 268,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+              "citation_id": "citation-3",
+              "end_char": 645,
+              "excerpt": "As Merina dominance expanded over neighboring Malagasy peoples in the early 19th century to establish the Kingdom of Madagascar, Antananarivo became the administrative center for virtually the entire island.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Government",
+                "Structure"
+              ],
+              "source_anchor": "Structure",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 438,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Antananarivo, the administrative capital and largest city of Madagascar, is located in the highlands region, near the island's geographic center."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "King Andrianjaka founded Antananarivo as the capital of his Imerina Kingdom around 1610 or 1625 upon the site of a captured Vazimba capital on the hilltop of Analamanga."
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "As Merina dominance expanded over neighboring Malagasy peoples in the early 19th century to establish the Kingdom of Madagascar, Antananarivo became the administrative center for virtually the entire island."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-2ccb03223b03e752871b8ae66c876296"
+          ],
+          "retrieval_latency_ms": 398.0694999991101,
+          "retrieved_chunk_ids": [
+            "chunk-2ccb03223b03e752871b8ae66c876296",
+            "chunk-15e64252a4ea794bab97291ac613e3e7",
+            "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-3ce4a4321c7f764d62983e2fd23e6687"
+          ]
+        },
+        {
+          "answer_latency_ms": 612.4815000002855,
+          "answer_status": "answered",
+          "answer_text": "Row 1: v t e Largest cities or towns in Madagascar According to the 2018 Census / Rank=1 | v t e Largest cities or towns in Madagascar According to the 2018 Census / Name=Antananarivo | v t e Largest cities or towns in Madagascar According to the 2018 Census / Region=Analamanga | v t e Largest cities or towns in Madagascar According to the 2018 Census / Pop.=1,275,207 | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A",
+          "answerable": true,
+          "case_id": "holdout-antsirabe-rank-fr",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-d966678f798df732981e0a9651bc7957",
+              "citation_id": "citation-1",
+              "end_char": 844,
+              "excerpt": "Row 1: v t e Largest cities or towns in Madagascar According to the 2018 Census / Rank=1 | v t e Largest cities or towns in Madagascar According to the 2018 Census / Name=Antananarivo | v t e Largest cities or towns in Madagascar According to the 2018 Census / Region=Analamanga | v t e Largest cities or towns in Madagascar According to the 2018 Census / Pop.=1,275,207 | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A",
+              "revision_id": 1365949107,
+              "row_index": 0,
+              "section_path": [
+                "Demographics",
+                "Largest cities"
+              ],
+              "source_anchor": "Largest_cities",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": "table-31c833126ba05dc215ea11bd"
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Row 1: v t e Largest cities or towns in Madagascar According to the 2018 Census / Rank=1 | v t e Largest cities or towns in Madagascar According to the 2018 Census / Name=Antananarivo | v t e Largest cities or towns in Madagascar According to the 2018 Census / Region=Analamanga | v t e Largest cities or towns in Madagascar According to the 2018 Census / Pop.=1,275,207 | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A"
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-3a5f5a6814fbc13f28d740ccae60a4e1"
+          ],
+          "retrieval_latency_ms": 650.6846999982372,
+          "retrieved_chunk_ids": [
+            "chunk-3a5f5a6814fbc13f28d740ccae60a4e1",
+            "chunk-6844826bc8082dc448f3a7c97d404b7c",
+            "chunk-f729f9dcdf77eb9d8db09eecab0ad42c",
+            "chunk-6ea3822b1d733faf17683895db07a467",
+            "chunk-e4b55e806c1d2bb381db523a01b9abec"
+          ]
+        },
+        {
+          "answer_latency_ms": 408.6881999974139,
+          "answer_status": "answered",
+          "answer_text": "Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka).\n\nMalagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions.\n\nSoutheast Asian cultural influence is also evident in Malagasy cuisine, in which rice is consumed at every meal, typically accompanied by one of a variety of flavorful vegetable or meat dishes.",
+          "answerable": true,
+          "case_id": "holdout-cuisine-components-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-99242aac25101075735f086ff30995a1",
+              "citation_id": "citation-1",
+              "end_char": 493,
+              "excerpt": "Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka).",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture",
+                "Cuisine"
+              ],
+              "source_anchor": "Cuisine",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 338,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-99242aac25101075735f086ff30995a1",
+              "citation_id": "citation-2",
+              "end_char": 137,
+              "excerpt": "Malagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture",
+                "Cuisine"
+              ],
+              "source_anchor": "Cuisine",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+              "citation_id": "citation-3",
+              "end_char": 1373,
+              "excerpt": "Southeast Asian cultural influence is also evident in Malagasy cuisine, in which rice is consumed at every meal, typically accompanied by one of a variety of flavorful vegetable or meat dishes.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture"
+              ],
+              "source_anchor": "Culture",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 1180,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Throughout almost the entire country, Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka)."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Malagasy cuisine reflects the diverse influences of Southeast Asian, African, Oceania, Indian, Chinese, and European culinary traditions."
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "Southeast Asian cultural influence is also evident in Malagasy cuisine, in which rice is consumed at every meal, typically accompanied by one of a variety of flavorful vegetable or meat dishes."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1"
+          ],
+          "retrieval_latency_ms": 412.47999999905005,
+          "retrieved_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1",
+            "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+            "chunk-bd624fb81275521aebaae851d83ebe78",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035"
+          ]
+        },
+        {
+          "answer_latency_ms": 468.1592999986606,
+          "answer_status": "answered",
+          "answer_text": "Malagasy and French are both official languages of the state.\n\nMadagascar, officially the Republic of Madagascar, is an island country in the Indian Ocean that includes the island of Madagascar and numerous smaller peripheral islands.\n\nIn 2007 six of the national parks— Marojejy, Masoala, Ranomafana, Zahamena, Andohahela, and Andringitra —were declared a joint world heritage site under the name Rainforests of the Atsinanana.",
+          "answerable": false,
+          "case_id": "holdout-space-agency-en",
+          "citation_count": 3,
+          "citations": [
+            {
+              "chunk_id": "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+              "citation_id": "citation-1",
+              "end_char": 1266,
+              "excerpt": "Malagasy and French are both official languages of the state.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Lead"
+              ],
+              "source_anchor": null,
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 1205,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-2d28841c865831121b84bbeb7dff068b",
+              "citation_id": "citation-2",
+              "end_char": 171,
+              "excerpt": "Madagascar, officially the Republic of Madagascar, is an island country in the Indian Ocean that includes the island of Madagascar and numerous smaller peripheral islands.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Lead"
+              ],
+              "source_anchor": null,
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": null
+            },
+            {
+              "chunk_id": "chunk-f8ecd082ee767192c3044458afd6b448",
+              "citation_id": "citation-3",
+              "end_char": 741,
+              "excerpt": "In 2007 six of the national parks— Marojejy, Masoala, Ranomafana, Zahamena, Andohahela, and Andringitra —were declared a joint world heritage site under the name Rainforests of the Atsinanana.",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Geography",
+                "Biodiversity and conservation"
+              ],
+              "source_anchor": "Biodiversity_and_conservation",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 549,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Malagasy and French are both official languages of the state."
+            },
+            {
+              "citation_ids": [
+                "citation-2"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Madagascar, officially the Republic of Madagascar, is an island country in the Indian Ocean that includes the island of Madagascar and numerous smaller peripheral islands."
+            },
+            {
+              "citation_ids": [
+                "citation-3"
+              ],
+              "claim_id": "claim-3",
+              "supported": true,
+              "text": "In 2007 six of the national parks— Marojejy, Masoala, Ranomafana, Zahamena, Andohahela, and Andringitra —were declared a joint world heritage site under the name Rainforests of the Atsinanana."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 450.735700003861,
+          "retrieved_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-f8ecd082ee767192c3044458afd6b448",
+            "chunk-a34a1870cb0a1a9e9b6f1d24347d39c8",
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f"
+          ]
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 0.0,
+        "answer_accuracy_correct": 0,
+        "answer_accuracy_total": 5,
+        "answer_latency": {
+          "cold_ms": 788.4006000022055,
+          "max_ms": 788.4006000022055,
+          "mean_ms": 522.9441833337963,
+          "p50_ms": 460.535099999106,
+          "p95_ms": 744.4208250017255,
+          "samples": 6,
+          "warm_max_ms": 612.4815000002855,
+          "warm_mean_ms": 469.85290000011446,
+          "warm_p50_ms": 452.9108999995515,
+          "warm_p95_ms": 583.6170599999605,
+          "warm_samples": 5
+        },
+        "answerability_status_accuracy": 0.6666666666666666,
+        "answerability_status_correct": 4,
+        "answerability_status_total": 6,
+        "citation_precision": 0.25,
+        "citation_precision_count": 2,
+        "citation_precision_total": 8,
+        "citation_total": 11,
+        "citation_valid_count": 11,
+        "citation_validity": 1.0,
+        "complete_evidence_rate_at_k": 1.0,
+        "evidence_recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieval_evaluated_cases": 5,
+        "retrieval_latency": {
+          "cold_ms": 67611.52969999966,
+          "max_ms": 67611.52969999966,
+          "mean_ms": 11692.678800000673,
+          "p50_ms": 541.654450003989,
+          "p95_ms": 50871.31844999931,
+          "samples": 6,
+          "warm_max_ms": 650.6846999982372,
+          "warm_mean_ms": 508.9086200008751,
+          "warm_p50_ms": 450.735700003861,
+          "warm_p95_ms": 647.0623999994132,
+          "warm_samples": 5
+        },
+        "trap_false_positive_rate": 1.0,
+        "trap_false_positives": 1,
+        "trap_total": 1
+      }
+    }
+  },
+  "parameters": {
+    "context_top_k": 5,
+    "dense_top_k": 20,
+    "fused_top_k": 10,
+    "lexical_top_k": 20,
+    "modes": [
+      "dense"
+    ],
+    "rrf_k": 60,
+    "top_k": 5
+  },
+  "revision_id": 1365949107,
+  "schema_version": "2.0",
+  "snapshot_sha256": "c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a"
+}
