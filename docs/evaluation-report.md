@@ -1,22 +1,34 @@
 # Rapport d'évaluation
 
-## Statut de ce rapport
+## Référence de release et traçabilité
 
-Le jeu de test versionné contient **25 cas** dans
-[`data/eval/questions.jsonl`](../data/eval/questions.jsonl). Les résultats
-ci-dessous proviennent exclusivement de deux artefacts versionnés :
+La référence de release est le run **calibré après l'ajout du gate d'ancrage**.
+Elle s'appuie exclusivement sur les deux artefacts suivants :
 
-| Artefact | Modes | Horodatage exact (`generated_at`) |
+| Artefact final | Modes | Horodatage exact (`generated_at`) |
 |---|---|---|
-| [`evaluation-dense-hybrid.json`](../artifacts/reports/evaluation-dense-hybrid.json) | `dense`, `hybrid` | `2026-07-28T21:20:38.010076+00:00` |
-| [`evaluation-hybrid-rerank.json`](../artifacts/reports/evaluation-hybrid-rerank.json) | `hybrid-rerank` | `2026-07-29T08:06:01.239708+00:00` |
+| [`evaluation-calibrated-dense-hybrid.json`](../artifacts/reports/evaluation-calibrated-dense-hybrid.json) | `dense`, `hybrid` | `2026-07-29T09:36:43.487927+00:00` |
+| [`evaluation-calibrated-hybrid-rerank.json`](../artifacts/reports/evaluation-calibrated-hybrid-rerank.json) | `hybrid-rerank` | `2026-07-29T09:40:18.273216+00:00` |
 
-Chaque run porte sur 25 cas, dont 22 answerable pour les métriques de retrieval,
-et ne contient aucune erreur enregistrée. Les trois modes partagent la même
-révision, le même SHA-256 de snapshot et les mêmes hashes de corpus/index
-indiqués ci-dessous.
+Les deux rapports de baseline pré-calibration sont conservés sans modification
+pour la traçabilité :
+[`evaluation-dense-hybrid.json`](../artifacts/reports/evaluation-dense-hybrid.json)
+et
+[`evaluation-hybrid-rerank.json`](../artifacts/reports/evaluation-hybrid-rerank.json).
+Ils décrivent un système antérieur au gate d'ancrage ; ils ne sont donc **pas
+comparables comme si le système était inchangé** et ne constituent pas les
+résultats de release.
 
-Le seul snapshot autorisé est :
+Le gate d'ancrage a été ajusté et testé contre ce même jeu versionné de 25 cas,
+avec ses chunks attendus, avant la relance calibrée. Les résultats finaux
+démontrent donc une **régression contrôlée et la conformité de release** sur ce
+jeu ; ils ne constituent pas une estimation non biaisée de la généralisation.
+Une évaluation future doit séparer un jeu de calibration et un holdout final
+inédit avant toute conclusion de performance généralisable.
+
+Chaque run final porte sur 25 cas, dont 22 answerable pour les métriques de
+retrieval, et ne contient aucune erreur enregistrée. Les trois pièges hors
+périmètre sont `abstained` avec zéro citation dans chaque mode final.
 
 | Champ | Valeur |
 |---|---|
@@ -24,116 +36,86 @@ Le seul snapshot autorisé est :
 | Révision | `1365949107` |
 | Horodatage de révision | `2026-07-25T10:41:18Z` |
 | Horodatage de capture | `2026-07-28T15:29:12.618740Z` |
-| HTML SHA-256 | `c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a` |
-| Snapshot SHA-256 dans les runs | `c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a` |
+| HTML / snapshot SHA-256 | `c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a` |
 | Corpus chunks SHA-256 | `99e27de0805b3a201d443da3f0e7b4324dd459f360a866e166d215e74f239a05` |
 | Index dense SHA-256 | `5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61` |
 | Provenance | [`data/raw/manifest.json`](../data/raw/manifest.json) |
 
-## Jeu d'évaluation
+## Jeu d'évaluation et protocole
 
-Les 25 cas couvrent les catégories exigées :
+Le jeu versionné [`data/eval/questions.jsonl`](../data/eval/questions.jsonl)
+contient 25 cas : 4 faits simples, 7 chiffres précis, 5 lectures de tableau,
+2 multi-passages, 3 ambiguïtés temporelles, 3 pièges hors périmètre et 1 cas de
+couverture partielle. Chaque cas fixe langue, révision, réponse attendue quand
+elle est answerable et preuves acceptables.
 
-| Catégorie | Cas |
-|---|---:|
-| Fait simple | 4 |
-| Chiffre précis | 7 |
-| Lecture de tableau | 5 |
-| Raisonnement multi-passages | 2 |
-| Ambiguïté temporelle | 3 |
-| Hors périmètre / piège | 3 |
-| Couverture partielle | 1 |
+Les runs finaux utilisent `k=5`, le même snapshot, corpus et index pour les
+trois modes. Le gate d'ancrage a été calibré sur ce même jeu afin de ne pas
+accepter une question sur un simple mot générique partagé ; il ne s'agit donc
+pas d'une séparation calibration/final indépendante. Pour reproduire :
 
-Chaque ligne JSONL fixe la langue, la réponse attendue lorsqu'elle est
-answerable, les chemins de sections, les IDs de chunks ou extraits de preuve,
-ainsi que les pièges d'abstention. Les cas temporels doivent être interprétés
-relativement à la révision ci-dessus.
+```bash
+uv run mada-rag evaluate --mode dense --mode hybrid --top-k 5 \
+  --output artifacts/reports/evaluation-calibrated-dense-hybrid.json
 
-## Protocole reproduit par les runs
+MADA_RAG_RERANKER_ENABLED=true uv run mada-rag evaluate \
+  --mode hybrid-rerank --top-k 5 \
+  --output artifacts/reports/evaluation-calibrated-hybrid-rerank.json
+```
 
-1. Créer un environnement propre avec Python 3.12 et `uv sync --frozen
-   --all-extras --group dev`.
-2. Vérifier le manifeste et reconstruire l'index à partir de `data/raw/`, sans
-   relancer l'ingestion : `uv run mada-rag index --overwrite`.
-3. Geler les paramètres : modèle E5, modèle de reranking éventuel, `top_k`,
-   pool BM25, `rrf_k`, seuil d'abstention, machine/OS et versions.
-4. Exécuter exactement les mêmes 25 questions pour `dense`, `hybrid` et
-   `hybrid-rerank`, en séparant les latences cold et warm. Le reranker est
-   facultatif à l'exécution mais doit être explicitement marqué indisponible si
-   son modèle ne peut pas être chargé.
-5. Sauvegarder pour chaque mode les sorties JSON, la configuration, la date et
-   les hashes du corpus/index dans `artifacts/reports/`.
-6. Calculer les métriques ci-dessous et ne publier que les chiffres attachés à
-   ces artefacts. Une revue manuelle d'entailment reste nécessaire avant toute
-   conclusion sémantique sur les réponses.
-
-## Définitions de métriques
+## Définitions et limites des métriques
 
 | Mesure | Définition |
 |---|---|
-| Recall@k | part des cas answerable dont au moins un chunk de preuve attendu est dans les `k` premiers résultats ; préciser le `k` |
-| MRR | moyenne de l'inverse du rang du premier chunk de preuve attendu |
-| nDCG@k | pertinence graduée des chunks de preuve, avec gain/normalisation documentés |
-| Exactitude de réponse | part des réponses answerable dont le contenu satisfait la réponse attendue et ses conditions temporelles ; non calculée par les artefacts actuels |
-| Précision des citations | proxy : citations qui recoupent les chunks/extraits de référence attendus ; ce n'est pas une validation humaine d'entailment |
-| Validité des citations | citations structurellement valides par rapport aux chunks retournés et à leurs extraits exacts |
-| Exactitude d'abstention | part des cas non answerable ou insuffisants correctement refusés |
-| Faux positifs pièges | part des cas `out-of-scope` recevant une affirmation au lieu d'une abstention |
-| Latence p50/p95 | percentiles mesurés séparément pour retrieval, reranking éventuel et réponse, avec cold/warm documenté |
+| Recall@5 | part des 22 cas answerable dont une preuve attendue est récupérée dans les cinq premiers chunks |
+| MRR / nDCG@5 | rang du premier chunk de preuve / qualité du classement par rapport aux chunks attendus |
+| Précision citations | proxy basé sur l'intersection entre citations et chunks/extraits attendus |
+| Validité citations | validité structurelle : chunk retourné, même révision, offsets, extrait, section et provenance exacts |
+| Exactitude d'abstention | statut `answered`/`abstained` correct sur les 25 cas versionnés |
+| Latence p50/p95 | millisecondes mesurées dans les artefacts, sans extrapolation à une autre machine |
 
-La réponse extractive peut comporter plusieurs claims. Les métriques de contenu
-ci-dessous sont des **proxies** calculés sur les chunks, extraits et citations
-attendus du jeu versionné ; elles ne constituent ni une vérité sémantique LLM,
-ni une revue humaine d'entailment. Les citations doivent toujours être vérifiées
-contre les offsets/extraits exacts, pas seulement contre la section.
+Les métriques de contenu sont des **proxies** fondés sur chunks, extraits et
+citations de référence. Elles ne constituent ni une vérité sémantique LLM, ni
+une revue humaine d'entailment ; une citation structurellement valide ne prouve
+pas à elle seule que toute réponse est complète ou sémantiquement correcte.
 
-## Résultats réels
+## Résultats finaux calibrés
 
-`k=5`, avec 22 cas answerable pour le retrieval et 25 cas pour l'abstention et
-les latences. Les latences sont en millisecondes ; elles sont les p50/p95
-enregistrés dans les artefacts, sans extrapolation à une autre machine.
+| Mode | Recall@5 | MRR | nDCG@5 | Précision citations (proxy) | Validité citations | Abstention | p50/p95 retrieval (ms) | p50/p95 answer (ms) | Erreurs |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Dense | 0.772727 | 0.810606 | 0.739043 | 0.564516 | 1.000000 | 1.000000 (25/25) | 423.760 / 2 096.993 | 555.299 / 1 095.291 | 0 |
+| Hybride RRF | 0.871212 | 0.954545 | 0.859030 | 0.532258 | 1.000000 | 1.000000 (25/25) | 429.164 / 1 165.835 | 588.917 / 1 442.539 | 0 |
+| Hybride RRF + reranker | 0.863636 | 0.799242 | 0.776049 | 0.483871 | 1.000000 | 1.000000 (25/25) | 21 756.536 / 26 181.638 | 21 801.078 / 26 566.471 | 0 |
 
-| Mode | Artefact | Recall@5 | MRR | nDCG@5 | Précision citations (proxy) | Validité citations | Abstention | p50/p95 retrieval | p50/p95 answer | Erreurs |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Dense | `evaluation-dense-hybrid.json` | 0.772727 | 0.810606 | 0.739043 | 0.516129 (16/31) | 1.000000 (31/31) | 0.560000 (14/25) | 1 140.906 / 2 742.389 | 714.873 / 1 568.903 | 0 |
-| Hybride RRF | `evaluation-dense-hybrid.json` | 0.810606 | 0.844697 | 0.762778 | 0.500000 (17/34) | 1.000000 (34/34) | 0.600000 (15/25) | 824.984 / 1 811.131 | 733.799 / 1 236.832 | 0 |
-| Hybride RRF + reranker | `evaluation-hybrid-rerank.json` | 0.840909 | 0.796970 | 0.764046 | 0.500000 (17/34) | 1.000000 (34/34) | 0.600000 (15/25) | 27 255.403 / 52 129.900 | 24 700.280 / 45 007.858 | 0 |
+Le mode **hybride RRF est le défaut recommandé** : il atteint les meilleurs
+Recall@5, MRR et nDCG@5 du run final tout en gardant des latences p95 de l'ordre
+de 1 à 1,5 seconde. Le reranker reste un opt-in expérimental : son p95 de
+retrieval est de 26,2 secondes et son p95 de réponse de 26,6 secondes, pour des
+proxies de classement inférieurs à l'hybride RRF sur ce run.
 
-Les artefacts ne calculent pas séparément l'exactitude sémantique des réponses
-ni le taux de faux positifs limité aux seuls pièges ; ces deux valeurs ne sont
-donc volontairement pas déduites du tableau.
+## Historique pré-calibration
 
-## Lecture et limites des résultats
+Les valeurs ci-dessous sont retenues comme audit historique des artefacts de
+baseline, pas comme comparaison causale avec les résultats finaux calibrés.
 
-L'hybride RRF améliore les trois proxies de retrieval par rapport au dense sur
-ce run (`Recall@5` 0.810606 contre 0.772727 ; `MRR` 0.844697 contre 0.810606 ;
-`nDCG@5` 0.762778 contre 0.739043), avec des p50/p95 de retrieval inférieurs
-dans cet échantillon. Le reranker obtient le Recall@5 et le nDCG@5 les plus
-élevés (0.840909 et 0.764046), mais son MRR est inférieur à celui de l'hybride
-RRF et sa latence est très supérieure. Ces comparaisons sont descriptives des
-artefacts enregistrés, non une généralisation à tout matériel ou toute charge.
-
-La validité structurale des citations est de 1.0 dans les trois runs, tandis
-que la précision de citations proxy reste entre 0.5 et 0.516129. Cela démontre
-que le graphe de preuves est cohérent selon le validateur, pas que chaque claim
-est sémantiquement vrai ou complet. Une revue humaine/entailment des cas
-échoués, une mesure distincte des pièges et une séparation calibration/final
-restent nécessaires avant toute affirmation de qualité finale.
+| Mode | Artefact baseline | Recall@5 | MRR | nDCG@5 | Abstention | p50/p95 retrieval (ms) |
+|---|---|---:|---:|---:|---:|---:|
+| Dense | `evaluation-dense-hybrid.json` | 0.772727 | 0.810606 | 0.739043 | 0.560000 (14/25) | 1 140.906 / 2 742.389 |
+| Hybride RRF | `evaluation-dense-hybrid.json` | 0.810606 | 0.844697 | 0.762778 | 0.600000 (15/25) | 824.984 / 1 811.131 |
+| Hybride RRF + reranker | `evaluation-hybrid-rerank.json` | 0.840909 | 0.796970 | 0.764046 | 0.600000 (15/25) | 27 255.403 / 52 129.900 |
 
 ## Réflexion : deux semaines supplémentaires
 
-Avec deux semaines supplémentaires, je livrerais d'abord le harnais manquant,
-des runs versionnés et une analyse d'erreurs par langue, catégorie et type de
-tableau. La priorité serait de distinguer une amélioration de retrieval d'une
-simple amélioration de style de réponse : les mesures de couverture des preuves,
-des citations et des abstentions seraient donc publiées avant toute conclusion
-sur le reranker. Je mettrais en place un jeu de calibration séparé, puis je
-gèlerais les seuils et les prompts avant le jeu final.
+Avec deux semaines supplémentaires, je commencerais par une revue humaine
+d'entailment des réponses, des citations et des pièges, puis par une analyse
+d'erreurs par langue, catégorie et type de tableau. Elle permettrait de
+différencier une amélioration de retrieval d'une simple correspondance de
+chunks attendus, et de confirmer que le gate calibré reste prudent sur des
+formulations inédites.
 
 Je consacrerais ensuite le temps restant à une génération sous contraintes plus
-riche, mais toujours vérifiable : schéma de claims atomiques, validation
-d'entailment/revue humaine ciblée et tests adversariaux sur les dates, unités,
-tables et reformulations bilingues. Enfin, j'automatiserais un clone propre,
-le cache/versionnement des modèles et la production d'artefacts signés afin de
-conserver une comparaison fiable quand la page source ou les dépendances
-évoluent.
+riche mais vérifiable, au cache/versionnement des modèles, aux mesures cold/warm
+sur une machine cible et à une politique de délai pour le reranker. Enfin,
+j'automatiserais le clone propre, l'entailment ciblé et la conservation des
+artefacts de release afin de préserver la reproductibilité lors des évolutions
+de la page ou des dépendances.

@@ -117,9 +117,11 @@ Modes disponibles : `dense`, `hybrid`, `hybrid-rerank`. Le mode `hybrid` combine
 E5/FAISS et BM25 par Reciprocal Rank Fusion. `hybrid-rerank` charge à la demande
 le cross-encoder configuré par `MADA_RAG_RERANKER_MODEL`; il peut donc demander
 un téléchargement de modèle et augmenter la latence. Il a fait l'objet d'un
-run comparatif : son `Recall@5` est de `0.840909`, mais ses latences retrieval
-p50/p95 (`27 255.403` / `52 129.900` ms) sont nettement supérieures à celles du
-mode hybride RRF. Consulter les limites et les artefacts dans le
+run calibré de release : son `Recall@5` est de `0.863636`, mais ses latences
+retrieval p50/p95 (`21 756.536` / `26 181.638` ms) restent très supérieures à
+celles du mode hybride RRF. **`hybrid` est le défaut recommandé** ;
+`hybrid-rerank` est un opt-in expérimental. Consulter les limites, les baselines
+historiques et les artefacts dans le
 [rapport d'évaluation](docs/evaluation-report.md) avant de le choisir.
 
 `retrieve` émet les chunks avec rangs et provenance dense/BM25/RRF/reranker.
@@ -135,17 +137,19 @@ Le jeu d'évaluation versionné est
 avec réponses/preuves attendues et catégories (faits, chiffres, tableaux,
 multi-passages, ambiguïtés temporelles, pièges et couverture partielle).
 
-Les runs réels dense, hybride et hybride+reranker sont archivés sous
-[`artifacts/reports/`](artifacts/reports/) ; leurs métriques et leurs limites
-sont documentées dans [`docs/evaluation-report.md`](docs/evaluation-report.md).
+Les runs finaux calibrés dense, hybride et hybride+reranker sont archivés sous
+[`artifacts/reports/`](artifacts/reports/) ; les baselines pré-calibration sont
+conservées dans le même dossier pour audit. Les métriques, limites et la règle
+de non-comparabilité des baselines sont documentées dans
+[`docs/evaluation-report.md`](docs/evaluation-report.md).
 
 ```bash
 uv run mada-rag evaluate --mode dense --mode hybrid --top-k 5 \
-  --output artifacts/reports/evaluation-dense-hybrid.json
+  --output artifacts/reports/evaluation-calibrated-dense-hybrid.json
 
 MADA_RAG_RERANKER_ENABLED=true uv run mada-rag evaluate \
   --mode hybrid-rerank --top-k 5 \
-  --output artifacts/reports/evaluation-hybrid-rerank.json
+  --output artifacts/reports/evaluation-calibrated-hybrid-rerank.json
 ```
 
 Le second run charge le cross-encoder optionnel. Conserver les rapports JSON,
@@ -190,11 +194,14 @@ uv run pytest
   refusée.
 - La réponse extractive est sûre et traçable, mais moins naturelle qu'une
   synthèse LLM contrôlée.
-- Les seuils d'abstention restent à calibrer sur une séparation dédiée, puis à
-  geler avant toute évaluation finale.
-- Les artefacts publiés montrent une forte pénalité de latence pour le reranker
-  sur ce run ; il faut donc le traiter comme un compromis qualité/latence, non
-  comme un mode par défaut. Les métriques de contenu sont des proxies fondés sur
+- Le gate d'ancrage est calibré pour le run de release ; sa robustesse doit être
+  réévaluée sur des formulations inédites et une séparation de calibration. Le
+  même jeu versionné de 25 cas et ses chunks attendus ont servi à l'ajustement
+  puis aux runs calibrés : ces résultats prouvent une régression contrôlée et
+  la conformité de release, pas une estimation non biaisée de généralisation.
+- Les artefacts finaux montrent une forte pénalité de latence pour le reranker
+  (p95 retrieval `26 181.638` ms) : le traiter comme un opt-in expérimental,
+  non comme un défaut. Les métriques de contenu restent des proxies fondés sur
   chunks/citations attendus, pas une validation sémantique LLM.
 
 ## Licence et attribution
@@ -208,13 +215,11 @@ informations de provenance et de licence.
 
 ## Avec deux semaines de plus
 
-Avec deux semaines supplémentaires, je commencerais par terminer le harnais
-d'évaluation et exécuter les trois variantes sur le même snapshot, avec une
-séparation calibration/final et des artefacts horodatés. J'ajouterais des
-mesures de Recall@k, MRR/nDCG, exactitude de réponse, précision des citations,
-exactitude d'abstention, faux positifs des pièges et latences cold/warm. Les
-erreurs seraient relues par catégorie et par langue plutôt que masquées par une
-moyenne globale.
+Avec deux semaines supplémentaires, je commencerais par une revue humaine
+d'entailment, par catégorie et par langue, afin de compléter les proxies de
+chunks/citations des runs calibrés. Je testerais le gate d'ancrage sur une
+séparation de calibration et des reformulations inédites, et je mesurerais les
+latences cold/warm sur une machine cible au lieu de les résumer en une moyenne.
 
 Je renforcerais ensuite l'usage produit : test d'entailment ou revue humaine
 des citations, génération structurée sous contexte strict avec un adaptateur

@@ -1,0 +1,1063 @@
+{
+  "case_count": 25,
+  "generated_at": "2026-07-29T09:36:43.487927+00:00",
+  "index_hashes": {
+    "dense": {
+      "chunks_sha256": "99e27de0805b3a201d443da3f0e7b4324dd459f360a866e166d215e74f239a05",
+      "index_sha256": "5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61"
+    },
+    "hybrid": {
+      "chunks_sha256": "99e27de0805b3a201d443da3f0e7b4324dd459f360a866e166d215e74f239a05",
+      "index_sha256": "5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61"
+    }
+  },
+  "modes": {
+    "dense": {
+      "cases": [
+        {
+          "answer_latency_ms": 1199.9591999992845,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-capital-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-4702818cb53469cea994f6ff893c557f",
+            "chunk-f9835ff9233b9e6dc3a052f082ace360"
+          ],
+          "retrieval_latency_ms": 93126.7411000008,
+          "retrieved_chunk_ids": [
+            "chunk-f9835ff9233b9e6dc3a052f082ace360",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+            "chunk-4702818cb53469cea994f6ff893c557f",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6"
+          ]
+        },
+        {
+          "answer_latency_ms": 577.4056000009296,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-languages-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035"
+          ],
+          "retrieval_latency_ms": 399.7257000009995,
+          "retrieved_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-7f2019b1447fe7e9b118a60e2789c42e",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6"
+          ]
+        },
+        {
+          "answer_latency_ms": 460.23199999945064,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-currency-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-77b111b94dece5630904bcdc29f8de2a",
+            "chunk-ff570aa97aae55356d091298417b598f"
+          ],
+          "retrieval_latency_ms": 278.1665999991674,
+          "retrieved_chunk_ids": [
+            "chunk-ff570aa97aae55356d091298417b598f",
+            "chunk-77b111b94dece5630904bcdc29f8de2a",
+            "chunk-33325411b417a197db2d99692e1bb8bb",
+            "chunk-2104c8c393b32fe281e7c377dd785c2c",
+            "chunk-975a0ad55ce580dc677804d079133994"
+          ]
+        },
+        {
+          "answer_latency_ms": 555.2986999991845,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-area-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-274a6fc3493aa4918a9224378b9216d8"
+          ],
+          "retrieval_latency_ms": 310.76759999996284,
+          "retrieved_chunk_ids": [
+            "chunk-274a6fc3493aa4918a9224378b9216d8",
+            "chunk-3ce02031146a9f069a8551eeebd5f2e0",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-2fbc56c411e4996d50417f5d75d80569",
+            "chunk-33325411b417a197db2d99692e1bb8bb"
+          ]
+        },
+        {
+          "answer_latency_ms": 535.2581000006467,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-population-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-f2e08f3e270eecceeb74d5c6b1bfbc56"
+          ],
+          "retrieval_latency_ms": 348.21419999934733,
+          "retrieved_chunk_ids": [
+            "chunk-f2e08f3e270eecceeb74d5c6b1bfbc56",
+            "chunk-53122b78ea62b4b11e6f0f61f8c57836",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-019a05c854df92de54a3532bd93b1901",
+            "chunk-7bc15a9ccb303f12f005d7d0269392c0"
+          ]
+        },
+        {
+          "answer_latency_ms": 345.97540000140725,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-multidimensional-poverty-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-d9450234924af245b3003bee8fe97b90"
+          ],
+          "retrieval_latency_ms": 330.7339000002685,
+          "retrieved_chunk_ids": [
+            "chunk-d9450234924af245b3003bee8fe97b90",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-b5be04175a8ecfff20188aec3f7815e3",
+            "chunk-e28dd97a34541d3e7cddc5c71ebab52d"
+          ]
+        },
+        {
+          "answer_latency_ms": 434.3812999995862,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-highest-density-fr",
+          "citation_count": 1,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-58597e3558fa501ad857dd1e0bafd663"
+          ],
+          "retrieval_latency_ms": 424.7101000000839,
+          "retrieved_chunk_ids": [
+            "chunk-9f08463eb9fa11b34eca57626ade622f",
+            "chunk-8961d13e507d5e6cc5ac42cd52e0755c",
+            "chunk-5e3d4f646a291fd67c662742be566873",
+            "chunk-65cdcbf65131ccaa837b5f8e86dd0595",
+            "chunk-78abe6c578c62532aa593897db42f7fa"
+          ]
+        },
+        {
+          "answer_latency_ms": 345.91159999945376,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-sava-capital-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-0f7c562730d330234262af3671765a7f"
+          ],
+          "retrieval_latency_ms": 300.50240000127815,
+          "retrieved_chunk_ids": [
+            "chunk-0f7c562730d330234262af3671765a7f",
+            "chunk-19900c6b62550d89626722dee694dc34",
+            "chunk-15e64252a4ea794bab97291ac613e3e7",
+            "chunk-3789add56e73bbc36d256095138de624",
+            "chunk-a2344f469ab63d810c18f818146476ba"
+          ]
+        },
+        {
+          "answer_latency_ms": 674.1343999983656,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-density-tie-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-784b358497c52f4d41477d330ec807ea",
+            "chunk-5973088afdfa39e0f8d63eeefd91b2e5",
+            "chunk-15e64252a4ea794bab97291ac613e3e7",
+            "chunk-3ce4a4321c7f764d62983e2fd23e6687"
+          ],
+          "retrieval_latency_ms": 423.7596000002668,
+          "retrieved_chunk_ids": [
+            "chunk-d8c2784395793c4f6be95c203086bf4b",
+            "chunk-65cdcbf65131ccaa837b5f8e86dd0595",
+            "chunk-0f7c562730d330234262af3671765a7f",
+            "chunk-ecbe05ee6ce706a52c9d3219ea5c1ae4",
+            "chunk-8251e926f2fec4c1ed3013ec9085ae9f"
+          ]
+        },
+        {
+          "answer_latency_ms": 456.33279999856313,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-second-city-en",
+          "citation_count": 1,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-899921e90607aa4ff7ebdd2169c6ff15",
+            "chunk-8975d10cec498072e8bedfbb9e8a3c4a"
+          ],
+          "retrieval_latency_ms": 432.7771999996912,
+          "retrieved_chunk_ids": [
+            "chunk-8975d10cec498072e8bedfbb9e8a3c4a",
+            "chunk-d3ada61a4d301d0c190e6fc94b6ee5ce",
+            "chunk-d966678f798df732981e0a9651bc7957",
+            "chunk-f729f9dcdf77eb9d8db09eecab0ad42c",
+            "chunk-7039d7bdfdc6c64db0b2a97f7102e51c"
+          ]
+        },
+        {
+          "answer_latency_ms": 515.3617999985727,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-merina-concentration-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-78fa6d971d444b9a7f48fbfe5e0f9336",
+            "chunk-78ea2868e8ad3618abf17cb7036ccd64"
+          ],
+          "retrieval_latency_ms": 328.88199999979406,
+          "retrieved_chunk_ids": [
+            "chunk-78ea2868e8ad3618abf17cb7036ccd64",
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+            "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+            "chunk-78fa6d971d444b9a7f48fbfe5e0f9336",
+            "chunk-0c1234d0676612ccfe32a94404c7fdee"
+          ]
+        },
+        {
+          "answer_latency_ms": 884.983399999328,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "multi-power-2023-2025-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-6c48d6ccc375bc5d68281fbe1bf05589"
+          ],
+          "retrieval_latency_ms": 1007.0020000002842,
+          "retrieved_chunk_ids": [
+            "chunk-7bc15a9ccb303f12f005d7d0269392c0",
+            "chunk-e6d6d2b44599aa35f00ab2ccaf7bced9",
+            "chunk-6c48d6ccc375bc5d68281fbe1bf05589",
+            "chunk-019a05c854df92de54a3532bd93b1901",
+            "chunk-fffd32cd9cc5124f3a0ab9e78d717837"
+          ]
+        },
+        {
+          "answer_latency_ms": 406.7359000000579,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "multi-independence-un-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-cf42f96c922a009b236ae7d4e290af24",
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f"
+          ],
+          "retrieval_latency_ms": 811.8777999989106,
+          "retrieved_chunk_ids": [
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-7c34ed1b3c6095d8343302302858eb26",
+            "chunk-cf42f96c922a009b236ae7d4e290af24",
+            "chunk-2d28841c865831121b84bbeb7dff068b"
+          ]
+        },
+        {
+          "answer_latency_ms": 492.4460000002,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "temporal-current-president-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-6c48d6ccc375bc5d68281fbe1bf05589"
+          ],
+          "retrieval_latency_ms": 799.1376999998465,
+          "retrieved_chunk_ids": [
+            "chunk-38a78b28a295ec0a7e9e667c5b3f43f1",
+            "chunk-7f2019b1447fe7e9b118a60e2789c42e",
+            "chunk-b877fe2ee5d646b02d5d13047e223c6b",
+            "chunk-7bc15a9ccb303f12f005d7d0269392c0",
+            "chunk-2cb6144463276766a728bf750deb7c9c"
+          ]
+        },
+        {
+          "answer_latency_ms": 385.2108000010048,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "temporal-official-languages-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035"
+          ],
+          "retrieval_latency_ms": 423.29310000059195,
+          "retrieved_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-88bc760216d996e66ed416debc749018",
+            "chunk-8292b09b9c0d3b7c4211307557dae822",
+            "chunk-6171a94b8f6bbe9aa1f791617df7479c",
+            "chunk-fa117bca40f69cd202ab0e70e41414c6"
+          ]
+        },
+        {
+          "answer_latency_ms": 642.4948000003496,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "partial-poverty-rate-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-d9450234924af245b3003bee8fe97b90",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b"
+          ],
+          "retrieval_latency_ms": 327.7625999999145,
+          "retrieved_chunk_ids": [
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-d9450234924af245b3003bee8fe97b90",
+            "chunk-975a0ad55ce580dc677804d079133994",
+            "chunk-7f945c49fa9ec0dd9a47796a08ba6cff"
+          ]
+        },
+        {
+          "answer_latency_ms": 425.9237000005669,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "temporal-religion-estimates-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-e2a1c6a452349e88ec910b5963c17515"
+          ],
+          "retrieval_latency_ms": 408.02590000021155,
+          "retrieved_chunk_ids": [
+            "chunk-f38a656a4afee50578f90d54d8030c91",
+            "chunk-e2a1c6a452349e88ec910b5963c17515",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-d9450234924af245b3003bee8fe97b90"
+          ]
+        },
+        {
+          "answer_latency_ms": 440.13989999984915,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-forest-loss-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-88bc760216d996e66ed416debc749018"
+          ],
+          "retrieval_latency_ms": 390.9665999999561,
+          "retrieved_chunk_ids": [
+            "chunk-88bc760216d996e66ed416debc749018",
+            "chunk-f8ecd082ee767192c3044458afd6b448",
+            "chunk-3c7c7d63865d2965a167269783f54dc2",
+            "chunk-539dd3901b34c50e4ce86beb1dd35ab4",
+            "chunk-f6b7bd9a900f772fa7cc0b43863f916a"
+          ]
+        },
+        {
+          "answer_latency_ms": 922.2430999998323,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-life-expectancy-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-0e65f76953781b67a8443ddd710e1b79"
+          ],
+          "retrieval_latency_ms": 378.2852999993338,
+          "retrieved_chunk_ids": [
+            "chunk-0e65f76953781b67a8443ddd710e1b79",
+            "chunk-d37447476502b69d8a298d62a0e5e07e",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b",
+            "chunk-0c1234d0676612ccfe32a94404c7fdee",
+            "chunk-564d1951a5147c1ec7792152a747208b"
+          ]
+        },
+        {
+          "answer_latency_ms": 710.4521000001114,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-protected-areas-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-f8ecd082ee767192c3044458afd6b448"
+          ],
+          "retrieval_latency_ms": 565.8473999992566,
+          "retrieved_chunk_ids": [
+            "chunk-f8ecd082ee767192c3044458afd6b448",
+            "chunk-88bc760216d996e66ed416debc749018",
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-7287100e8e885916c5d3beee204258d8"
+          ]
+        },
+        {
+          "answer_latency_ms": 700.6572999998752,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-vanilla-share-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-f6c00f0227d40aeca2cb7f556e96fdb5"
+          ],
+          "retrieval_latency_ms": 485.9267000010732,
+          "retrieved_chunk_ids": [
+            "chunk-f6c00f0227d40aeca2cb7f556e96fdb5",
+            "chunk-147d1ed7c0e733bdf5e6baeaa7455da3",
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-33325411b417a197db2d99692e1bb8bb",
+            "chunk-93e04711a1d1615fda5b7f8a5992425e"
+          ]
+        },
+        {
+          "answer_latency_ms": 665.7006999994337,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-climate-seasons-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-3c7c7d63865d2965a167269783f54dc2"
+          ],
+          "retrieval_latency_ms": 2369.490600000063,
+          "retrieved_chunk_ids": [
+            "chunk-3c7c7d63865d2965a167269783f54dc2",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-f6b7bd9a900f772fa7cc0b43863f916a",
+            "chunk-f6c00f0227d40aeca2cb7f556e96fdb5"
+          ]
+        },
+        {
+          "answer_latency_ms": 1132.5949000001856,
+          "answer_status": "abstained",
+          "answerable": false,
+          "case_id": "trap-national-dish-fr",
+          "citation_count": 0,
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 525.1932999999553,
+          "retrieved_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1",
+            "chunk-975a0ad55ce580dc677804d079133994",
+            "chunk-5121bc63bba4efcc0a850733dec05381",
+            "chunk-7f945c49fa9ec0dd9a47796a08ba6cff",
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f"
+          ]
+        },
+        {
+          "answer_latency_ms": 946.0736000000907,
+          "answer_status": "abstained",
+          "answerable": false,
+          "case_id": "trap-official-flower-en",
+          "citation_count": 0,
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 668.262399998639,
+          "retrieved_chunk_ids": [
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-259af7b0d0d480cb37937c0ec9e68cd0",
+            "chunk-f6c00f0227d40aeca2cb7f556e96fdb5"
+          ]
+        },
+        {
+          "answer_latency_ms": 893.8237000002118,
+          "answer_status": "abstained",
+          "answerable": false,
+          "case_id": "trap-prime-minister-salary-fr",
+          "citation_count": 0,
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 637.44829999996,
+          "retrieved_chunk_ids": [
+            "chunk-975a0ad55ce580dc677804d079133994",
+            "chunk-33325411b417a197db2d99692e1bb8bb",
+            "chunk-2104c8c393b32fe281e7c377dd785c2c",
+            "chunk-7f945c49fa9ec0dd9a47796a08ba6cff",
+            "chunk-77b111b94dece5630904bcdc29f8de2a"
+          ]
+        }
+      ],
+      "metrics": {
+        "abstention_accuracy": 1.0,
+        "abstention_correct": 25,
+        "abstention_total": 25,
+        "answer_latency": {
+          "mean_ms": 629.9892319998617,
+          "p50_ms": 555.2986999991845,
+          "p95_ms": 1095.2906400001661,
+          "samples": 25
+        },
+        "citation_precision": 0.5645161290322581,
+        "citation_precision_count": 35,
+        "citation_precision_total": 62,
+        "citation_total": 62,
+        "citation_valid_count": 62,
+        "citation_validity": 1.0,
+        "mrr": 0.8106060606060606,
+        "ndcg_at_k": 0.7390425354454302,
+        "recall_at_k": 0.7727272727272727,
+        "retrieval_evaluated_cases": 22,
+        "retrieval_latency": {
+          "mean_ms": 4260.140003999986,
+          "p50_ms": 423.7596000002668,
+          "p95_ms": 2096.992880000103,
+          "samples": 25
+        }
+      }
+    },
+    "hybrid": {
+      "cases": [
+        {
+          "answer_latency_ms": 2651.812099999006,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-capital-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-4702818cb53469cea994f6ff893c557f",
+            "chunk-f9835ff9233b9e6dc3a052f082ace360"
+          ],
+          "retrieval_latency_ms": 21911.88780000084,
+          "retrieved_chunk_ids": [
+            "chunk-f9835ff9233b9e6dc3a052f082ace360",
+            "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-4702818cb53469cea994f6ff893c557f",
+            "chunk-e709eb69b97ef33c862c60e73960252c"
+          ]
+        },
+        {
+          "answer_latency_ms": 814.4269000003987,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-languages-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035"
+          ],
+          "retrieval_latency_ms": 636.1995000006573,
+          "retrieved_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-0ce5807330fd257c73e005b1c27b4770",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-4702818cb53469cea994f6ff893c557f"
+          ]
+        },
+        {
+          "answer_latency_ms": 997.2993999999744,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-currency-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-77b111b94dece5630904bcdc29f8de2a",
+            "chunk-ff570aa97aae55356d091298417b598f"
+          ],
+          "retrieval_latency_ms": 739.2158999991807,
+          "retrieved_chunk_ids": [
+            "chunk-ff570aa97aae55356d091298417b598f",
+            "chunk-77b111b94dece5630904bcdc29f8de2a",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-ae0192a636690671e846a0efb7e83194"
+          ]
+        },
+        {
+          "answer_latency_ms": 1486.2665999989986,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-area-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-274a6fc3493aa4918a9224378b9216d8"
+          ],
+          "retrieval_latency_ms": 972.743199999968,
+          "retrieved_chunk_ids": [
+            "chunk-274a6fc3493aa4918a9224378b9216d8",
+            "chunk-33325411b417a197db2d99692e1bb8bb",
+            "chunk-2104c8c393b32fe281e7c377dd785c2c",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3"
+          ]
+        },
+        {
+          "answer_latency_ms": 588.9165000007779,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-population-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-f2e08f3e270eecceeb74d5c6b1bfbc56"
+          ],
+          "retrieval_latency_ms": 556.7995999990671,
+          "retrieved_chunk_ids": [
+            "chunk-f2e08f3e270eecceeb74d5c6b1bfbc56",
+            "chunk-53122b78ea62b4b11e6f0f61f8c57836",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-c9b93712099342874c253c81651800d4",
+            "chunk-9f08463eb9fa11b34eca57626ade622f"
+          ]
+        },
+        {
+          "answer_latency_ms": 340.10979999948177,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-multidimensional-poverty-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-d9450234924af245b3003bee8fe97b90"
+          ],
+          "retrieval_latency_ms": 1214.1080999990663,
+          "retrieved_chunk_ids": [
+            "chunk-d9450234924af245b3003bee8fe97b90",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b",
+            "chunk-b5be04175a8ecfff20188aec3f7815e3",
+            "chunk-fffd32cd9cc5124f3a0ab9e78d717837"
+          ]
+        },
+        {
+          "answer_latency_ms": 496.030400001473,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-highest-density-fr",
+          "citation_count": 1,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-58597e3558fa501ad857dd1e0bafd663"
+          ],
+          "retrieval_latency_ms": 398.662499999773,
+          "retrieved_chunk_ids": [
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-3f0e6f125095ac50c75289cf30c5f5a6",
+            "chunk-5df5a22126aacfa2954ac4e72f0d3d62",
+            "chunk-d3ada61a4d301d0c190e6fc94b6ee5ce",
+            "chunk-f729f9dcdf77eb9d8db09eecab0ad42c"
+          ]
+        },
+        {
+          "answer_latency_ms": 557.7135999992606,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-sava-capital-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-0f7c562730d330234262af3671765a7f"
+          ],
+          "retrieval_latency_ms": 397.12299999882816,
+          "retrieved_chunk_ids": [
+            "chunk-0f7c562730d330234262af3671765a7f",
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-5e3d4f646a291fd67c662742be566873",
+            "chunk-15e64252a4ea794bab97291ac613e3e7",
+            "chunk-78abe6c578c62532aa593897db42f7fa"
+          ]
+        },
+        {
+          "answer_latency_ms": 1131.4947999999276,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-density-tie-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-784b358497c52f4d41477d330ec807ea",
+            "chunk-5973088afdfa39e0f8d63eeefd91b2e5",
+            "chunk-15e64252a4ea794bab97291ac613e3e7",
+            "chunk-3ce4a4321c7f764d62983e2fd23e6687"
+          ],
+          "retrieval_latency_ms": 837.2517000007065,
+          "retrieved_chunk_ids": [
+            "chunk-3ce4a4321c7f764d62983e2fd23e6687",
+            "chunk-8961d13e507d5e6cc5ac42cd52e0755c",
+            "chunk-15e64252a4ea794bab97291ac613e3e7",
+            "chunk-0f7c562730d330234262af3671765a7f",
+            "chunk-78abe6c578c62532aa593897db42f7fa"
+          ]
+        },
+        {
+          "answer_latency_ms": 557.5946999997541,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-second-city-en",
+          "citation_count": 1,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-899921e90607aa4ff7ebdd2169c6ff15",
+            "chunk-8975d10cec498072e8bedfbb9e8a3c4a"
+          ],
+          "retrieval_latency_ms": 809.8077000013291,
+          "retrieved_chunk_ids": [
+            "chunk-8975d10cec498072e8bedfbb9e8a3c4a",
+            "chunk-6ea3822b1d733faf17683895db07a467",
+            "chunk-6ef9b0ffbf2fa5ac140f9b0f6d109719",
+            "chunk-d3ada61a4d301d0c190e6fc94b6ee5ce",
+            "chunk-899921e90607aa4ff7ebdd2169c6ff15"
+          ]
+        },
+        {
+          "answer_latency_ms": 753.8445999998657,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "table-merina-concentration-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-78fa6d971d444b9a7f48fbfe5e0f9336",
+            "chunk-78ea2868e8ad3618abf17cb7036ccd64"
+          ],
+          "retrieval_latency_ms": 329.4994999996561,
+          "retrieved_chunk_ids": [
+            "chunk-78ea2868e8ad3618abf17cb7036ccd64",
+            "chunk-b67de7b2f996bd1971cc97316aa88e01",
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+            "chunk-78fa6d971d444b9a7f48fbfe5e0f9336",
+            "chunk-981af6c56d0e98cc6af66e09ab0b02fe"
+          ]
+        },
+        {
+          "answer_latency_ms": 1267.6267000006192,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "multi-power-2023-2025-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-6c48d6ccc375bc5d68281fbe1bf05589"
+          ],
+          "retrieval_latency_ms": 454.90310000059253,
+          "retrieved_chunk_ids": [
+            "chunk-6c48d6ccc375bc5d68281fbe1bf05589",
+            "chunk-e6d6d2b44599aa35f00ab2ccaf7bced9",
+            "chunk-7bc15a9ccb303f12f005d7d0269392c0",
+            "chunk-fffd32cd9cc5124f3a0ab9e78d717837",
+            "chunk-019a05c854df92de54a3532bd93b1901"
+          ]
+        },
+        {
+          "answer_latency_ms": 484.5738000003621,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "multi-independence-un-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-cf42f96c922a009b236ae7d4e290af24",
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f"
+          ],
+          "retrieval_latency_ms": 429.1638000013336,
+          "retrieved_chunk_ids": [
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-cf42f96c922a009b236ae7d4e290af24",
+            "chunk-a34a1870cb0a1a9e9b6f1d24347d39c8",
+            "chunk-7c34ed1b3c6095d8343302302858eb26"
+          ]
+        },
+        {
+          "answer_latency_ms": 592.5300999988394,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "temporal-current-president-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-6c48d6ccc375bc5d68281fbe1bf05589"
+          ],
+          "retrieval_latency_ms": 378.0984000004537,
+          "retrieved_chunk_ids": [
+            "chunk-38a78b28a295ec0a7e9e667c5b3f43f1",
+            "chunk-fffd32cd9cc5124f3a0ab9e78d717837",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-7f2019b1447fe7e9b118a60e2789c42e",
+            "chunk-b877fe2ee5d646b02d5d13047e223c6b"
+          ]
+        },
+        {
+          "answer_latency_ms": 633.7277000002359,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "temporal-official-languages-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035"
+          ],
+          "retrieval_latency_ms": 827.6635999991413,
+          "retrieved_chunk_ids": [
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-8292b09b9c0d3b7c4211307557dae822",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-0ce5807330fd257c73e005b1c27b4770",
+            "chunk-fffd32cd9cc5124f3a0ab9e78d717837"
+          ]
+        },
+        {
+          "answer_latency_ms": 593.8516999995045,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "partial-poverty-rate-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-d9450234924af245b3003bee8fe97b90",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b"
+          ],
+          "retrieval_latency_ms": 370.71560000003956,
+          "retrieved_chunk_ids": [
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b",
+            "chunk-0e65f76953781b67a8443ddd710e1b79",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-77b111b94dece5630904bcdc29f8de2a"
+          ]
+        },
+        {
+          "answer_latency_ms": 567.5664000009419,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "temporal-religion-estimates-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-e2a1c6a452349e88ec910b5963c17515"
+          ],
+          "retrieval_latency_ms": 349.2556000001059,
+          "retrieved_chunk_ids": [
+            "chunk-e2a1c6a452349e88ec910b5963c17515",
+            "chunk-bd624fb81275521aebaae851d83ebe78",
+            "chunk-f38a656a4afee50578f90d54d8030c91",
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-c9b93712099342874c253c81651800d4"
+          ]
+        },
+        {
+          "answer_latency_ms": 448.3758000005764,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-forest-loss-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-88bc760216d996e66ed416debc749018"
+          ],
+          "retrieval_latency_ms": 389.5136999999522,
+          "retrieved_chunk_ids": [
+            "chunk-88bc760216d996e66ed416debc749018",
+            "chunk-f6b7bd9a900f772fa7cc0b43863f916a",
+            "chunk-f8ecd082ee767192c3044458afd6b448",
+            "chunk-1a6301e7741bfd4f95195d022160bcdb",
+            "chunk-3c7c7d63865d2965a167269783f54dc2"
+          ]
+        },
+        {
+          "answer_latency_ms": 487.527900000714,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-life-expectancy-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-0e65f76953781b67a8443ddd710e1b79"
+          ],
+          "retrieval_latency_ms": 400.4898000002868,
+          "retrieved_chunk_ids": [
+            "chunk-0e65f76953781b67a8443ddd710e1b79",
+            "chunk-d37447476502b69d8a298d62a0e5e07e",
+            "chunk-0efabff7198753a8ada6359cbf9610d9",
+            "chunk-d9450234924af245b3003bee8fe97b90",
+            "chunk-88bc760216d996e66ed416debc749018"
+          ]
+        },
+        {
+          "answer_latency_ms": 995.9228000006988,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-protected-areas-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-f8ecd082ee767192c3044458afd6b448"
+          ],
+          "retrieval_latency_ms": 499.62629999936325,
+          "retrieved_chunk_ids": [
+            "chunk-f8ecd082ee767192c3044458afd6b448",
+            "chunk-88bc760216d996e66ed416debc749018",
+            "chunk-2c976dc6e85fbe1532f6a3a814a17edb",
+            "chunk-d4b5fde47f367b0bf8c2a784903da8a6",
+            "chunk-a34a1870cb0a1a9e9b6f1d24347d39c8"
+          ]
+        },
+        {
+          "answer_latency_ms": 372.4160000001575,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "precise-vanilla-share-fr",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-f6c00f0227d40aeca2cb7f556e96fdb5"
+          ],
+          "retrieval_latency_ms": 386.20710000031977,
+          "retrieved_chunk_ids": [
+            "chunk-f6c00f0227d40aeca2cb7f556e96fdb5",
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-147d1ed7c0e733bdf5e6baeaa7455da3",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-f8ecd082ee767192c3044458afd6b448"
+          ]
+        },
+        {
+          "answer_latency_ms": 381.0579000000871,
+          "answer_status": "answered",
+          "answerable": true,
+          "case_id": "simple-climate-seasons-en",
+          "citation_count": 3,
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-3c7c7d63865d2965a167269783f54dc2"
+          ],
+          "retrieval_latency_ms": 344.807800000126,
+          "retrieved_chunk_ids": [
+            "chunk-3c7c7d63865d2965a167269783f54dc2",
+            "chunk-f6b7bd9a900f772fa7cc0b43863f916a",
+            "chunk-e16b0b3f2fe353eda92d9eb67d20765b",
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-77e3348522fdc220e16840724cdd4184"
+          ]
+        },
+        {
+          "answer_latency_ms": 386.0620999985258,
+          "answer_status": "abstained",
+          "answerable": false,
+          "case_id": "trap-national-dish-fr",
+          "citation_count": 0,
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 329.79660000091826,
+          "retrieved_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-f667f394b72d81ddac71bf763e9e1d0f",
+            "chunk-4702818cb53469cea994f6ff893c557f",
+            "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035"
+          ]
+        },
+        {
+          "answer_latency_ms": 402.37359999991895,
+          "answer_status": "abstained",
+          "answerable": false,
+          "case_id": "trap-official-flower-en",
+          "citation_count": 0,
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 302.7093999990029,
+          "retrieved_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-0c1234d0676612ccfe32a94404c7fdee",
+            "chunk-2c6d6940d3d1c8db8a47870c2723a5c2",
+            "chunk-2d28841c865831121b84bbeb7dff068b"
+          ]
+        },
+        {
+          "answer_latency_ms": 678.422099999807,
+          "answer_status": "abstained",
+          "answerable": false,
+          "case_id": "trap-prime-minister-salary-fr",
+          "citation_count": 0,
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 721.0634000002756,
+          "retrieved_chunk_ids": [
+            "chunk-77b111b94dece5630904bcdc29f8de2a",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-104f3a269d580a422617eeb8670ada31",
+            "chunk-4702818cb53469cea994f6ff893c557f",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6"
+          ]
+        }
+      ],
+      "metrics": {
+        "abstention_accuracy": 1.0,
+        "abstention_correct": 25,
+        "abstention_total": 25,
+        "answer_latency": {
+          "mean_ms": 746.7017599999963,
+          "p50_ms": 588.9165000007779,
+          "p95_ms": 1442.538619999322,
+          "samples": 25
+        },
+        "citation_precision": 0.532258064516129,
+        "citation_precision_count": 33,
+        "citation_precision_total": 62,
+        "citation_total": 62,
+        "citation_valid_count": 62,
+        "citation_validity": 1.0,
+        "mrr": 0.9545454545454546,
+        "ndcg_at_k": 0.8590298876069532,
+        "recall_at_k": 0.8712121212121212,
+        "retrieval_evaluated_cases": 22,
+        "retrieval_latency": {
+          "mean_ms": 1399.4925080000394,
+          "p50_ms": 429.1638000013336,
+          "p95_ms": 1165.835119999246,
+          "samples": 25
+        }
+      }
+    }
+  },
+  "parameters": {
+    "context_top_k": 5,
+    "dense_top_k": 20,
+    "fused_top_k": 10,
+    "lexical_top_k": 20,
+    "modes": [
+      "dense",
+      "hybrid"
+    ],
+    "rrf_k": 60,
+    "top_k": 5
+  },
+  "revision_id": 1365949107,
+  "schema_version": "1.0",
+  "snapshot_sha256": "c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a"
+}
