@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import math
+import unicodedata
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -42,12 +43,19 @@ class EvaluationError:
 
 @dataclass(frozen=True, slots=True)
 class LatencyMetrics:
-    """Observed latency distribution, in milliseconds."""
+    """Observed latency split into first-call cold and subsequent warm samples."""
 
     samples: int
     mean_ms: float | None
     p50_ms: float | None
     p95_ms: float | None
+    max_ms: float | None
+    cold_ms: float | None
+    warm_samples: int
+    warm_mean_ms: float | None
+    warm_p50_ms: float | None
+    warm_p95_ms: float | None
+    warm_max_ms: float | None
 
     def to_dict(self) -> dict[str, float | int | None]:
         return {
@@ -55,6 +63,13 @@ class LatencyMetrics:
             "mean_ms": self.mean_ms,
             "p50_ms": self.p50_ms,
             "p95_ms": self.p95_ms,
+            "max_ms": self.max_ms,
+            "cold_ms": self.cold_ms,
+            "warm_samples": self.warm_samples,
+            "warm_mean_ms": self.warm_mean_ms,
+            "warm_p50_ms": self.warm_p50_ms,
+            "warm_p95_ms": self.warm_p95_ms,
+            "warm_max_ms": self.warm_max_ms,
         }
 
 
@@ -63,7 +78,9 @@ class ModeMetrics:
     """Metrics with explicit denominators instead of synthetic zeroes."""
 
     retrieval_evaluated_cases: int
-    recall_at_k: float | None
+    evidence_recall_at_k: float | None
+    hit_rate_at_k: float | None
+    complete_evidence_rate_at_k: float | None
     mrr: float | None
     ndcg_at_k: float | None
     citation_precision: float | None
@@ -72,16 +89,24 @@ class ModeMetrics:
     citation_validity: float | None
     citation_valid_count: int
     citation_total: int
-    abstention_accuracy: float | None
-    abstention_correct: int
-    abstention_total: int
+    answer_accuracy: float | None
+    answer_accuracy_correct: int
+    answer_accuracy_total: int
+    answerability_status_accuracy: float | None
+    answerability_status_correct: int
+    answerability_status_total: int
+    trap_false_positive_rate: float | None
+    trap_false_positives: int
+    trap_total: int
     retrieval_latency: LatencyMetrics
     answer_latency: LatencyMetrics
 
     def to_dict(self) -> dict[str, object]:
         return {
             "retrieval_evaluated_cases": self.retrieval_evaluated_cases,
-            "recall_at_k": self.recall_at_k,
+            "evidence_recall_at_k": self.evidence_recall_at_k,
+            "hit_rate_at_k": self.hit_rate_at_k,
+            "complete_evidence_rate_at_k": self.complete_evidence_rate_at_k,
             "mrr": self.mrr,
             "ndcg_at_k": self.ndcg_at_k,
             "citation_precision": self.citation_precision,
@@ -90,12 +115,30 @@ class ModeMetrics:
             "citation_validity": self.citation_validity,
             "citation_valid_count": self.citation_valid_count,
             "citation_total": self.citation_total,
-            "abstention_accuracy": self.abstention_accuracy,
-            "abstention_correct": self.abstention_correct,
-            "abstention_total": self.abstention_total,
+            "answer_accuracy": self.answer_accuracy,
+            "answer_accuracy_correct": self.answer_accuracy_correct,
+            "answer_accuracy_total": self.answer_accuracy_total,
+            "answerability_status_accuracy": self.answerability_status_accuracy,
+            "answerability_status_correct": self.answerability_status_correct,
+            "answerability_status_total": self.answerability_status_total,
+            "trap_false_positive_rate": self.trap_false_positive_rate,
+            "trap_false_positives": self.trap_false_positives,
+            "trap_total": self.trap_total,
             "retrieval_latency": self.retrieval_latency.to_dict(),
             "answer_latency": self.answer_latency.to_dict(),
         }
+
+    @property
+    def recall_at_k(self) -> float | None:
+        """Compatibility alias; JSON reports use ``evidence_recall_at_k``."""
+
+        return self.evidence_recall_at_k
+
+    @property
+    def abstention_accuracy(self) -> float | None:
+        """Compatibility alias for the broader answerability status metric."""
+
+        return self.answerability_status_accuracy
 
 
 @dataclass(frozen=True, slots=True)
@@ -108,8 +151,11 @@ class CaseEvaluation:
     retrieved_chunk_ids: tuple[str, ...]
     retrieval_latency_ms: float | None
     answer_status: str | None
+    answer_text: str | None
     answer_latency_ms: float | None
     citation_count: int
+    claims: tuple[dict[str, object], ...]
+    citations: tuple[dict[str, object], ...]
     errors: tuple[EvaluationError, ...]
 
     def to_dict(self) -> dict[str, object]:
@@ -120,8 +166,11 @@ class CaseEvaluation:
             "retrieved_chunk_ids": list(self.retrieved_chunk_ids),
             "retrieval_latency_ms": self.retrieval_latency_ms,
             "answer_status": self.answer_status,
+            "answer_text": self.answer_text,
             "answer_latency_ms": self.answer_latency_ms,
             "citation_count": self.citation_count,
+            "claims": list(self.claims),
+            "citations": list(self.citations),
             "errors": [error.to_dict() for error in self.errors],
         }
 
@@ -271,7 +320,7 @@ def evaluate(
             clock=clock,
         )
     return EvaluationReport(
-        schema_version="1.0",
+        schema_version="2.0",
         generated_at=timestamp,
         revision_id=revision_id,
         snapshot_sha256=snapshot_sha256,
@@ -297,15 +346,21 @@ def _evaluate_mode(
     corpus = {chunk.chunk_id: chunk for chunk in retriever.chunks}
     retrieval_latency_values: list[float] = []
     answer_latency_values: list[float] = []
-    recalls: list[float] = []
+    evidence_recalls: list[float] = []
+    hits: list[float] = []
+    complete_evidence: list[float] = []
     reciprocal_ranks: list[float] = []
     ndcgs: list[float] = []
     citation_precision_count = 0
     citation_precision_total = 0
     citation_valid_count = 0
     citation_total = 0
-    abstention_correct = 0
-    abstention_total = 0
+    answer_accuracy_correct = 0
+    answer_accuracy_total = 0
+    answerability_status_correct = 0
+    answerability_status_total = 0
+    trap_false_positives = 0
+    trap_total = 0
     records: list[CaseEvaluation] = []
 
     for case in cases:
@@ -325,7 +380,9 @@ def _evaluate_mode(
         if case.answerable and case.expected_chunk_ids and not errors:
             expected = set(case.expected_chunk_ids)
             matched = sum(chunk_id in expected for chunk_id in retrieved_ids)
-            recalls.append(matched / len(expected))
+            evidence_recalls.append(matched / len(expected))
+            hits.append(float(matched > 0))
+            complete_evidence.append(float(matched == len(expected)))
             reciprocal_ranks.append(_reciprocal_rank(retrieved_ids, expected))
             ndcgs.append(_ndcg(retrieved_ids, expected, top_k=top_k))
 
@@ -339,12 +396,20 @@ def _evaluate_mode(
                 answer_latency_values.append(answer_latency_ms)
                 if answer.revision_id != case.revision_id:
                     raise EvaluationDataError("answer revision differs from evaluation case")
-                abstention_total += 1
+                answerability_status_total += 1
                 expected_status = (
                     AnswerStatus.ANSWERED if case.answerable else AnswerStatus.ABSTAINED
                 )
                 if answer.status is expected_status:
-                    abstention_correct += 1
+                    answerability_status_correct += 1
+                if case.answerable and case.expected_answer is not None:
+                    answer_accuracy_total += 1
+                    answer_accuracy_correct += int(
+                        _strict_answer_match(answer.text, case.expected_answer)
+                    )
+                if not case.answerable:
+                    trap_total += 1
+                    trap_false_positives += int(answer.status is AnswerStatus.ANSWERED)
                 valid, total, relevant = _citation_measurements(answer, corpus, case)
                 citation_valid_count += valid
                 citation_total += total
@@ -362,15 +427,24 @@ def _evaluate_mode(
                 retrieved_chunk_ids=retrieved_ids,
                 retrieval_latency_ms=retrieval_latency_ms,
                 answer_status=None if answer is None else answer.status.value,
+                answer_text=None if answer is None else answer.text,
                 answer_latency_ms=answer_latency_ms,
                 citation_count=0 if answer is None else len(answer.citations),
+                claims=()
+                if answer is None
+                else tuple(claim.model_dump(mode="json") for claim in answer.claims),
+                citations=()
+                if answer is None
+                else tuple(citation.model_dump(mode="json") for citation in answer.citations),
                 errors=tuple(errors),
             )
         )
 
     metrics = ModeMetrics(
-        retrieval_evaluated_cases=len(recalls),
-        recall_at_k=_mean_or_none(recalls),
+        retrieval_evaluated_cases=len(evidence_recalls),
+        evidence_recall_at_k=_mean_or_none(evidence_recalls),
+        hit_rate_at_k=_mean_or_none(hits),
+        complete_evidence_rate_at_k=_mean_or_none(complete_evidence),
         mrr=_mean_or_none(reciprocal_ranks),
         ndcg_at_k=_mean_or_none(ndcgs),
         citation_precision=_ratio_or_none(citation_precision_count, citation_precision_total),
@@ -379,9 +453,18 @@ def _evaluate_mode(
         citation_validity=_ratio_or_none(citation_valid_count, citation_total),
         citation_valid_count=citation_valid_count,
         citation_total=citation_total,
-        abstention_accuracy=_ratio_or_none(abstention_correct, abstention_total),
-        abstention_correct=abstention_correct,
-        abstention_total=abstention_total,
+        answer_accuracy=_ratio_or_none(answer_accuracy_correct, answer_accuracy_total),
+        answer_accuracy_correct=answer_accuracy_correct,
+        answer_accuracy_total=answer_accuracy_total,
+        answerability_status_accuracy=_ratio_or_none(
+            answerability_status_correct,
+            answerability_status_total,
+        ),
+        answerability_status_correct=answerability_status_correct,
+        answerability_status_total=answerability_status_total,
+        trap_false_positive_rate=_ratio_or_none(trap_false_positives, trap_total),
+        trap_false_positives=trap_false_positives,
+        trap_total=trap_total,
         retrieval_latency=_latencies(retrieval_latency_values),
         answer_latency=_latencies(answer_latency_values),
     )
@@ -446,13 +529,34 @@ def _ndcg(retrieved_ids: Sequence[str], expected: set[str], *, top_k: int) -> fl
 
 def _latencies(values: Sequence[float]) -> LatencyMetrics:
     if not values:
-        return LatencyMetrics(samples=0, mean_ms=None, p50_ms=None, p95_ms=None)
+        return LatencyMetrics(
+            samples=0,
+            mean_ms=None,
+            p50_ms=None,
+            p95_ms=None,
+            max_ms=None,
+            cold_ms=None,
+            warm_samples=0,
+            warm_mean_ms=None,
+            warm_p50_ms=None,
+            warm_p95_ms=None,
+            warm_max_ms=None,
+        )
     ordered = sorted(values)
+    warm = values[1:]
+    warm_ordered = sorted(warm)
     return LatencyMetrics(
         samples=len(ordered),
         mean_ms=sum(ordered) / len(ordered),
         p50_ms=_percentile(ordered, 0.5),
         p95_ms=_percentile(ordered, 0.95),
+        max_ms=ordered[-1],
+        cold_ms=values[0],
+        warm_samples=len(warm_ordered),
+        warm_mean_ms=_mean_or_none(warm_ordered),
+        warm_p50_ms=_percentile(warm_ordered, 0.5) if warm_ordered else None,
+        warm_p95_ms=_percentile(warm_ordered, 0.95) if warm_ordered else None,
+        warm_max_ms=warm_ordered[-1] if warm_ordered else None,
     )
 
 
@@ -472,6 +576,16 @@ def _mean_or_none(values: Sequence[float]) -> float | None:
 
 def _ratio_or_none(numerator: int, denominator: int) -> float | None:
     return numerator / denominator if denominator else None
+
+
+def _strict_answer_match(answer_text: str, expected_answer: str) -> bool:
+    """Compare answers by Unicode normalization, whitespace collapse, and case only."""
+
+    return _canonical_answer_text(answer_text) == _canonical_answer_text(expected_answer)
+
+
+def _canonical_answer_text(value: str) -> str:
+    return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
 def _error(phase: str, exc: Exception) -> EvaluationError:

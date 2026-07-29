@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterator
 from dataclasses import dataclass
 from datetime import datetime
 from hashlib import sha256
@@ -125,7 +124,13 @@ def abstention(case: EvalCase) -> Answer:
     )
 
 
-def case(case_id: str, *, answerable: bool, expected_ids: tuple[str, ...]) -> EvalCase:
+def case(
+    case_id: str,
+    *,
+    answerable: bool,
+    expected_ids: tuple[str, ...],
+    expected_answer: str | None = None,
+) -> EvalCase:
     return EvalCase(
         case_id=case_id,
         question=case_id,
@@ -133,23 +138,21 @@ def case(case_id: str, *, answerable: bool, expected_ids: tuple[str, ...]) -> Ev
         category=EvalCategory.SIMPLE_FACT if answerable else EvalCategory.OUT_OF_SCOPE,
         revision_id=7,
         answerable=answerable,
-        expected_answer="answer" if answerable else None,
+        expected_answer=expected_answer if answerable else None,
         expected_chunk_ids=expected_ids,
     )
-
-
-def tick_clock() -> Iterator[float]:
-    value = 0.0
-    while True:
-        yield value
-        value += 0.01
 
 
 def test_evaluate_measures_retrieval_citations_abstention_and_latency() -> None:
     first = chunk("first", "First evidence.")
     second = chunk("second", "Second evidence.")
     distractor = chunk("distractor", "Distractor evidence.")
-    answerable = case("answerable", answerable=True, expected_ids=("first", "second"))
+    answerable = case(
+        "answerable",
+        answerable=True,
+        expected_ids=("first", "second"),
+        expected_answer=first.text,
+    )
     trap = case("trap", answerable=False, expected_ids=())
     retriever = FakeRetriever(
         chunks=(first, second, distractor),
@@ -159,7 +162,7 @@ def test_evaluate_measures_retrieval_citations_abstention_and_latency() -> None:
         },
     )
     service = FakeService({"answerable": answer(answerable, first), "trap": abstention(trap)})
-    ticks = tick_clock()
+    ticks = iter((0.00, 0.01, 0.01, 0.04, 0.04, 0.06, 0.06, 0.11))
 
     report = evaluate(
         (answerable, trap),
@@ -173,19 +176,89 @@ def test_evaluate_measures_retrieval_citations_abstention_and_latency() -> None:
     )
 
     metrics = report.modes["dense"].metrics
+    assert report.schema_version == "2.0"
     assert metrics.retrieval_evaluated_cases == 1
-    assert metrics.recall_at_k == 1.0
+    assert metrics.evidence_recall_at_k == 1.0
     assert metrics.mrr == 0.5
     assert metrics.ndcg_at_k == pytest.approx(0.6934264)
+    assert metrics.hit_rate_at_k == metrics.complete_evidence_rate_at_k == 1.0
     assert metrics.citation_precision == metrics.citation_validity == 1.0
-    assert metrics.abstention_accuracy == 1.0
-    assert metrics.retrieval_latency.samples == metrics.answer_latency.samples == 2
+    assert metrics.answer_accuracy == 1.0
+    assert metrics.answer_accuracy_correct == metrics.answer_accuracy_total == 1
+    assert metrics.answerability_status_accuracy == 1.0
+    assert metrics.answerability_status_correct == metrics.answerability_status_total == 2
+    assert metrics.trap_false_positive_rate == 0.0
+    assert metrics.trap_false_positives == 0
+    assert metrics.trap_total == 1
+    assert metrics.retrieval_latency.samples == 2
+    assert metrics.retrieval_latency.cold_ms == pytest.approx(10.0)
+    assert metrics.retrieval_latency.warm_samples == 1
+    assert metrics.retrieval_latency.warm_mean_ms == pytest.approx(20.0)
+    assert metrics.retrieval_latency.max_ms == pytest.approx(20.0)
+    assert metrics.retrieval_latency.warm_max_ms == pytest.approx(20.0)
+    assert metrics.answer_latency.samples == 2
+    assert metrics.answer_latency.cold_ms == pytest.approx(30.0)
+    assert metrics.answer_latency.warm_samples == 1
+    assert metrics.answer_latency.warm_mean_ms == pytest.approx(50.0)
+    assert metrics.answer_latency.max_ms == pytest.approx(50.0)
+    assert metrics.answer_latency.warm_max_ms == pytest.approx(50.0)
+    answer_record, trap_record = report.modes["dense"].cases
+    assert answer_record.answer_text == first.text
+    expected_answer = answer(answerable, first)
+    assert answer_record.claims == (expected_answer.claims[0].model_dump(mode="json"),)
+    assert answer_record.citations == (expected_answer.citations[0].model_dump(mode="json"),)
+    assert trap_record.answer_text == "I do not know from the supplied snapshot."
+    assert trap_record.claims == trap_record.citations == ()
     assert report.to_dict()["snapshot_sha256"] == "a" * 64
+
+
+def test_evaluate_records_answer_text_mismatches_and_trap_false_positives() -> None:
+    evidence = chunk("evidence", "Snapshot evidence.")
+    answerable = case(
+        "answerable",
+        answerable=True,
+        expected_ids=("evidence",),
+        expected_answer="Different expected answer.",
+    )
+    trap = case("trap", answerable=False, expected_ids=())
+    retriever = FakeRetriever(
+        chunks=(evidence,),
+        results={
+            "answerable": (retrieved(evidence, 1),),
+            "trap": (retrieved(evidence, 1),),
+        },
+    )
+    service = FakeService(
+        {
+            "answerable": answer(answerable, evidence),
+            "trap": answer(trap, evidence),
+        }
+    )
+    report = evaluate(
+        (answerable, trap),
+        retrievers={"dense": retriever},
+        services={"dense": service},
+    )
+
+    mode = report.modes["dense"]
+    assert mode.metrics.answer_accuracy == 0.0
+    assert mode.metrics.answer_accuracy_correct == 0
+    assert mode.metrics.answer_accuracy_total == 1
+    assert mode.metrics.answerability_status_accuracy == 0.5
+    assert mode.metrics.trap_false_positive_rate == 1.0
+    assert mode.metrics.trap_false_positives == mode.metrics.trap_total == 1
+    assert mode.cases[0].answer_text == evidence.text
+    assert mode.cases[1].answer_status == AnswerStatus.ANSWERED.value
 
 
 def test_evaluate_reports_retrieval_errors_without_synthetic_metrics() -> None:
     evidence = chunk("evidence", "Evidence.")
-    answerable = case("answerable", answerable=True, expected_ids=("evidence",))
+    answerable = case(
+        "answerable",
+        answerable=True,
+        expected_ids=("evidence",),
+        expected_answer="Evidence.",
+    )
     report = evaluate(
         (answerable,),
         retrievers={
@@ -198,13 +271,21 @@ def test_evaluate_reports_retrieval_errors_without_synthetic_metrics() -> None:
     )
 
     mode = report.modes["dense"]
-    assert mode.metrics.recall_at_k is mode.metrics.mrr is mode.metrics.ndcg_at_k is None
+    assert mode.metrics.evidence_recall_at_k is mode.metrics.mrr is mode.metrics.ndcg_at_k is None
+    assert mode.metrics.hit_rate_at_k is mode.metrics.complete_evidence_rate_at_k is None
+    assert mode.metrics.answer_accuracy is mode.metrics.answerability_status_accuracy is None
+    assert mode.metrics.trap_false_positive_rate is None
     assert mode.cases[0].errors[0].phase == "retrieve"
     assert mode.cases[0].errors[0].message == "local index unavailable"
 
 
 def test_jsonl_loader_filters_strict_cases_and_report_writes_atomically(tmp_path: Path) -> None:
-    first = case("first", answerable=True, expected_ids=("first",))
+    first = case(
+        "first",
+        answerable=True,
+        expected_ids=("first",),
+        expected_answer="Evidence.",
+    )
     second = case("second", answerable=False, expected_ids=())
     cases_path = tmp_path / "questions.jsonl"
     cases_path.write_text(

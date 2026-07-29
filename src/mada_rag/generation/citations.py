@@ -59,7 +59,9 @@ class CitationValidator:
                 for citation_id in claim.citation_ids
                 if citation_id in citations
             ]
-            if not claim_citations or not any(
+            if not claim_citations:
+                raise CitationValidationError("claim is not linked to a valid citation")
+            if answer.provider in {None, "extractive"} and not any(
                 citation.excerpt == claim.text for citation in claim_citations
             ):
                 raise CitationValidationError("extractive claim is not an exact cited excerpt")

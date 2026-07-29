@@ -1,5 +1,7 @@
 # Mada RAG
 
+[![CI](https://github.com/memphisfils/mada-rag/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/memphisfils/mada-rag/actions/workflows/ci.yml)
+
 RAG local, bilingue (français/anglais), limité à **une seule révision** de la
 page Wikipédia anglaise [Madagascar](https://en.wikipedia.org/wiki/Madagascar).
 Il répond par extraits exacts accompagnés de citations structurées, ou refuse
@@ -66,22 +68,47 @@ dépôt.
 
 ## Configuration et secrets
 
-Copiez éventuellement l'exemple, sans jamais versionner `.env` :
+La configuration utilise le préfixe `MADA_RAG_`; les paramètres de retrieval,
+ports, limites de requête et chemins sont documentés dans
+[`.env.example`](.env.example). Ne versionnez jamais `.env`, une clé API, ni la
+sortie d'une commande qui affiche une clé.
 
-```bash
-cp .env.example .env
+Le chemin recommandé et sans secret est **extractif** :
+
+```powershell
+$env:MADA_RAG_GENERATION_PROVIDER = "extractive"
+Remove-Item Env:MADA_RAG_LLM_API_KEY -ErrorAction SilentlyContinue
+Remove-Item Env:MADA_RAG_LLM_BASE_URL -ErrorAction SilentlyContinue
+uv run mada-rag ask "Quelle est la capitale de Madagascar ?" --language fr
 ```
 
-Sous PowerShell, remplacez `cp` par `Copy-Item .env.example .env`. La
-configuration utilise le préfixe `MADA_RAG_`; les paramètres de retrieval,
-ports, limites de requête et chemins sont documentés dans
-[`.env.example`](.env.example).
+Il n'envoie aucun chunk à un fournisseur externe. Pour utiliser la génération
+structurée facultative, installez d'abord l'extra puis fournissez les variables
+uniquement dans l'environnement du processus (ou un gestionnaire de secrets).
 
-Le chemin de génération livré est **extractif et sans secret** :
-`MADA_RAG_GENERATION_PROVIDER=extractive`. Les variables `MADA_RAG_LLM_API_KEY`
-et `MADA_RAG_LLM_BASE_URL` sont réservées à une intégration future ; le CLI
-actuel refuse tout fournisseur autre qu'extractif. Ne placez aucune clé dans le
-code, le dépôt, les commandes shell historisées ou les rapports.
+```powershell
+uv sync --extra openai
+
+# API OpenAI
+$env:MADA_RAG_GENERATION_PROVIDER = "openai"
+$env:MADA_RAG_GENERATION_MODEL = "your-model-id"
+$env:MADA_RAG_LLM_API_KEY = "<api-key-from-your-secret-store>"
+Remove-Item Env:MADA_RAG_LLM_BASE_URL -ErrorAction SilentlyContinue
+uv run mada-rag ask "What is the capital of Madagascar?" --language en
+
+# Endpoint compatible avec l'API OpenAI
+$env:MADA_RAG_GENERATION_PROVIDER = "openai-compatible"
+$env:MADA_RAG_GENERATION_MODEL = "your-model-id"
+$env:MADA_RAG_LLM_API_KEY = "<api-key-from-your-secret-store>"
+$env:MADA_RAG_LLM_BASE_URL = "https://provider.example/v1"
+uv run mada-rag ask "Quelle est la capitale de Madagascar ?" --language fr
+```
+
+`openai` exige une clé et un modèle ; `openai-compatible` exige en plus une
+base URL. La génération structurée ne fait jamais confiance à une citation
+proposée par le modèle : elle reconstruit les offsets depuis les chunks
+récupérés et refuse un ID, extrait ou schéma JSON invalide. Toute erreur de
+fournisseur ou de validation retourne une abstention sûre.
 
 ## Commandes
 
@@ -128,14 +155,19 @@ historiques et les artefacts dans le
 `ask` émet un objet JSON `Answer` : `answered` porte claims et citations;
 `abstained` porte un `refusal_reason` et aucune affirmation. Une citation
 contient l'ID du chunk, le chemin de section, l'extrait exact, la révision et,
-le cas échéant, le tableau/la ligne.
+le cas échéant, le tableau/la ligne. Pour une question française, la réponse et
+les claims peuvent être en français ; les extraits cités restent des copies
+exactes du corpus anglais. Le même principe s'applique aux questions anglaises.
 
 ### Évaluation
 
-Le jeu d'évaluation versionné est
+Le jeu de **calibrage** versionné est
 [`data/eval/questions.jsonl`](data/eval/questions.jsonl) : 25 cas bilingues,
 avec réponses/preuves attendues et catégories (faits, chiffres, tableaux,
 multi-passages, ambiguïtés temporelles, pièges et couverture partielle).
+Le holdout distinct [`data/eval/holdout.jsonl`](data/eval/holdout.jsonl) n'a
+servi à aucun réglage de retrieval, reranking, prompts ou seuils d'abstention ;
+ne l'exécutez qu'après gel de ces choix et publiez ses résultats séparément.
 
 Les runs finaux calibrés dense, hybride et hybride+reranker sont archivés sous
 [`artifacts/reports/`](artifacts/reports/) ; les baselines pré-calibration sont
@@ -154,6 +186,16 @@ MADA_RAG_RERANKER_ENABLED=true uv run mada-rag evaluate \
 
 Le second run charge le cross-encoder optionnel. Conserver les rapports JSON,
 leurs horodatages et leurs hashes pour toute comparaison reproductible.
+
+Le rapport produit `evidence_recall_at_k`, `hit_rate_at_k`,
+`complete_evidence_rate_at_k`, MRR/nDCG, métriques de citations, statuts
+answerable/abstained, faux positifs sur pièges et latences cold/warm/max.
+`answer_accuracy` est volontairement stricte : elle compare `answer_text` à
+`expected_answer` après normalisation Unicode NFKC, mise en minuscules et
+compactage des espaces. Ce n'est **pas** une mesure sémantique, d'entailment ni
+de qualité rédactionnelle. Voir aussi
+[`docs/release-evidence.md`](docs/release-evidence.md) pour les preuves de
+release et leurs statuts.
 
 ### API locale
 

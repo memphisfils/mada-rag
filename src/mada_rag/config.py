@@ -113,11 +113,12 @@ class Settings(BaseSettings):
             return self
         if not self.generation_model:
             raise ValueError("generation_model is required when generation is enabled")
-        if self.generation_provider is GenerationProvider.OPENAI and self.llm_api_key is None:
-            raise ValueError("llm_api_key is required for the OpenAI provider")
-        if (
-            self.generation_provider is GenerationProvider.OPENAI_COMPATIBLE
-            and self.llm_base_url is None
-        ):
+        if self.generation_provider is GenerationProvider.OPENAI:
+            if self.llm_api_key is None:
+                raise ValueError("llm_api_key is required for the OpenAI provider")
+            return self
+        if self.llm_base_url is None:
             raise ValueError("llm_base_url is required for the OpenAI-compatible provider")
+        if self.llm_api_key is None:
+            raise ValueError("llm_api_key is required for the OpenAI-compatible provider")
         return self

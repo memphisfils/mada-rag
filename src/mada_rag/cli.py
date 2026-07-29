@@ -15,7 +15,13 @@ from mada_rag.chunking import ArticleChunker
 from mada_rag.config import GenerationProvider, RetrievalMode, Settings
 from mada_rag.evaluation import evaluate as run_evaluation
 from mada_rag.evaluation import load_evaluation_cases, write_evaluation_report
-from mada_rag.generation import CitationValidator, ExtractiveGenerator, SufficiencyPolicy
+from mada_rag.generation import (
+    AnswerGenerator,
+    CitationValidator,
+    ExtractiveGenerator,
+    StructuredLLMGenerator,
+    SufficiencyPolicy,
+)
 from mada_rag.indexing import BM25Index, DenseIndex, E5Embedder
 from mada_rag.ingestion import MediaWikiClient, SnapshotStore, ingest_snapshot
 from mada_rag.models import Language, RetrievedChunk
@@ -113,15 +119,41 @@ def _build_service(
     settings: Settings,
     mode: RetrievalMode | None = None,
 ) -> RagService:
-    if settings.generation_provider is not GenerationProvider.EXTRACTIVE:
-        raise ValueError("the G2 CLI supports the secret-free extractive provider only")
     retriever = _build_retriever(settings, mode)
-    return RagService(
-        retriever=retriever,
-        generator=ExtractiveGenerator(
+    generator: AnswerGenerator
+    if settings.generation_provider is GenerationProvider.EXTRACTIVE:
+        generator = ExtractiveGenerator(
             max_claims=settings.extractive_max_claims,
             max_excerpt_chars=settings.extractive_max_excerpt_chars,
-        ),
+        )
+    elif settings.generation_provider is GenerationProvider.OPENAI:
+        if settings.llm_api_key is None or settings.generation_model is None:
+            raise ValueError("OpenAI structured generation is missing required configuration")
+        generator = StructuredLLMGenerator(
+            provider="openai",
+            api_key=settings.llm_api_key.get_secret_value(),
+            model_name=settings.generation_model,
+            timeout_seconds=settings.llm_timeout_seconds,
+        )
+    elif settings.generation_provider is GenerationProvider.OPENAI_COMPATIBLE:
+        if (
+            settings.llm_api_key is None
+            or settings.generation_model is None
+            or settings.llm_base_url is None
+        ):
+            raise ValueError("OpenAI-compatible structured generation is missing configuration")
+        generator = StructuredLLMGenerator(
+            provider="openai-compatible",
+            api_key=settings.llm_api_key.get_secret_value(),
+            model_name=settings.generation_model,
+            base_url=str(settings.llm_base_url),
+            timeout_seconds=settings.llm_timeout_seconds,
+        )
+    else:
+        raise ValueError("generation_provider=disabled cannot answer questions")
+    return RagService(
+        retriever=retriever,
+        generator=generator,
         sufficiency_policy=SufficiencyPolicy(
             minimum_score=settings.dense_score_threshold,
             minimum_candidates=settings.minimum_retrieved_chunks,
