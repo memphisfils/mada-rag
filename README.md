@@ -116,8 +116,11 @@ uv run mada-rag ask "What is Madagascar's official flower?" --mode dense
 Modes disponibles : `dense`, `hybrid`, `hybrid-rerank`. Le mode `hybrid` combine
 E5/FAISS et BM25 par Reciprocal Rank Fusion. `hybrid-rerank` charge à la demande
 le cross-encoder configuré par `MADA_RAG_RERANKER_MODEL`; il peut donc demander
-un téléchargement de modèle et augmenter la latence. Il est testé unitairement,
-mais **n'a pas encore fait l'objet d'une mesure comparative publiée**.
+un téléchargement de modèle et augmenter la latence. Il a fait l'objet d'un
+run comparatif : son `Recall@5` est de `0.840909`, mais ses latences retrieval
+p50/p95 (`27 255.403` / `52 129.900` ms) sont nettement supérieures à celles du
+mode hybride RRF. Consulter les limites et les artefacts dans le
+[rapport d'évaluation](docs/evaluation-report.md) avant de le choisir.
 
 `retrieve` émet les chunks avec rangs et provenance dense/BM25/RRF/reranker.
 `ask` émet un objet JSON `Answer` : `answered` porte claims et citations;
@@ -132,11 +135,21 @@ Le jeu d'évaluation versionné est
 avec réponses/preuves attendues et catégories (faits, chiffres, tableaux,
 multi-passages, ambiguïtés temporelles, pièges et couverture partielle).
 
-La commande `mada-rag evaluate` et le harnais de métriques ne sont **pas encore
-livrés**. Il serait trompeur de documenter une invocation exécutable ou des
-scores avant leur implémentation. Le protocole et la table de résultats à
-remplir après une vraie exécution sont dans
-[`docs/evaluation-report.md`](docs/evaluation-report.md).
+Les runs réels dense, hybride et hybride+reranker sont archivés sous
+[`artifacts/reports/`](artifacts/reports/) ; leurs métriques et leurs limites
+sont documentées dans [`docs/evaluation-report.md`](docs/evaluation-report.md).
+
+```bash
+uv run mada-rag evaluate --mode dense --mode hybrid --top-k 5 \
+  --output artifacts/reports/evaluation-dense-hybrid.json
+
+MADA_RAG_RERANKER_ENABLED=true uv run mada-rag evaluate \
+  --mode hybrid-rerank --top-k 5 \
+  --output artifacts/reports/evaluation-hybrid-rerank.json
+```
+
+Le second run charge le cross-encoder optionnel. Conserver les rapports JSON,
+leurs horodatages et leurs hashes pour toute comparaison reproductible.
 
 ### API locale
 
@@ -179,9 +192,10 @@ uv run pytest
   synthèse LLM contrôlée.
 - Les seuils d'abstention restent à calibrer sur une séparation dédiée, puis à
   geler avant toute évaluation finale.
-- Les artefacts et métriques comparant dense, hybride et hybride+rerank ne sont
-  pas encore publiés. Aucun score de reranking ne doit être inféré de ses tests
-  unitaires.
+- Les artefacts publiés montrent une forte pénalité de latence pour le reranker
+  sur ce run ; il faut donc le traiter comme un compromis qualité/latence, non
+  comme un mode par défaut. Les métriques de contenu sont des proxies fondés sur
+  chunks/citations attendus, pas une validation sémantique LLM.
 
 ## Licence et attribution
 
