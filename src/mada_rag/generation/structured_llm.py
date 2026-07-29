@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Callable
+from importlib import import_module
 from typing import Any, Literal, Protocol
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
@@ -96,13 +97,13 @@ class _OpenAICompletionClient:
 
 def _default_client_factory(api_key: str, base_url: str | None) -> CompletionClient:
     try:
-        from openai import OpenAI  # type: ignore[import-not-found]
+        openai_module = import_module("openai")
     except ImportError as exc:
         raise StructuredLLMUnavailableError(
             "OpenAI support is not installed; install the optional openai dependency"
         ) from exc
     try:
-        client = OpenAI(api_key=api_key, base_url=base_url)
+        client = openai_module.OpenAI(api_key=api_key, base_url=base_url)
     except Exception as exc:
         raise StructuredLLMUnavailableError(
             "could not initialize the structured LLM client"
