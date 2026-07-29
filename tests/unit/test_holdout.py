@@ -11,7 +11,9 @@ from mada_rag.storage import load_chunks
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 CALIBRATION_PATH = REPOSITORY_ROOT / "data" / "eval" / "questions.jsonl"
 HOLDOUT_PATH = REPOSITORY_ROOT / "data" / "eval" / "holdout.jsonl"
-CHUNKS_PATH = REPOSITORY_ROOT / "data" / "processed" / "chunks.json"
+EVALUATION_CHUNKS_FIXTURE = (
+    Path(__file__).resolve().parents[1] / "fixtures" / "evaluation_chunks.json"
+)
 
 
 def _normalise_question(question: str) -> str:
@@ -36,7 +38,7 @@ def test_holdout_loads_and_is_disjoint_from_calibration_cases() -> None:
 def test_holdout_evidence_is_exact_and_uses_the_calibration_snapshot() -> None:
     calibration = load_evaluation_cases(CALIBRATION_PATH)
     holdout = load_evaluation_cases(HOLDOUT_PATH)
-    chunks_by_id = {chunk.chunk_id: chunk for chunk in load_chunks(CHUNKS_PATH)}
+    chunks_by_id = {chunk.chunk_id: chunk for chunk in load_chunks(EVALUATION_CHUNKS_FIXTURE)}
 
     assert (
         {case.revision_id for case in holdout}
