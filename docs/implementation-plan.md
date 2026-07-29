@@ -75,11 +75,11 @@ Avant fusion, l'auteur fournit la commande exécutée et son résultat. Une revu
 | Gate / phase | État | Preuves et limites restantes |
 |---|---|---|
 | G0 — Architecture | Terminé | Architecture, décisions, risques et DoD sont documentés. |
-| G1 — Données | Implémenté, revue release restante | Snapshot révisionné, parsing et tableaux sont couverts par les tests ; vérifier une dernière fois les artefacts depuis un clone propre. |
-| G2 — Vertical dense | Implémenté | Ingestion, index local, CLI, citations et abstention existent ; le smoke complet avec le vrai modèle reste une preuve de release. |
-| G3 — Retrieval | Terminé en tests | BM25, RRF, reranker paresseux, expansion tabulaire et API sont testés sans réseau ni modèle ; ce n'est pas une mesure comparative. |
+| G1 — Données | Terminé | Snapshot, révision et SHA-256 vérifiés dans le clone propre final. |
+| G2 — Vertical dense | Terminé | Ingestion, index local, CLI, citations et abstention ont été couverts par les tests et les runs réels. |
+| G3 — Retrieval | Terminé | BM25, RRF, reranker paresseux, expansion tabulaire et API sont couverts par les tests, puis comparés dans les runs réels. |
 | P4 / G4 — Évaluation produit | Terminé | Les 25 cas, la commande CLI `evaluate` et les runs calibrés de release sont archivés ; les baselines pré-calibration sont conservées pour audit, sans comparaison comme système inchangé. |
-| P5 / G5 — Release | En préparation | Revue et mesures finalisées ; reste le clone propre du HEAD après revue finale et push, avant publication. |
+| P5 / G5 — Release | Terminé | Clone propre du HEAD final, scan de secrets, revue adversariale, push public et CI GitHub verte. |
 
 ### Décisions et risques actifs
 
@@ -137,8 +137,8 @@ Les tests CI n'appellent ni Wikipedia ni un LLM payant. Les tests réseau et gé
 - [x] Exécuter dense/hybride/hybride+rerank calibrés et versionner les artefacts finaux, avec baselines historiques conservées.
 - [x] Exposer la commande `evaluate` et automatiser la reproduction des runs.
 - [x] Réaliser la revue adversariale des réponses, pièges et citations ; conserver l'entailment humain comme amélioration future.
-- [ ] Réussir le clone propre du HEAD après revue finale et push (G5).
-- [ ] Publier le dépôt et préparer le lien de remise.
+- [x] Réussir le clone propre du HEAD après revue finale et push (G5).
+- [x] Publier le dépôt et préparer le lien de remise.
 
 ## Definition of Done de release
 
