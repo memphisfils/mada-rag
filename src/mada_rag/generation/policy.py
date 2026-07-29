@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from mada_rag.generation.relevance import concept_coverage, missing_critical_concepts
+from mada_rag.generation.relevance import (
+    concept_coverage,
+    has_grounding_anchor,
+    missing_critical_concepts,
+)
 from mada_rag.models import RetrievedChunk
 
 
@@ -60,6 +64,11 @@ class SufficiencyPolicy:
                 )
             coverage = concept_coverage(question, evidence)
             if coverage < self.minimum_concept_coverage:
+                if coverage >= 0.5 and has_grounding_anchor(question, evidence):
+                    return SufficiencyDecision(
+                        True,
+                        "retrieved evidence has anchored non-critical concept coverage",
+                    )
                 return SufficiencyDecision(
                     False,
                     "retrieved evidence does not cover enough query concepts "
