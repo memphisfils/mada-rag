@@ -80,3 +80,22 @@ seuil de qualité de réponse ni l'abstention sur son piège. Il ne faut donc pa
 déclarer une qualification fonctionnelle de ce fallback sur ce holdout. Les
 baselines historiques sont conservées et ne sont ni remplacées ni recalibrées
 à partir de ces six cas.
+
+## Validation Gemini via le provider OpenAI-compatible
+
+Gemini a servi uniquement à valider l'interface générique
+`openai-compatible` avec `gemini-3.6-flash` et l'endpoint compatible Google.
+Le dépôt n'ajoute ni SDK Gemini ni provider Gemini spécifique : les providers
+`extractive`, `openai` et `openai-compatible` restent disponibles. Un
+recruteur peut fournir sa propre clé OpenAI par environnement sans modifier le
+code ; aucune clé n'est stockée dans Git.
+
+Les six cas de `data/eval/holdout.jsonl` sont diagnostiques, pas un holdout
+indépendant destiné au réglage. Le run réel est archivé dans
+`artifacts/reports/evaluation-gemini-3.6-flash-hybrid.json` et sa validation
+manuelle dans `docs/gemini-validation.md` : quatre réponses factuellement
+correctes sur cinq, une abstention answerable, statut correct sur cinq cas sur
+six, aucun faux positif sur le piège et quatre citations valides sur quatre.
+La métrique automatique `answer_accuracy` reste à `0.0` à cause de son
+comparateur volontairement textuel strict ; elle ne mesure pas la fidélité
+sémantique de ce run.

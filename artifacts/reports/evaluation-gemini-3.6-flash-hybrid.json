@@ -1,0 +1,320 @@
+{
+  "case_count": 6,
+  "generated_at": "2026-07-30T08:15:52.172937+00:00",
+  "index_hashes": {
+    "hybrid": {
+      "chunks_sha256": "99e27de0805b3a201d443da3f0e7b4324dd459f360a866e166d215e74f239a05",
+      "index_sha256": "5d94f75a4c00b34f497bc7c457f275139564daca702ddd6a91eb708523dfbe61"
+    }
+  },
+  "modes": {
+    "hybrid": {
+      "cases": [
+        {
+          "answer_latency_ms": 18880.87429999723,
+          "answer_status": "answered",
+          "answer_text": "Madagascar's highest point, Maromokotro, is located in the Tsaratanana Massif and has an elevation of 2,876 m (9,436 ft).",
+          "answerable": true,
+          "case_id": "holdout-highest-point-en",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+              "citation_id": "citation-1",
+              "end_char": 853,
+              "excerpt": "Maromokotro 2,876 m (9,436 ft) in the Tsaratanana Massif is the island's highest point",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Geography"
+              ],
+              "source_anchor": "Geography",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 767,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Madagascar's highest point is Maromokotro in the Tsaratanana Massif, reaching an elevation of 2,876 m (9,436 ft)."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1"
+          ],
+          "retrieval_latency_ms": 70864.29589999898,
+          "retrieved_chunk_ids": [
+            "chunk-a69d1b01f3daba3adfea25d7e78057d1",
+            "chunk-2d28841c865831121b84bbeb7dff068b",
+            "chunk-899921e90607aa4ff7ebdd2169c6ff15",
+            "chunk-3ce02031146a9f069a8551eeebd5f2e0",
+            "chunk-6844826bc8082dc448f3a7c97d404b7c"
+          ]
+        },
+        {
+          "answer_latency_ms": 649.6934999886435,
+          "answer_status": "abstained",
+          "answer_text": "Je ne sais pas à partir du snapshot fourni.",
+          "answerable": true,
+          "case_id": "holdout-baobab-species-fr",
+          "citation_count": 0,
+          "citations": [],
+          "claims": [],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75"
+          ],
+          "retrieval_latency_ms": 883.1045999977505,
+          "retrieved_chunk_ids": [
+            "chunk-0dcaa37fa006a64c8c6fd96519fdfb75",
+            "chunk-5d6bf417cf8e07642fc67971b38f30a3",
+            "chunk-a00014d7dc23dc505d1f972bfcb448b6",
+            "chunk-ae0192a636690671e846a0efb7e83194",
+            "chunk-d9700c3ebbd258e637372402287b5950"
+          ]
+        },
+        {
+          "answer_latency_ms": 6902.806599988253,
+          "answer_status": "answered",
+          "answer_text": "According to the administrative-divisions table, the capital of Vakinankaratra is Antsirabe.",
+          "answerable": true,
+          "case_id": "holdout-vakinankaratra-capital-en",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-2ccb03223b03e752871b8ae66c876296",
+              "citation_id": "citation1",
+              "end_char": 198,
+              "excerpt": "Row 5: Number on map=5 | Region's name=Vakinankaratra | Area (km 2)=16,599 | Population (2018 census)=2,074,358 | Population density per km 2=108.6 | Capital=Antsirabe | Former province=Antananarivo",
+              "revision_id": 1365949107,
+              "row_index": 4,
+              "section_path": [
+                "Government",
+                "Administrative divisions"
+              ],
+              "source_anchor": "Administrative_divisions",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": "table-1dabd1874445c1a7290e7852"
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation1"
+              ],
+              "claim_id": "claim1",
+              "supported": true,
+              "text": "According to the administrative-divisions table, the capital of Vakinankaratra is Antsirabe."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-2ccb03223b03e752871b8ae66c876296"
+          ],
+          "retrieval_latency_ms": 525.9584000014002,
+          "retrieved_chunk_ids": [
+            "chunk-2ccb03223b03e752871b8ae66c876296",
+            "chunk-981af6c56d0e98cc6af66e09ab0b02fe",
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-15e64252a4ea794bab97291ac613e3e7"
+          ]
+        },
+        {
+          "answer_latency_ms": 8916.03930000565,
+          "answer_status": "answered",
+          "answer_text": "Selon le tableau du recensement de 2018, la ville d'Antsirabe est classée au 3e rang avec une population de 245 592 habitants.",
+          "answerable": true,
+          "case_id": "holdout-antsirabe-rank-fr",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-3a5f5a6814fbc13f28d740ccae60a4e1",
+              "citation_id": "cit-1",
+              "end_char": 843,
+              "excerpt": "Row 3: v t e Largest cities or towns in Madagascar According to the 2018 Census / Rank=3 | v t e Largest cities or towns in Madagascar According to the 2018 Census / Name=Antsirabe | v t e Largest cities or towns in Madagascar According to the 2018 Census / Region=Vakinankaratra | v t e Largest cities or towns in Madagascar According to the 2018 Census / Pop.=245,592 | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A | v t e Largest cities or towns in Madagascar According to the 2018 Census=N/A",
+              "revision_id": 1365949107,
+              "row_index": 2,
+              "section_path": [
+                "Demographics",
+                "Largest cities"
+              ],
+              "source_anchor": "Largest_cities",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 0,
+              "table_id": "table-31c833126ba05dc215ea11bd"
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "cit-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Selon le tableau du recensement de 2018, Antsirabe est classée au 3e rang des plus grandes villes."
+            },
+            {
+              "citation_ids": [
+                "cit-1"
+              ],
+              "claim_id": "claim-2",
+              "supported": true,
+              "text": "Le tableau du recensement de 2018 attribue à Antsirabe une population de 245 592 habitants."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-3a5f5a6814fbc13f28d740ccae60a4e1"
+          ],
+          "retrieval_latency_ms": 505.8755999925779,
+          "retrieved_chunk_ids": [
+            "chunk-3a5f5a6814fbc13f28d740ccae60a4e1",
+            "chunk-6844826bc8082dc448f3a7c97d404b7c",
+            "chunk-2ccb03223b03e752871b8ae66c876296",
+            "chunk-a2344f469ab63d810c18f818146476ba",
+            "chunk-6ea3822b1d733faf17683895db07a467"
+          ]
+        },
+        {
+          "answer_latency_ms": 5372.886400000425,
+          "answer_status": "answered",
+          "answer_text": "Contemporary Malagasy cuisine typically consists of a base of rice (vary) served with an accompaniment known as laoka.",
+          "answerable": true,
+          "case_id": "holdout-cuisine-components-en",
+          "citation_count": 1,
+          "citations": [
+            {
+              "chunk_id": "chunk-99242aac25101075735f086ff30995a1",
+              "citation_id": "citation-1",
+              "end_char": 493,
+              "excerpt": "Madagascar's contemporary cuisine typically consists of a base of rice ( vary) served with an accompaniment ( laoka).",
+              "revision_id": 1365949107,
+              "row_index": null,
+              "section_path": [
+                "Culture",
+                "Cuisine"
+              ],
+              "source_anchor": "Cuisine",
+              "source_url": "https://en.wikipedia.org/wiki/Madagascar",
+              "start_char": 376,
+              "table_id": null
+            }
+          ],
+          "claims": [
+            {
+              "citation_ids": [
+                "citation-1"
+              ],
+              "claim_id": "claim-1",
+              "supported": true,
+              "text": "Contemporary Malagasy cuisine typically features a base of rice (vary) served with an accompaniment called laoka."
+            }
+          ],
+          "errors": [],
+          "expected_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1"
+          ],
+          "retrieval_latency_ms": 367.79840000963304,
+          "retrieved_chunk_ids": [
+            "chunk-99242aac25101075735f086ff30995a1",
+            "chunk-f5a75b15c46dc7363673b9cc4590ef47",
+            "chunk-0c1234d0676612ccfe32a94404c7fdee",
+            "chunk-45bfa4d8fd5f03aae377d3b727e1e035",
+            "chunk-78fa6d971d444b9a7f48fbfe5e0f9336"
+          ]
+        },
+        {
+          "answer_latency_ms": 6337.85650000209,
+          "answer_status": "abstained",
+          "answer_text": "I do not know from the supplied snapshot.",
+          "answerable": false,
+          "case_id": "holdout-space-agency-en",
+          "citation_count": 0,
+          "citations": [],
+          "claims": [],
+          "errors": [],
+          "expected_chunk_ids": [],
+          "retrieval_latency_ms": 337.67779999470804,
+          "retrieved_chunk_ids": [
+            "chunk-a58c45b78b4d1eda76b143c0dbb0e545",
+            "chunk-a34a1870cb0a1a9e9b6f1d24347d39c8",
+            "chunk-703e3b8014678b284d9e981a7073f765",
+            "chunk-147d1ed7c0e733bdf5e6baeaa7455da3",
+            "chunk-4702818cb53469cea994f6ff893c557f"
+          ]
+        }
+      ],
+      "metrics": {
+        "answer_accuracy": 0.0,
+        "answer_accuracy_correct": 0,
+        "answer_accuracy_total": 5,
+        "answer_latency": {
+          "cold_ms": 18880.87429999723,
+          "max_ms": 18880.87429999723,
+          "mean_ms": 7843.359433330382,
+          "p50_ms": 6620.331549995171,
+          "p95_ms": 16389.665549999336,
+          "samples": 6,
+          "warm_max_ms": 8916.03930000565,
+          "warm_mean_ms": 5635.856459997012,
+          "warm_p50_ms": 6337.85650000209,
+          "warm_p95_ms": 8513.39276000217,
+          "warm_samples": 5
+        },
+        "answerability_status_accuracy": 0.8333333333333334,
+        "answerability_status_correct": 5,
+        "answerability_status_total": 6,
+        "citation_precision": 1.0,
+        "citation_precision_count": 4,
+        "citation_precision_total": 4,
+        "citation_total": 4,
+        "citation_valid_count": 4,
+        "citation_validity": 1.0,
+        "complete_evidence_rate_at_k": 1.0,
+        "evidence_recall_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieval_evaluated_cases": 5,
+        "retrieval_latency": {
+          "cold_ms": 70864.29589999898,
+          "max_ms": 70864.29589999898,
+          "mean_ms": 12247.451783332508,
+          "p50_ms": 515.916999996989,
+          "p95_ms": 53368.99807499867,
+          "samples": 6,
+          "warm_max_ms": 883.1045999977505,
+          "warm_mean_ms": 524.0829599992139,
+          "warm_p50_ms": 505.8755999925779,
+          "warm_p95_ms": 811.6753599984804,
+          "warm_samples": 5
+        },
+        "trap_false_positive_rate": 0.0,
+        "trap_false_positives": 0,
+        "trap_total": 1
+      }
+    }
+  },
+  "parameters": {
+    "context_top_k": 5,
+    "dense_top_k": 20,
+    "fused_top_k": 10,
+    "lexical_top_k": 20,
+    "modes": [
+      "hybrid"
+    ],
+    "rrf_k": 60,
+    "top_k": 5
+  },
+  "revision_id": 1365949107,
+  "schema_version": "2.0",
+  "snapshot_sha256": "c54a3df9ca9650a99b717e0b235bb2845593b69a96d744becaea6c0eac4e3a4a"
+}
